@@ -1,0 +1,10 @@
+{
+    "File Mover": {
+        "enabled": true,
+        "settings": {
+            "operation_type": "copy",
+            "recursive": true,
+            "preserve_metadata": true
+        }
+    }
+}

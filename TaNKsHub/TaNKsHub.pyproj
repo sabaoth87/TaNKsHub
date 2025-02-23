@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b0198fa-f97a-42a7-a389-46a1be85db39</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TaNKsHub.py</StartupFile>
+    <StartupFile>tankhub\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,34 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TaNKsHub.py" />
+    <Compile Include="tankhub\config\__init__.py" />
+    <Compile Include="tankhub\core\base_module.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\core\module_manager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\core\__init__.py" />
+    <Compile Include="tankhub\gui\main_window.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\gui\__init__.py" />
+    <Compile Include="tankhub\main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\gui\TaNKsHub.py" />
+    <Compile Include="tankhub\modules\file_mover.py" />
+    <Compile Include="tankhub\modules\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tankhub\modules\" />
+    <Folder Include="tankhub\core\" />
+    <Folder Include="tankhub\gui\" />
+    <Folder Include="tankhub\config\" />
+    <Folder Include="tankhub\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
