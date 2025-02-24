@@ -1,10 +1,18 @@
 {
     "File Mover": {
-        "enabled": true,
+        "enabled": false,
         "settings": {
             "operation_type": "copy",
             "recursive": true,
-            "preserve_metadata": true
+            "preserve_metadata": true,
+            "destination_folder": "F:/Video/_new"
+        }
+    },
+    "File Name Editor": {
+        "enabled": true,
+        "settings": {
+            "pattern": "",
+            "preserve_extension": true
         }
     }
 }

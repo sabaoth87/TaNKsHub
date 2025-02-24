@@ -36,7 +36,9 @@
     <Compile Include="tankhub\main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tankhub\gui\TaNKsHub.py" />
+    <Compile Include="tankhub\modules\file_name_editor.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tankhub\modules\file_mover.py" />
     <Compile Include="tankhub\modules\__init__.py">
       <SubType>Code</SubType>

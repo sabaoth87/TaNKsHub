@@ -77,9 +77,13 @@ class ModuleManager:
     def register_module(self, module: BaseModule) -> None:
         """Register a new module."""
         self.modules[module.name] = module
-        logger.info(f"Registered module: {module.name}")
+        logger.debug(f"Registered module: {module.name}")
+        logger.debug(f"Current modules: {list(self.modules.keys())}")
         self._save_config()  # Update config with new module
 
     def get_enabled_modules(self) -> List[BaseModule]:
         """Return list of enabled modules."""
-        return [mod for mod in self.modules.values() if mod.enabled]
+        enabled = [mod for mod in self.modules.values() if mod.enabled]
+        #logger.debug(f"Getting enabled modules. Total modules: {len(self.modules)}")
+        #logger.debug(f"Enabled modules: {[m.name for m in enabled]}")
+        return enabled

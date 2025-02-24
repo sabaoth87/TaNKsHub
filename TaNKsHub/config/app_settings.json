@@ -1,0 +1,7 @@
+{
+    "theme": "dark",
+    "logging": {
+        "level": "INFO",
+        "file": "tankhub.log"
+    }
+}

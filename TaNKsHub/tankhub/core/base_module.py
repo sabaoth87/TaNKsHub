@@ -48,3 +48,7 @@ class BaseModule(ABC):
         - Returns ['*'] because it can handle any file type
         """
         pass
+
+    def on_enable_changed(self, enabled: bool):
+        """Handle module enable/disable state changes."""
+        self.enabled = enabled
