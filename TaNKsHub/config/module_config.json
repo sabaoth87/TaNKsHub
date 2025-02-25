@@ -1,11 +1,12 @@
 {
     "File Mover": {
-        "enabled": false,
+        "enabled": true,
         "settings": {
             "operation_type": "copy",
             "recursive": true,
             "preserve_metadata": true,
-            "destination_folder": "F:/Video/_new"
+            "destination_folder": "",
+            "rename_enabled": false
         }
     },
     "File Name Editor": {
@@ -13,6 +14,21 @@
         "settings": {
             "pattern": "",
             "preserve_extension": true
+        }
+    },
+    "Media Sorter": {
+        "enabled": true,
+        "settings": {
+            "api_key": "68b552d0",
+            "api_type": "omdb",
+            "base_folder": "",
+            "sort_by": "genre",
+            "tv_folder": "TV Shows",
+            "movie_folder": "Movies",
+            "unknown_folder": "Unknown",
+            "create_genre_folders": true,
+            "create_type_folders": true,
+            "simulate": true
         }
     }
 }

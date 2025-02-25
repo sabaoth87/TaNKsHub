@@ -40,6 +40,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tankhub\modules\file_mover.py" />
+    <Compile Include="tankhub\modules\file_name_parser.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tankhub\modules\media_sorter.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tankhub\modules\__init__.py">
       <SubType>Code</SubType>
     </Compile>

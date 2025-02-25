@@ -97,6 +97,9 @@ class FileNameEditorModule(BaseModule):
         # Initialize filename parser
         self.filename_parser = FilenameParser()
 
+        # Preserve the extension?
+        self.preserve_ext_var = tk.BooleanVar(value=True)
+
         # Initialize module-specific variables
         self.logger = logging.getLogger(__name__)
         self.queued_files: List[Path] = []

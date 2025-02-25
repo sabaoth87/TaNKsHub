@@ -1,0 +1,29 @@
+2025-02-25 06:12:05,759 - __main__ - DEBUG - Starting TaNKsHub initialization
+2025-02-25 06:12:05,829 - __main__ - DEBUG - Creating FileMoverModule instance
+2025-02-25 06:12:05,830 - __main__ - DEBUG - Creating FileNameEditorModule instance
+2025-02-25 06:12:05,830 - __main__ - DEBUG - Creating MediaSorterModule instance
+2025-02-25 06:12:05,831 - tankhub.modules.media_sorter - INFO - Loaded 0 media items from cache
+2025-02-25 06:12:05,831 - __main__ - DEBUG - Connected FileNameEditor to FileMover: True
+2025-02-25 06:12:05,831 - __main__ - DEBUG - Connected FileMover to MediaSorter: True
+2025-02-25 06:12:05,833 - __main__ - DEBUG - Test parse: Test.Movie.2021.mp4 -> Test Movie (2021).mp4
+2025-02-25 06:12:05,833 - __main__ - DEBUG - Creating GUI
+2025-02-25 06:12:05,834 - tankhub.core.module_manager - INFO - Loaded module configuration
+2025-02-25 06:12:05,843 - tankhub.gui.main_window - DEBUG - Loaded 4 module icons
+'TaNKsHubGUI' object has no attribute 'file_paths'
+Stack trace:
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 619, in create_files_panel
+ >    file_count = len(self.file_paths)
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 575, in setup_dashboard_tab
+ >    self.create_files_panel(left_column)
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 105, in setup_gui
+ >    self.setup_dashboard_tab()
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 30, in __init__
+ >    self.setup_gui()
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\main.py", line 70, in main
+ >    app = TaNKsHubGUI(root)
+ >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\main.py", line 93, in <module>
+ >    main()
+Loaded 'tankhub.gui.main_window'
+Loaded '__main__'
+Loaded 'runpy'
+The program 'python.exe' has exited with code -1 (0xffffffff).
