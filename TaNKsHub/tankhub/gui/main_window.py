@@ -13,12 +13,108 @@ from tankhub.core.base_module import BaseModule
 
 logger = logging.getLogger(__name__)
 
+"""
+Additional improvements for drag and drop functionality with detailed logging
+and better handling of edge cases.
+"""
+
+class DragDropHandler:
+    """Helper class to manage drag and drop operations with better debugging."""
+    
+    def __init__(self, logger):
+        self.logger = logger
+    
+    def parse_dropped_files(self, data):
+        """
+        Parse file paths from drag and drop data with detailed logging.
+        
+        Args:
+            data: The data string from the drag and drop event.
+            
+        Returns:
+            list: A list of parsed file paths.
+        """
+        self.logger.debug(f"Raw drop data: {repr(data)}")
+        
+        # Different operating systems format drag-drop data differently
+        # Windows: Paths with spaces are enclosed in curly braces
+        # macOS: Paths are separated by newlines
+        # Linux: Various formats depending on desktop environment
+        
+        files = []
+        
+        # Check if this is a macOS-style drop (paths separated by newlines)
+        if '\n' in data and not (data.startswith('{') or '{' in data):
+            self.logger.debug("Detected macOS-style drop (newline separated)")
+            files = [path.strip() for path in data.split('\n') if path.strip()]
+            
+        # Check if this is a simple list of space-separated paths (no braces)
+        elif ' ' in data and not ('{' in data or '}' in data):
+            self.logger.debug("Detected simple space-separated paths")
+            files = [path.strip() for path in data.split() if path.strip()]
+            
+        # Handle Windows-style drop (paths with spaces in curly braces)
+        else:
+            self.logger.debug("Detected Windows-style drop (curly braces)")
+            
+            # If it's a single path in braces
+            if data.startswith('{') and data.endswith('}') and data.count('{') == 1:
+                self.logger.debug("Single path in braces")
+                files = [data.strip('{}')]
+                
+            # Multiple paths potentially with braces
+            else:
+                self.logger.debug("Multiple paths with potential braces")
+                current_file = ""
+                in_braces = False
+                
+                for char in data:
+                    if char == '{':
+                        in_braces = True
+                        # Don't include the brace in the path
+                    elif char == '}':
+                        in_braces = False
+                        if current_file:
+                            files.append(current_file)
+                            current_file = ""
+                    elif char.isspace() and not in_braces:
+                        if current_file:
+                            files.append(current_file)
+                            current_file = ""
+                    else:
+                        current_file += char
+                
+                # Add the last file if there is one
+                if current_file:
+                    files.append(current_file)
+        
+        # Log the parsed file list
+        self.logger.debug(f"Parsed {len(files)} files from drop data:")
+        for i, file_path in enumerate(files):
+            self.logger.debug(f"  {i+1}: {file_path}")
+        
+        # Clean the paths (remove quotes, normalize slashes)
+        cleaned_files = []
+        for path in files:
+            # Remove potential quotes
+            path = path.strip('"\'')
+            # Normalize path separators
+            path = path.replace('\\', '/')
+            # Skip empty paths
+            if path:
+                cleaned_files.append(path)
+        
+        self.logger.debug(f"Final cleaned file list: {len(cleaned_files)} files")
+        return cleaned_files
+
 class TaNKsHubGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("TaNKsHub")
         self.module_manager = ModuleManager()
         self.active_modules: Dict[str, ttk.Frame] = {}
+        
+        self.logger = logging.getLogger(__name__)
         
         # Initialize module icons (will be populated in setup_gui)
         self.module_icons = {}
@@ -388,35 +484,58 @@ class TaNKsHubGUI:
             settings_widget.pack(fill='both', expand=True, padx=5, pady=5)
 
     def setup_files_tab(self):
+        """Set up the files management interface with improved controls."""
         # Drop zone frame
         self.drop_frame = ttk.LabelFrame(self.files_tab, text="Drop Files", padding=10)
         self.drop_frame.pack(fill='x', padx=5, pady=5)
-        
+    
         self.drop_label = ttk.Label(
             self.drop_frame,
             text="Drag and drop files here or click to select",
             padding=20
         )
         self.drop_label.pack(expand=True)
-        
+    
         # Configure drag and drop for both frame and label
         self.drop_frame.drop_target_register(DND_FILES)
         self.drop_label.drop_target_register(DND_FILES)
-        
+    
         # Bind drop events
         self.drop_frame.dnd_bind('<<Drop>>', self.handle_drop)
         self.drop_label.dnd_bind('<<Drop>>', self.handle_drop)
-        
+    
         # Bind click events
         self.drop_frame.bind("<Button-1>", self.select_files)
         self.drop_label.bind("<Button-1>", self.select_files)
-        
-        # Add a file list display
+    
+        # Add a file list display with improved UI
         self.file_list_frame = ttk.LabelFrame(self.files_tab, text="Selected Files", padding=5)
         self.file_list_frame.pack(fill='both', expand=True, padx=5, pady=5)
-        
-        self.file_list = tk.Text(self.file_list_frame, height=10, wrap=tk.WORD)
-        self.file_list.pack(fill='both', expand=True, padx=5, pady=5)
+    
+        # Add buttons for file list actions
+        self.file_list_actions_frame = ttk.Frame(self.file_list_frame)
+        self.file_list_actions_frame.pack(fill='x', padx=5, pady=5)
+    
+        # File count label
+        self.file_count_label = ttk.Label(self.file_list_actions_frame, text="Total: 0 files")
+        self.file_count_label.pack(side='left', padx=5)
+    
+        # Clear all button
+        ttk.Button(
+            self.file_list_actions_frame,
+            text="Clear All",
+            command=self.clear_file_list
+        ).pack(side='right', padx=5)
+    
+        # Add files button
+        ttk.Button(
+            self.file_list_actions_frame,
+            text="Add Files",
+            command=self.select_files
+        ).pack(side='right', padx=5)
+    
+        # Initialize with empty list
+        self.update_file_list_display([])
 
     def setup_modules_tab(self):
         """Set up the modules management interface with each module in its own tab."""
@@ -885,43 +1004,144 @@ class TaNKsHubGUI:
         logger.info(f"Module {module.name} {'enabled' if module.enabled else 'disabled'}")
 
     def handle_drop(self, event):
-        """Handle file drop events."""
-        files = event.data.split()
-        files = [f.strip('{}') for f in files]  # Handle Windows paths
-        
+        """Handle file drop events with robust parsing for all operating systems."""
+        # Create a handler if it doesn't exist
+        if not hasattr(self, 'drop_handler'):
+            self.drop_handler = DragDropHandler(self.logger)
+    
+        # Use the handler to parse the drop data
+        files = self.drop_handler.parse_dropped_files(event.data)
+    
         # Update file list display
-        self.file_list.delete('1.0', tk.END)
-        for file_path in files:
-            self.file_list.insert(tk.END, f"{os.path.basename(file_path)}\n")
-        
+        self.update_file_list_display(files)
+    
         # Store file paths
         self.file_paths = files
-        
+    
         # Process files with enabled modules
-        for file_path in files:
+        self.process_files(files)
+
+    def update_file_list_display(self, files):
+        """Update the file list display with improved UI elements."""
+        # Clear the existing list
+        for widget in self.file_list_frame.winfo_children():
+            if widget != self.file_list_actions_frame:
+                widget.destroy()
+    
+        # Create a frame for the file list with scrollbar
+        list_container = ttk.Frame(self.file_list_frame)
+        list_container.pack(fill='both', expand=True, padx=5, pady=5)
+    
+        # Add a scrollbar
+        scrollbar = ttk.Scrollbar(list_container)
+        scrollbar.pack(side='right', fill='y')
+    
+        # Create a canvas for scrolling
+        canvas = tk.Canvas(list_container, yscrollcommand=scrollbar.set)
+        canvas.pack(side='left', fill='both', expand=True)
+        scrollbar.config(command=canvas.yview)
+    
+        # Create a frame inside the canvas for the file items
+        file_frame = ttk.Frame(canvas)
+        canvas.create_window((0, 0), window=file_frame, anchor='nw', tags="file_frame")
+    
+        # Add each file as a row with controls
+        for i, file_path in enumerate(files):
+            row_frame = ttk.Frame(file_frame)
+            row_frame.pack(fill='x', padx=5, pady=2)
+        
+            # File path display (truncated if too long)
             path = Path(file_path)
-            for module in self.module_manager.get_enabled_modules():
-                if '*' in module.get_supported_extensions() or path.suffix.lower() in module.get_supported_extensions():
-                    try:
-                        dest_path = path  # You might want to modify this based on module
-                        success = module.process_file(path, dest_path)
-                        if success:
-                            logger.info(f"Successfully processed {path} with {module.name}")
-                        else:
-                            logger.warning(f"Failed to process {path} with {module.name}")
-                    except Exception as e:
-                        logger.error(f"Error processing {path} with {module.name}: {str(e)}")
+            display_text = f"{i+1}. {path.name}"
+        
+            # Add an icon based on file type
+            ext = path.suffix.lower()
+            icon_color = "blue"  # Default
+        
+            if ext in ['.mp4', '.mkv', '.avi', '.mov']:
+                icon_color = "red"  # Video files
+            elif ext in ['.jpg', '.png', '.gif']:
+                icon_color = "green"  # Image files
+            elif ext in ['.mp3', '.wav', '.flac']:
+                icon_color = "purple"  # Audio files
+            
+            icon = self.create_colored_icon(icon_color, (12, 12))
+            icon_label = ttk.Label(row_frame, image=icon)
+            icon_label.image = icon  # Keep a reference
+            icon_label.pack(side='left', padx=2)
+        
+            ttk.Label(row_frame, text=display_text).pack(side='left', padx=5, fill='x', expand=True)
+        
+            # Remove button
+            remove_btn = ttk.Button(
+                row_frame,
+                text="✕", 
+                width=3,
+                command=lambda idx=i: self.remove_file(idx)
+            )
+            remove_btn.pack(side='right', padx=2)
+        
+            # Store the full path as an attribute for tooltip
+            row_frame.file_path = file_path
+        
+            # Add tooltip for the full path on hover
+            self.add_tooltip(row_frame, file_path)
+    
+        # Update the canvas scroll region
+        file_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+    
+        # Update file count label
+        if hasattr(self, 'file_count_label'):
+            self.file_count_label.config(text=f"Total: {len(files)} files")
+
+
+    def add_tooltip(self, widget, text):
+        """Add a tooltip to a widget."""
+        def enter(event):
+            x, y, _, _ = widget.bbox("insert")
+            x += widget.winfo_rootx() + 25
+            y += widget.winfo_rooty() + 25
+        
+            # Create a toplevel window
+            self.tooltip = tk.Toplevel(widget)
+            self.tooltip.wm_overrideredirect(True)
+            self.tooltip.wm_geometry(f"+{x}+{y}")
+        
+            label = ttk.Label(self.tooltip, text=text, wraplength=500,
+                             background="#ffffe0", relief="solid", borderwidth=1)
+            label.pack(ipadx=5, ipady=5)
+    
+        def leave(event):
+            if hasattr(self, 'tooltip'):
+                self.tooltip.destroy()
+            
+        widget.bind("<Enter>", enter)
+        widget.bind("<Leave>", leave)
+
+
+    def remove_file(self, index):
+        """Remove a file from the list."""
+        if 0 <= index < len(self.file_paths):
+            del self.file_paths[index]
+            self.update_file_list_display(self.file_paths)
+
+
+    def clear_file_list(self):
+        """Clear the entire file list."""
+        self.file_paths = []
+        self.update_file_list_display([])
 
     def select_files(self, event=None):
-        """Open file selection dialog."""
-        files = filedialog.askopenfilenames(title="Select Files")
-        if files:
-            # Create a drop event-like structure
-            class DropEvent:
-                def __init__(self, files):
-                    self.data = ' '.join(files)
-            
-            self.handle_drop(DropEvent(files))
+        """Open file selection dialog with improved handling for multiple files."""
+        new_files = filedialog.askopenfilenames(title="Select Files")
+        if new_files:
+            # Combine with existing files
+            combined_files = self.file_paths + list(new_files)
+            # Update UI and internal list
+            self.update_file_list_display(combined_files)
+            self.file_paths = combined_files
+            # Process the new files
+            self.process_files(new_files)
 
     def select_log_file(self):
         """Select log file location."""
@@ -932,20 +1152,26 @@ class TaNKsHubGUI:
         if filename:
             self.log_file_var.set(filename)
 
-    def process_files(self, file_paths: List[str]):
-        """Process files using enabled modules."""
+    def process_files(self, file_paths):
+        """Process files using enabled modules with improved error handling."""
         for module in self.module_manager.get_enabled_modules():
             for file_path in file_paths:
                 path = Path(file_path)
-                if path.suffix.lower() in module.get_supported_extensions():
+                extensions = module.get_supported_extensions()
+            
+                # Check if module supports this file type
+                if '*' in extensions or path.suffix.lower() in extensions:
                     try:
+                        # Process using the same source and destination initially
                         success = module.process_file(path, path)
                         if success:
-                            logger.info(f"Successfully processed {path} with {module.name}")
+                            self.logger.info(f"Successfully processed {path} with {module.name}")
                         else:
-                            logger.warning(f"Failed to process {path} with {module.name}")
+                            self.logger.warning(f"Failed to process {path} with {module.name}")
                     except Exception as e:
-                        logger.error(f"Error processing {path} with {module.name}: {str(e)}")
+                        self.logger.error(f"Error processing {path} with {module.name}: {str(e)}")
+                        import traceback
+                        self.logger.error(traceback.format_exc())
 
     def process_queues(self):
         """Process module queues."""

@@ -170,14 +170,35 @@ class FileNameEditorModule(BaseModule):
         return frame
 
     def process_file(self, file_path: Path, dest_path: Path) -> bool:
-        """Queue a file for processing."""
+        """Queue a file for processing with improved path handling."""
         try:
-            if file_path not in self.queued_files:
-                self.queued_files.append(file_path)
-                self._update_preview()
+            # Ensure we're working with Path objects
+            file_path = Path(file_path) if not isinstance(file_path, Path) else file_path
+        
+            # Check if file exists
+            if not file_path.exists():
+                self.logger.warning(f"File does not exist: {file_path}")
+                return False
+            
+            # Use resolved path for deduplication
+            file_path_resolved = file_path.resolve()
+        
+            # Check if file is already in queue
+            for queued_file in self.queued_files:
+                queued_resolved = Path(queued_file).resolve()
+                if queued_resolved == file_path_resolved:
+                    self.logger.debug(f"File already in queue: {file_path}")
+                    return True
+                
+            # Add to queue
+            self.queued_files.append(file_path_resolved)
+            self._update_preview()
             return True
+        
         except Exception as e:
             self.logger.error(f"Error queueing {file_path}: {str(e)}")
+            import traceback
+            self.logger.error(traceback.format_exc())
             return False
 
     def _preview_changes(self):
@@ -197,24 +218,60 @@ class FileNameEditorModule(BaseModule):
             )
 
     def _apply_changes(self):
-        """Apply the rename changes to files."""
+        """Apply the rename changes to files with improved error handling."""
         if not self.queued_files:
             return
 
-        for file_path in self.queued_files:
+        success_count = 0
+        error_count = 0
+        unchanged_count = 0
+    
+        # Create a results window to show progress
+        results_window = tk.Toplevel()
+        results_window.title("Rename Results")
+        results_window.geometry("600x400")
+    
+        # Results text widget
+        results_text = tk.Text(results_window, wrap=tk.WORD)
+        results_text.pack(fill='both', expand=True, padx=10, pady=10)
+    
+        # Add scrollbar
+        scrollbar = ttk.Scrollbar(results_window, command=results_text.yview)
+        scrollbar.pack(side='right', fill='y')
+        results_text.configure(yscrollcommand=scrollbar.set)
+    
+        # Updated file paths
+        updated_files = []
+
+        for i, file_path in enumerate(self.queued_files):
             try:
+                # Check if file still exists
+                if not file_path.exists():
+                    error_msg = f"File no longer exists: {file_path.name}"
+                    self.logger.error(error_msg)
+                    results_text.insert(tk.END, f"❌ {error_msg}\n")
+                    error_count += 1
+                    continue
+                
                 # Get the parent directory and current extension
                 parent_dir = file_path.parent
                 extension = file_path.suffix if self.preserve_ext_var.get() else ""
-                
+            
                 # Parse and generate new name
                 input_filename = file_path.stem
                 media_info = self.filename_parser.parse_filename(input_filename)
                 new_basename = self.filename_parser.generate_filename(media_info)
-                
+            
                 # Construct new path with extension
                 new_filename = f"{new_basename}{extension}"
                 new_path = parent_dir / new_filename
+            
+                # Check if the name would actually change
+                if new_path == file_path:
+                    results_text.insert(tk.END, f"⚠️ {file_path.name} (unchanged)\n")
+                    unchanged_count += 1
+                    updated_files.append(file_path)  # Keep original path
+                    continue
                 
                 # Check if target file already exists
                 if new_path.exists() and new_path != file_path:
@@ -224,19 +281,41 @@ class FileNameEditorModule(BaseModule):
                         numbered_name = f"{new_basename} ({counter}){extension}"
                         new_path = parent_dir / numbered_name
                         counter += 1
-                
+            
                 # Perform the rename
                 file_path.rename(new_path)
                 self.logger.info(f"Renamed: {file_path.name} -> {new_path.name}")
-                
+                results_text.insert(tk.END, f"✅ {file_path.name} -> {new_path.name}\n")
+                success_count += 1
+            
+                # Add the new path to our updated list
+                updated_files.append(new_path)
+            
             except Exception as e:
                 self.logger.error(f"Error renaming {file_path}: {str(e)}")
-                continue
-        
-        # Clear the queue and update display
-        self.queued_files.clear()
+                results_text.insert(tk.END, f"❌ Error renaming {file_path.name}: {str(e)}\n")
+                updated_files.append(file_path)  # Keep original path on error
+                error_count += 1
+    
+        # Add summary to results
+        results_text.insert(tk.END, f"\n=== Summary ===\n")
+        results_text.insert(tk.END, f"✅ Successfully renamed: {success_count}\n")
+        results_text.insert(tk.END, f"⚠️ Unchanged: {unchanged_count}\n")
+        results_text.insert(tk.END, f"❌ Errors: {error_count}\n")
+    
+        # Add close button
+        ttk.Button(
+            results_window,
+            text="Close",
+            command=results_window.destroy
+        ).pack(pady=10)
+    
+        # Update the queue with new paths
+        self.queued_files = updated_files
         self._update_preview()
-        self.preview_text.insert('1.0', "All files processed!\n")
+    
+        # Scroll to the top
+        results_text.see("1.0")
 
     def _update_preview(self):
         """Update the preview display."""

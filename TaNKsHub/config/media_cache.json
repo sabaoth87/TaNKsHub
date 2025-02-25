@@ -1,1 +1,31 @@
-{}
+{
+    "24 Little Hours (2020)": {
+        "title": "24 Little Hours",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie"
+    },
+    "6 Underground (2019)": {
+        "title": "6 Underground",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie"
+    },
+    "21 Bridges (2019)": {
+        "title": "21 Bridges",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "type": "movie"
+    }
+}

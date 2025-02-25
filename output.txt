@@ -1,29 +1,223 @@
-2025-02-25 06:12:05,759 - __main__ - DEBUG - Starting TaNKsHub initialization
-2025-02-25 06:12:05,829 - __main__ - DEBUG - Creating FileMoverModule instance
-2025-02-25 06:12:05,830 - __main__ - DEBUG - Creating FileNameEditorModule instance
-2025-02-25 06:12:05,830 - __main__ - DEBUG - Creating MediaSorterModule instance
-2025-02-25 06:12:05,831 - tankhub.modules.media_sorter - INFO - Loaded 0 media items from cache
-2025-02-25 06:12:05,831 - __main__ - DEBUG - Connected FileNameEditor to FileMover: True
-2025-02-25 06:12:05,831 - __main__ - DEBUG - Connected FileMover to MediaSorter: True
-2025-02-25 06:12:05,833 - __main__ - DEBUG - Test parse: Test.Movie.2021.mp4 -> Test Movie (2021).mp4
-2025-02-25 06:12:05,833 - __main__ - DEBUG - Creating GUI
-2025-02-25 06:12:05,834 - tankhub.core.module_manager - INFO - Loaded module configuration
-2025-02-25 06:12:05,843 - tankhub.gui.main_window - DEBUG - Loaded 4 module icons
-'TaNKsHubGUI' object has no attribute 'file_paths'
-Stack trace:
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 619, in create_files_panel
- >    file_count = len(self.file_paths)
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 575, in setup_dashboard_tab
- >    self.create_files_panel(left_column)
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 105, in setup_gui
- >    self.setup_dashboard_tab()
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\gui\main_window.py", line 30, in __init__
- >    self.setup_gui()
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\main.py", line 70, in main
- >    app = TaNKsHubGUI(root)
- >  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\main.py", line 93, in <module>
- >    main()
-Loaded 'tankhub.gui.main_window'
-Loaded '__main__'
-Loaded 'runpy'
-The program 'python.exe' has exited with code -1 (0xffffffff).
+2025-02-25 06:59:26,657 - __main__ - DEBUG - Starting TaNKsHub initialization
+2025-02-25 06:59:26,728 - __main__ - DEBUG - Creating FileMoverModule instance
+2025-02-25 06:59:26,728 - __main__ - DEBUG - Creating FileNameEditorModule instance
+2025-02-25 06:59:26,729 - __main__ - DEBUG - Creating MediaSorterModule instance
+2025-02-25 06:59:26,730 - tankhub.modules.media_sorter - INFO - Loaded 0 media items from cache
+2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileNameEditor to FileMover: True
+2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileMover to MediaSorter: True
+2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileNameEditor to MediaSorter: True
+2025-02-25 06:59:26,733 - __main__ - DEBUG - Test parse: Test.Movie.2021.mp4 -> Test Movie (2021).mp4
+2025-02-25 06:59:26,734 - __main__ - DEBUG - Creating GUI
+2025-02-25 06:59:26,734 - tankhub.core.module_manager - INFO - Loaded module configuration
+2025-02-25 06:59:26,743 - tankhub.gui.main_window - DEBUG - Loaded 4 module icons
+2025-02-25 06:59:26,773 - tankhub.gui.main_window - DEBUG - Setting up modules tab
+2025-02-25 06:59:26,775 - tankhub.gui.main_window - DEBUG - Found 0 total modules
+2025-02-25 06:59:26,775 - tankhub.gui.main_window - DEBUG - No modules found, adding placeholder tab
+2025-02-25 06:59:26,781 - __main__ - DEBUG - Registering modules
+2025-02-25 06:59:26,782 - tankhub.core.module_manager - DEBUG - Registered module: File Mover
+2025-02-25 06:59:26,782 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover']
+2025-02-25 06:59:26,783 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:26,783 - tankhub.core.module_manager - DEBUG - Registered module: File Name Editor
+2025-02-25 06:59:26,783 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor']
+2025-02-25 06:59:26,785 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:26,785 - tankhub.core.module_manager - DEBUG - Registered module: Media Sorter
+2025-02-25 06:59:26,785 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor', 'Media Sorter']
+2025-02-25 06:59:26,787 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:26,787 - __main__ - DEBUG - Enabled modules: ['File Mover', 'File Name Editor', 'Media Sorter']
+2025-02-25 06:59:26,788 - __main__ - INFO - TaNKsHub started
+2025-02-25 06:59:26,894 - __main__ - DEBUG - Refreshing modules tab
+2025-02-25 06:59:26,894 - tankhub.gui.main_window - DEBUG - Setting up modules tab
+2025-02-25 06:59:26,933 - tankhub.gui.main_window - DEBUG - Found 3 total modules
+2025-02-25 06:59:26,933 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Mover
+2025-02-25 06:59:26,947 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Mover
+2025-02-25 06:59:26,947 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Name Editor
+2025-02-25 06:59:26,956 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Name Editor
+2025-02-25 06:59:26,956 - tankhub.gui.main_window - DEBUG - Creating tab for module: Media Sorter
+2025-02-25 06:59:26,972 - tankhub.gui.main_window - DEBUG - Successfully created tab for Media Sorter
+2025-02-25 06:59:32,385 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:32,425 - tankhub.gui.main_window - INFO - Module File Mover disabled
+2025-02-25 06:59:37,431 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:37,470 - tankhub.gui.main_window - INFO - Module File Name Editor disabled
+2025-02-25 06:59:38,323 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 06:59:38,360 - tankhub.gui.main_window - INFO - Module File Name Editor enabled
+2025-02-25 06:59:49,565 - tankhub.modules.file_mover - DEBUG - Rename setting changed to: True
+2025-02-25 07:00:28,889 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 with File Name Editor
+2025-02-25 07:00:28,890 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 with Media Sorter
+2025-02-25 07:00:28,890 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 with File Name Editor
+2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 with Media Sorter
+2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Name Editor
+2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with Media Sorter
+2025-02-25 07:00:52,708 - tankhub.modules.media_sorter - INFO - Renamed: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
+2025-02-25 07:00:52,709 - tankhub.modules.media_sorter - INFO - Renamed: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
+2025-02-25 07:00:52,711 - tankhub.modules.media_sorter - INFO - Renamed: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
+2025-02-25 07:01:02,228 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-25 07:01:02,433 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=24%20Little%20Hours&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
+2025-02-25 07:01:02,441 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-25 07:01:02,634 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=6%20Underground&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-25 07:01:02,650 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-25 07:01:02,789 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=21%20Bridges&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-25 07:01:02,791 - tankhub.modules.media_sorter - INFO - Saved 3 media items to cache
+2025-02-25 07:01:46,611 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT] for renaming
+2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Generated new name: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
+2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Created operation with source=24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4, dest=24 Little Hours (2020).mp4, rename=True
+2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT] for renaming
+2025-02-25 07:01:46,614 - tankhub.modules.file_mover - DEBUG - Generated new name: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
+2025-02-25 07:01:46,614 - tankhub.modules.file_mover - DEBUG - Created operation with source=6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4, dest=6 Underground (2019).mp4, rename=True
+2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX] for renaming
+2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Generated new name: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
+2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Created operation with source=21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4, dest=21 Bridges (2019).mp4, rename=True
+2025-02-25 07:01:46,616 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
+2025-02-25 07:01:46,617 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-25 07:01:46,662 - tankhub.gui.main_window - INFO - Module File Mover enabled
+2025-02-25 07:01:52,134 - tankhub.modules.media_sorter - INFO - Using cached data for 24 Little Hours (2020).mp4
+2025-02-25 07:01:52,137 - tankhub.modules.media_sorter - INFO - Using cached data for 6 Underground (2019).mp4
+2025-02-25 07:01:52,139 - tankhub.modules.media_sorter - INFO - Using cached data for 21 Bridges (2019).mp4
+2025-02-25 07:01:52,140 - tankhub.modules.media_sorter - INFO - Saved 3 media items to cache
+2025-02-25 07:03:53,885 - tankhub.modules.file_mover - DEBUG - Processing queue with rename_enabled=True
+2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:03:53,887 - tankhub.modules.file_mover - DEBUG - Processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT] for renaming
+2025-02-25 07:03:53,887 - tankhub.modules.file_mover - DEBUG - Generated new name: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
+2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Created operation with source=24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4, dest=24 Little Hours (2020).mp4, rename=True
+2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT] for renaming
+2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Generated new name: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
+2025-02-25 07:03:53,889 - tankhub.modules.file_mover - DEBUG - Created operation with source=6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4, dest=6 Underground (2019).mp4, rename=True
+2025-02-25 07:03:53,889 - tankhub.modules.file_mover - DEBUG - Processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX] for renaming
+2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Generated new name: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
+2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Created operation with source=21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4, dest=21 Bridges (2019).mp4, rename=True
+2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
+2025-02-25 07:03:53,891 - tankhub.modules.file_mover - DEBUG - Sample operation before processing: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4, rename=True
+2025-02-25 07:03:53,892 - tankhub.modules.file_mover - DEBUG - Starting to process queue
+2025-02-25 07:03:53,893 - tankhub.modules.file_mover - DEBUG - Queue size: 3
+2025-02-25 07:03:53,893 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> F:\Media\24 Little Hours (2020).mp4
+2025-02-25 07:03:53,894 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
+2025-02-25 07:03:53,895 - tankhub.modules.file_mover - ERROR - Error processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
+2025-02-25 07:03:53,895 - tankhub.modules.file_mover - INFO - Error processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
+2025-02-25 07:03:53,904 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4' -> 'F:\\Media\\24 Little Hours (2020).mp4'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
+    shutil.move(operation.source, operation.dest)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
+    copy_function(src, real_dst)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
+
+2025-02-25 07:03:53,904 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> F:\Media\6 Underground (2019).mp4
+2025-02-25 07:03:53,906 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
+2025-02-25 07:03:53,907 - tankhub.modules.file_mover - ERROR - Error processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
+2025-02-25 07:03:53,907 - tankhub.modules.file_mover - INFO - Error processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
+2025-02-25 07:03:53,908 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4' -> 'F:\\Media\\6 Underground (2019).mp4'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
+    shutil.move(operation.source, operation.dest)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
+    copy_function(src, real_dst)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
+
+2025-02-25 07:03:53,908 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> F:\Media\21 Bridges (2019).mp4
+2025-02-25 07:03:53,909 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
+2025-02-25 07:03:53,910 - tankhub.modules.file_mover - ERROR - Error processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+2025-02-25 07:03:53,910 - tankhub.modules.file_mover - INFO - Error processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+2025-02-25 07:03:53,910 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4' -> 'F:\\Media\\21 Bridges (2019).mp4'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
+    shutil.move(operation.source, operation.dest)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
+    copy_function(src, real_dst)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+
+The thread 0x2 has exited with code 0 (0x0).
+2025-02-25 07:05:16,524 - tankhub.modules.file_mover - DEBUG - Added file to queue: I:\Video\Movies\24
+2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:05:16,527 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
+2025-02-25 07:05:16,527 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
+2025-02-25 07:05:16,528 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
+2025-02-25 07:05:16,528 - tankhub.modules.file_mover - DEBUG - Queue updated with 1 operations
+2025-02-25 07:05:16,528 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24 with File Mover
+2025-02-25 07:05:16,529 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24 with File Name Editor
+2025-02-25 07:05:16,529 - tankhub.modules.file_mover - DEBUG - Added file to queue: Little
+2025-02-25 07:05:16,530 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
+2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
+2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
+2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
+2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
+2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
+2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Queue updated with 2 operations
+2025-02-25 07:05:16,533 - tankhub.gui.main_window - INFO - Successfully processed Little with File Mover
+2025-02-25 07:05:16,535 - tankhub.gui.main_window - INFO - Successfully processed Little with File Name Editor
+2025-02-25 07:05:16,535 - tankhub.modules.file_mover - DEBUG - Added file to queue: Hours
+2025-02-25 07:05:16,536 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:05:16,536 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
+2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
+2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
+2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
+2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
+2025-02-25 07:05:16,539 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
+2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Processing Hours for renaming
+2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Generated new name: Hours -> Hours
+2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Created operation with source=Hours, dest=Hours, rename=True
+2025-02-25 07:05:16,541 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
+2025-02-25 07:05:16,541 - tankhub.gui.main_window - INFO - Successfully processed Hours with File Mover
+2025-02-25 07:05:16,541 - tankhub.gui.main_window - INFO - Successfully processed Hours with File Name Editor
+2025-02-25 07:05:16,542 - tankhub.modules.file_mover - DEBUG - Added file to queue: (2020).mp4
+2025-02-25 07:05:16,543 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
+2025-02-25 07:05:16,543 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
+2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
+2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
+2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
+2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
+2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
+2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
+2025-02-25 07:05:16,546 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
+2025-02-25 07:05:16,546 - tankhub.modules.file_mover - DEBUG - Processing Hours for renaming
+2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Generated new name: Hours -> Hours
+2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Created operation with source=Hours, dest=Hours, rename=True
+2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Processing (2020) for renaming
+2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Generated new name: (2020).mp4 ->  (2020).mp4
+2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Created operation with source=(2020).mp4, dest= (2020).mp4, rename=True
+2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Queue updated with 4 operations
+2025-02-25 07:05:16,549 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with File Mover
+2025-02-25 07:05:16,549 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with File Name Editor
+2025-02-25 07:05:16,550 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with Media Sorter
+The thread 'MainThread' (0x1) has exited with code 0 (0x0).
+The program 'python.exe' has exited with code 0 (0x0).

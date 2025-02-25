@@ -6,7 +6,7 @@
             "recursive": true,
             "preserve_metadata": true,
             "destination_folder": "",
-            "rename_enabled": false
+            "rename_enabled": true
         }
     },
     "File Name Editor": {

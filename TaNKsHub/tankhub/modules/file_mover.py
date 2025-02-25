@@ -284,25 +284,33 @@ class FileMoverModule(BaseModule):
         self.status_var.set("Queue cleared")
 
     def _update_queue_destination(self):
-        """Update destination for all queued files."""
+        """Update destination for all queued files with improved path handling."""
         if not self.dest_path.get():
             self.logger.debug("No destination path set")
             return
-        
+    
         new_dest = Path(self.dest_path.get())
         self.operation_queue = queue.Queue()  # Clear existing queue
-    
+
         # Log current settings
         self.logger.debug(f"Updating queue destination to {new_dest}")
         self.logger.debug(f"Rename enabled: {self.rename_enabled}")
         self.logger.debug(f"Filename editor available: {self.filename_editor is not None}")
-    
+
         for file_path in self.queued_files:
             try:
+                # Make sure file_path is a Path object
+                file_path = Path(file_path) if not isinstance(file_path, Path) else file_path
+            
+                # Skip if file doesn't exist
+                if not file_path.exists():
+                    self.logger.warning(f"File no longer exists: {file_path}")
+                    continue
+                
                 # Determine the filename based on rename setting
                 orig_name = file_path.name
                 dest_name = orig_name  # Default to original name
-            
+        
                 # Check if rename is enabled and we have a filename editor
                 if self.rename_enabled and self.filename_editor:
                     # Get new filename using the filename editor
@@ -314,29 +322,45 @@ class FileMoverModule(BaseModule):
                     self.logger.debug(f"Generated new name: {orig_name} -> {dest_name}")
                 else:
                     self.logger.debug(f"No renaming applied for {orig_name}")
-                
+            
                 # Create the final destination path
                 final_dest = new_dest / dest_name
             
+                # Check if destination already exists, add a number if needed
+                counter = 1
+                while final_dest.exists() and final_dest != file_path:
+                    base_name = final_dest.stem
+                    # Check if base_name already ends with a number in parentheses
+                    match = re.search(r'^(.*)\s\((\d+)\)$', base_name)
+                    if match:
+                        # Increment the existing number
+                        base_name = match.group(1)
+                        counter = int(match.group(2)) + 1
+                
+                    new_name = f"{base_name} ({counter}){file_path.suffix}"
+                    final_dest = new_dest / new_name
+                    counter += 1
+                    self.logger.debug(f"Destination exists, using {new_name} instead")
+        
                 # IMPORTANT: Create the operation with the right rename flag
                 operation = FileOperation(
-                    str(file_path),
+                    str(file_path.resolve()),  # Use absolute path
                     str(final_dest),
                     file_path.is_file(),
                     self.operation_var.get(),
                     rename=self.rename_enabled
                 )
-            
+        
                 # Debug check the operation to ensure rename flag is set correctly
                 self.logger.debug(f"Created operation with source={file_path.name}, dest={dest_name}, rename={operation.rename}")
-            
+        
                 self.operation_queue.put(operation)
-            
+        
             except Exception as e:
                 self.logger.error(f"Error in _update_queue_destination for {file_path}: {str(e)}")
                 import traceback
                 self.logger.error(traceback.format_exc())
-            
+        
         self.logger.debug(f"Queue updated with {self.operation_queue.qsize()} operations")
 
     def _process_current_queue(self):
@@ -376,61 +400,94 @@ class FileMoverModule(BaseModule):
         self.current_thread.start()
 
     def process_file(self, file_path: Path, dest_path: Path) -> bool:
-        """Queue a file for processing."""
+        """Queue a file for processing with improved path handling."""
         try:
-            if file_path not in self.queued_files:
-                self.queued_files.append(file_path)
-                self.logger.debug(f"Added file to queue: {file_path}")
-                self._update_preview()
+            # Ensure we're working with Path objects
+            file_path = Path(file_path) if not isinstance(file_path, Path) else file_path
+        
+            # Log the file being processed
+            self.logger.debug(f"Processing file: {file_path} (exists: {file_path.exists()})")
+        
+            # Check if file exists before adding to queue
+            if not file_path.exists():
+                self.logger.warning(f"File does not exist: {file_path}")
+                self.message_queue.put(f"File does not exist: {file_path}")
+                return False
             
+            # Check if file is already in queue (compare resolved paths)
+            file_path_resolved = file_path.resolve()
+            for queued_file in self.queued_files:
+                if Path(queued_file).resolve() == file_path_resolved:
+                    self.logger.debug(f"File already in queue: {file_path}")
+                    return True
+        
+            # Add to queue using the resolved path
+            self.queued_files.append(file_path_resolved)
+            self.logger.debug(f"Added file to queue: {file_path_resolved}")
+            self._update_preview()
+        
+            # Update queue with current settings if destination is set
             if self.dest_path and self.dest_path.get():
-                # Update queue with current settings
                 self._update_queue_destination()
             
             return True
-            
+        
         except Exception as e:
+            self.logger.error(f"Error queuing {file_path}: {str(e)}")
             self.message_queue.put(f"Error queuing {file_path}: {str(e)}")
+            import traceback
+            self.logger.error(traceback.format_exc())
             return False
 
     def _process_queue(self) -> None:
-        """Process the operation queue."""
+        """Process the operation queue with improved error handling."""
         self.logger.debug("Starting to process queue")
         self.logger.debug(f"Queue size: {self.operation_queue.qsize()}")
-    
+
         while self.processing and not self.operation_queue.empty():
             try:
                 operation = self.operation_queue.get_nowait()
-            
+        
                 self.logger.debug(f"Processing operation: {operation.source} -> {operation.dest}")
                 self.logger.debug(f"Operation type: {operation.operation_type}, Rename: {operation.rename}")
-            
+        
                 if not self.processing:  # Check if cancelled
                     break
-            
-                # Check if the destination directory exists
+                
+                # Verify source file still exists
+                if not Path(operation.source).exists():
+                    error_msg = f"Source file not found: {operation.source}"
+                    self.logger.error(error_msg)
+                    self.message_queue.put(error_msg)
+                    continue
+        
+                # Check if the destination directory exists, create if needed
                 dest_dir = os.path.dirname(operation.dest)
                 if not os.path.exists(dest_dir):
                     os.makedirs(dest_dir, exist_ok=True)
-                
+                    self.logger.debug(f"Created destination directory: {dest_dir}")
+            
+                # Get source and destination filenames for display
+                source_filename = os.path.basename(operation.source)
+                dest_filename = os.path.basename(operation.dest)
+            
                 if operation.is_file:
                     # Process single file
                     if operation.operation_type == "copy":
                         shutil.copy2(operation.source, operation.dest)
+                        operation_past_tense = "copied"
                     else:  # move operation
                         shutil.move(operation.source, operation.dest)
+                        operation_past_tense = "moved"
                 
                     # Determine the message based on whether renaming was done
-                    dest_filename = os.path.basename(operation.dest)
-                    source_filename = os.path.basename(operation.source)
-                
                     if operation.rename and dest_filename != source_filename:
                         self.message_queue.put(
-                            f"Successfully {operation.operation_type}d and renamed {source_filename} to {dest_filename}"
+                            f"Successfully {operation_past_tense} and renamed {source_filename} to {dest_filename}"
                         )
                     else:
                         self.message_queue.put(
-                            f"Successfully {operation.operation_type}d {source_filename}"
+                            f"Successfully {operation_past_tense} {source_filename}"
                         )
                 else:
                     # Process directory
@@ -440,11 +497,13 @@ class FileMoverModule(BaseModule):
                             operation.dest,
                             dirs_exist_ok=True
                         )
+                        operation_past_tense = "copied"
                     else:  # move operation
                         shutil.move(operation.source, operation.dest)
+                        operation_past_tense = "moved"
                 
                     self.message_queue.put(
-                        f"Successfully {operation.operation_type}d folder: {os.path.basename(operation.source)}"
+                        f"Successfully {operation_past_tense} folder: {os.path.basename(operation.source)}"
                     )
 
                 # Update progress
@@ -453,7 +512,7 @@ class FileMoverModule(BaseModule):
                 self.progress_queue.put(
                     (progress, f"{operation.operation_type.capitalize()}ing files... ({self.total_operations - remaining}/{self.total_operations})")
                 )
-            
+        
             except Exception as e:
                 self.message_queue.put(
                     f"Error processing {os.path.basename(operation.source)}: {str(e)}"
@@ -534,8 +593,16 @@ class FileMoverModule(BaseModule):
         self.queued_files_text.see("1.0")
 
     def sync_with_main_list(self, file_paths: List[str]):
-        """Sync the module's queue with the main file list."""
-        self.queued_files = [Path(fp) for fp in file_paths]
+        """Sync the module's queue with the main file list using resolved paths."""
+        # Convert all paths to Path objects with resolved paths
+        self.queued_files = []
+        for fp in file_paths:
+            path = Path(fp)
+            if path.exists():
+                self.queued_files.append(path.resolve())
+            else:
+                self.logger.warning(f"Skipping non-existent file during sync: {fp}")
+    
         self._update_preview()
         # If destination is set, update operation queue
         if self.dest_path and self.dest_path.get():

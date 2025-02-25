@@ -933,17 +933,40 @@ class MediaSorterModule(BaseModule):
         self._analyze_files()
     
     def process_file(self, file_path: Path, dest_path: Path) -> bool:
-        """Queue a file for processing."""
+        """Queue a file for processing with improved path handling."""
         try:
+            # Ensure we're working with Path objects
+            file_path = Path(file_path) if not isinstance(file_path, Path) else file_path
+        
+            # Check if file exists
+            if not file_path.exists():
+                self.logger.warning(f"File does not exist: {file_path}")
+                return False
+            
             # Check if this is a supported file type
             if file_path.suffix.lower() in self.get_supported_extensions():
-                if file_path not in self.queued_files:
-                    self.queued_files.append(file_path)
+                # Use resolved path for deduplication
+                file_path_resolved = file_path.resolve()
+            
+                # Check if file is already in queue
+                is_duplicate = False
+                for queued_file in self.queued_files:
+                    queued_resolved = Path(queued_file).resolve()
+                    if queued_resolved == file_path_resolved:
+                        is_duplicate = True
+                        break
+                    
+                if not is_duplicate:
+                    self.queued_files.append(file_path_resolved)
                     self._update_queue_display()
+                
                 return True
             return False
+        
         except Exception as e:
             self.logger.error(f"Error queuing {file_path}: {str(e)}")
+            import traceback
+            self.logger.error(traceback.format_exc())
             return False
 
     def _sort_files(self):
