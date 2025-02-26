@@ -23,10 +23,34 @@ class FilenameParser:
     def __init__(self):
         # Patterns for different filename formats
         self.movie_patterns = [
-            # Pattern: Movie.Name.2024.1080p...
+            # Original patterns
             r'^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)',
-            # Pattern: Movie.Name.(2024)...
             r'^((?:[A-Za-z0-9.]+[. ])*?)\((\d{4})\)',
+            r'^(.*?)[\.\s](\d{4})[\.\s]',  # More general pattern: anything followed by 4 digits
+            r'^(.*?)[_\-\.\s]\((\d{4})\)',  # Title followed by (year)
+            r'^(.*?)[\.\s]\[(\d{4})\]',     # Title followed by [year]
+            
+            # NEW PATTERNS:
+            # Handle YTS and similar tagged releases with year.quality.format
+            r'^(.*?)\.(\d{4})\..*?\[?(?:YTS|YIFY|RARBG).*?\]?.*?$',
+            
+            # Handle releases with year followed by quality/source details
+            r'^(.*?)\.(\d{4})\.(?:.*?(?:WEBRip|BluRay|HDRip|DVDRip|BRRip)).*?$',
+            
+            # Handle releases with distributor/network like "Lifetime" after year
+            r'^(.*?)\.(\d{4})\.(?:.*?(?:Lifetime|Netflix|Disney|HBO|Amazon)).*?$',
+            
+            # General pattern for year followed by resolution that's NOT directly attached
+            r'^(.*?)[\.\s](\d{4})[\.\s](?!(?:p|i)).*?$',
+            
+            # Handle cases with spaces like "Movie Name 2020 (1080p)"
+            r'^(.*?)\s+(\d{4})\s+(?:\(.*?\)|\[.*?\]|.*?)$',
+        ]
+        
+        # Define patterns to AVOID matching as years (resolutions, etc.)
+        self.non_year_patterns = [
+            r'1080p', r'1080i', r'720p', r'720i', r'480p', r'480i', r'2160p', r'4k',
+            r'4K', r'UHD', r'x264', r'x265', r'HEVC', r'XVID', r'MP4', r'MKV',
         ]
         
         self.tv_patterns = [
@@ -48,10 +72,13 @@ class FilenameParser:
 
     def parse_filename(self, filename: str) -> MediaInfo:
         """Parse filename and extract media information"""
+        logger.debug(f"Parsing filename: {filename}")
+        
         # Try TV show patterns first
         for pattern in self.tv_patterns:
             match = re.match(pattern, filename)
             if match:
+                logger.debug(f"Matched TV pattern: {pattern}")
                 title = self.clean_title(match.group(1))
                 return MediaInfo(
                     title=title,
@@ -63,26 +90,45 @@ class FilenameParser:
         for pattern in self.movie_patterns:
             match = re.match(pattern, filename)
             if match:
+                logger.debug(f"Matched movie pattern: {pattern}")
                 title = self.clean_title(match.group(1))
-                return MediaInfo(
-                    title=title,
-                    year=match.group(2)
-                )
+                year = match.group(2)
+                
+                # Skip if the "year" is actually a resolution or codec
+                year_text = f"{year}p" if year else ""
+                if any(re.search(non_year, year_text, re.IGNORECASE) for non_year in self.non_year_patterns):
+                    logger.debug(f"Skipping matched year '{year}' because it appears to be a resolution/codec")
+                    continue
+                
+                # Validate years (typically between 1900 and current year + a few years)
+                if year and 1900 <= int(year) <= 2030:
+                    return MediaInfo(
+                        title=title,
+                        year=year
+                    )
+                else:
+                    logger.debug(f"Matched year '{year}' is out of valid range, ignoring")
         
         # If no pattern matches, just clean the filename
+        logger.debug("No pattern matched, using clean title only")
         return MediaInfo(title=self.clean_title(filename))
 
     def generate_filename(self, media_info: MediaInfo) -> str:
         """Generate clean filename from MediaInfo"""
+        logger.debug(f"Generating filename from: {media_info}")
+        
         if media_info.season and media_info.episode:
             # TV Show format: "Show Name - S01E02"
-            return f"{media_info.title} - S{media_info.season.zfill(2)}E{media_info.episode.zfill(2)}"
+            result = f"{media_info.title} - S{media_info.season.zfill(2)}E{media_info.episode.zfill(2)}"
         elif media_info.year:
             # Movie format: "Movie Name (2024)"
-            return f"{media_info.title} ({media_info.year})"
+            result = f"{media_info.title} ({media_info.year})"
         else:
             # Just the clean title
-            return media_info.title
+            result = media_info.title
+            
+        logger.debug(f"Generated filename: {result}")
+        return result
 
 class FileNameEditorModule(BaseModule):
     """Module for batch editing filenames."""
@@ -113,7 +159,7 @@ class FileNameEditorModule(BaseModule):
             'pattern': '',  # Default naming pattern
             'preserve_extension': True,
             'case_sensitive': False,
-            # Add other settings as needed
+            # Add other settings here
         }
 
     def get_supported_extensions(self) -> List[str]:
@@ -339,3 +385,28 @@ class FileNameEditorModule(BaseModule):
         if hasattr(self, 'pattern_var'):
             self.pattern_var.set(self.config.get('pattern', ''))
             self.preserve_ext_var.set(self.config.get('preserve_extension', True))
+
+# Test function to verify pattern matching
+def test_patterns():
+    parser = FilenameParser()
+    
+    test_files = [
+        "Richie.Rich.1994.720p.WEBRip.x264-[YTS.AM].mp4",
+        "Practical.Magic.1998.720p.BluRay.x264-[YTS.AG].mkv",
+        "Once.Upon.A.Main.Street.2020.Lifetime.720P.WEBRip.X264-Solar.mp4",
+        "Hotel Transylvania 2012 (1080).mp4",
+        "The.Matrix.1999.1080p.BluRay.x264.mp4",
+        "Inception.2010.BluRay.1080p.x264.mkv",
+        "Movie.1080p.2021.BluRay.mp4",  # Tricky case with resolution before year
+        "Movie.2021.1080p.BluRay.mp4",  # Normal case with year before resolution
+    ]
+    
+    for test_file in test_files:
+        print(f"\nTesting: {test_file}")
+        basename = test_file.rsplit('.', 1)[0]  # Remove extension
+        
+        media_info = parser.parse_filename(basename)
+        print(f"  Parsed as: {media_info}")
+        
+        new_filename = parser.generate_filename(media_info)
+        print(f"  New name: {new_filename}")

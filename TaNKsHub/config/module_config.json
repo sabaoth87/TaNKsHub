@@ -1,6 +1,6 @@
 {
     "File Mover": {
-        "enabled": false,
+        "enabled": true,
         "settings": {
             "operation_type": "move",
             "recursive": false,
@@ -10,7 +10,7 @@
         }
     },
     "File Name Editor": {
-        "enabled": false,
+        "enabled": true,
         "settings": {
             "pattern": "",
             "preserve_extension": true
@@ -28,7 +28,9 @@
             "unknown_folder": "Unknown",
             "create_genre_folders": true,
             "create_type_folders": true,
-            "simulate": true
+            "create_audience_folders": true,
+            "simulate": true,
+            "pre_process_filenames": true
         }
     }
 }

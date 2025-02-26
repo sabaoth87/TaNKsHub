@@ -32,11 +32,11 @@ class MediaDetails:
         """Determine audience category based on genres and content rating."""
         # First, check content rating if available
         if self.content_rating:
-            if self.content_rating in ["G", "TV-Y", "TV-Y7", "TV-G"]:
+            if self.content_rating in ["F"]:
                 return "Kids"
-            elif self.content_rating in ["PG", "TV-PG", "PG-13"]:
+            elif self.content_rating in ["G", "TV-Y", "TV-Y7", "TV-G", "PG", "TV-PG"]:
                 return "Family"
-            elif self.content_rating in ["R", "NC-17", "TV-MA", "TV-14"]:
+            elif self.content_rating in ["PG-13", "R", "NC-17", "TV-MA", "TV-14"]:
                 return "Adult"
         
         # If no content rating, use genres to categorize
@@ -51,7 +51,7 @@ class MediaDetails:
                 return "Adult"
         
         # Default to family if we can't determine
-        return "Family"
+        return "Adult"
 
 class MediaSorterModule(BaseModule):
     """Module for sorting media files by genre using external API information."""

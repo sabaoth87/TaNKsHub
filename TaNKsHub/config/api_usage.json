@@ -1,20 +1,24 @@
 {
     "omdb": {
         "daily_limit": 1000,
-        "calls_today": 303,
-        "last_reset": "2025-02-25",
+        "calls_today": 0,
+        "last_reset": "2025-02-26",
         "total_calls": 303,
         "successful_calls": 79,
         "failed_calls": 224,
-        "daily_history": {}
+        "daily_history": {
+            "2025-02-25": 303
+        }
     },
     "tmdb": {
         "daily_limit": 1000,
         "calls_today": 0,
-        "last_reset": "2025-02-25",
+        "last_reset": "2025-02-26",
         "total_calls": 0,
         "successful_calls": 0,
         "failed_calls": 0,
-        "daily_history": {}
+        "daily_history": {
+            "2025-02-25": 0
+        }
     }
 }
