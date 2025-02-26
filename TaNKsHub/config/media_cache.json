@@ -7,7 +7,8 @@
             "Crime",
             "Drama"
         ],
-        "type": "movie"
+        "type": "movie",
+        "content_rating": null
     },
     "6 Underground (2019)": {
         "title": "6 Underground",
@@ -16,7 +17,8 @@
             "Action",
             "Thriller"
         ],
-        "type": "movie"
+        "type": "movie",
+        "content_rating": null
     },
     "21 Bridges (2019)": {
         "title": "21 Bridges",
@@ -26,6 +28,3233 @@
             "Adventure",
             "Crime"
         ],
-        "type": "movie"
+        "type": "movie",
+        "content_rating": null
+    },
+    "Atomic Blonde (2017)": {
+        "title": "Atomic Blonde",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Die.Hard.1988.720p.BrRip.x264.bitloks.YIFY": {
+        "title": "Die Hard",
+        "year": "1988",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Die Hard (1988)": {
+        "title": "Die Hard",
+        "year": "1988",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Eight Crazy Nights (2002)": {
+        "title": "Eight Crazy Nights",
+        "year": "2002",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Musical"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Extraction (2020)": {
+        "title": "Extraction",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Extremely Wicked Shockingly Evil And Vile 2019 1080p Webrip X264-yts Am": {
+        "title": "Extremely Wicked, Shockingly Evil and Vile",
+        "year": "2019",
+        "genres": [
+            "Biography",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Extremely Wicked Shockingly Evil And Vile (2019)": {
+        "title": "Extremely Wicked, Shockingly Evil and Vile",
+        "year": "2019",
+        "genres": [
+            "Biography",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Friday.After.Next.2002.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Friday After Next",
+        "year": "2002",
+        "genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Four.Lions.2010.720p.BRrip.x264.YIFY": {
+        "title": "Four Lions",
+        "year": "2010",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Fred.Claus.2007.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Fred Claus",
+        "year": "2007",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Fred Claus (2007)": {
+        "title": "Fred Claus",
+        "year": "2007",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Friday After Next (2002)": {
+        "title": "Friday After Next",
+        "year": "2002",
+        "genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Four Lions (2010)": {
+        "title": "Four Lions",
+        "year": "2010",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ip Man 4 The Finale (2019)": {
+        "title": "Ip Man 4: The Finale",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Biography",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "It Chapter Two 2019 (1080)": {
+        "title": "It Chapter Two",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "John Henry (2020)": {
+        "title": "John Henry",
+        "year": "2020",
+        "genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Jojo Rabbit (2019)": {
+        "title": "Jojo Rabbit",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Drama",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Joker (2019)": {
+        "title": "Joker",
+        "year": "2019",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Hellboy (2019)": {
+        "title": "Hellboy",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Home Alone 2 Lost In New York (1992)": {
+        "title": "Home Alone 2: Lost in New York",
+        "year": "1992",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Home Alone (1990)": {
+        "title": "Home Alone",
+        "year": "1990",
+        "genres": [
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "How The Grinch Stole Christmas 1966 720p Bluray X264-yts Ag": {
+        "title": "How the Grinch Stole Christmas!",
+        "year": "1966",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "How To Train Your Dragon The Hidden World 2019 (1080)": {
+        "title": "How to Train Your Dragon: The Hidden World",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Hunt For The Skinwalker (2018)": {
+        "title": "Hunt for the Skinwalker",
+        "year": "2018",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Arcane.S01E01.720p.NF.WEBRip.x264-GalaxyTV": {
+        "title": "Arcane",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "tv",
+        "content_rating": "TV-14"
+    },
+    "Arcane.S01E02.720p.NF.WEBRip.x264-GalaxyTV": {
+        "title": "Arcane",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "tv",
+        "content_rating": "TV-14"
+    },
+    "Arcane.S01E03.720p.NF.WEBRip.x264-GalaxyTV": {
+        "title": "Arcane",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "tv",
+        "content_rating": "TV-14"
+    },
+    "Arcane.S01E04.720p.NF.WEBRip.x264-GalaxyTV": {
+        "title": "Arcane",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "tv",
+        "content_rating": "TV-14"
+    },
+    "Arcane.S01E05.720p.NF.WEBRip.x264-GalaxyTV": {
+        "title": "Arcane",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "tv",
+        "content_rating": "TV-14"
+    },
+    "Wonder.Woman.1984.2020.720p.WEBRip.900MB.x264-GalaxyRG": {
+        "title": "Wonder Woman 1984",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Zombieland.Double.Tap.2019.HC.720p.HDRip.800MB.x264-GalaxyRG": {
+        "title": "Zombieland: Double Tap",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Willys Wonderland (2021)": {
+        "title": "Willy's Wonderland",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Transformers.The.Last.Knight.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "Transformers: The Last Knight",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Trolls.Band.Together.2023.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG": {
+        "title": "Trolls Band Together",
+        "year": "2023",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Tucker.And.Dale.VS.Evil.2010.720p.BRrip.x264.YIFY": {
+        "title": "Tucker and Dale vs Evil",
+        "year": "2010",
+        "genres": [
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Unaccompanied.Minors.2006.720p.WEBRip.x264.AAC-ETRG": {
+        "title": "Unaccompanied Minors",
+        "year": "2006",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Uncle.Buck.1989.720p.BluRay.x264.YIFY": {
+        "title": "Uncle Buck",
+        "year": "1989",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Upside-Down.Magic.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Upside-Down Magic",
+        "year": "2020",
+        "genres": [
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Us.2019.1080p.WEBRip.x264-[YTS.AM]": {
+        "title": "Us",
+        "year": "2019",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Venom.2018.1080p.WEBRip.x264-[YTS.AM]": {
+        "title": "Venom",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Vixen The Movie 2017 720p BRRip 550 MB - iExTV": {
+        "title": "Vixen: The Movie",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Fantasy",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "War.For.The.Planet.Of.The.Apes.2017.720p.BluRay.x264-[YTS.PE]": {
+        "title": "War for the Planet of the Apes",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "White.Snake.2019.720p.BluRay.x264.AAC-[YTS.LT]": {
+        "title": "White Snake",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Wonder Woman 1984 (2020)": {
+        "title": "Wonder Woman 1984",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Suicide.Squad.2021.720p.HMAX.WEBRip.900MB.x264-GalaxyRG": {
+        "title": "The Suicide Squad",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Titan.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "The Titan",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Mystery",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "The.Woman.in.Black.2012.1080p.BluRay.x264.YIFY": {
+        "title": "The Woman in Black",
+        "year": "2012",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Tomb.Raider.2018.1080p.WEBRip.x264-[YTS.AM]": {
+        "title": "Tomb Raider",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Top.Secret!.1984.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Top Secret!",
+        "year": "1984",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Music"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Transformers The Last Knight (2017)": {
+        "title": "Transformers: The Last Knight",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Trolls Band Together 2023 1080p Amzn Webrip (1400)": {
+        "title": "Trolls Band Together",
+        "year": "2023",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Tucker And Dale Vs Evil (2010)": {
+        "title": "Tucker and Dale vs Evil",
+        "year": "2010",
+        "genres": [
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Unaccompanied Minors (2006)": {
+        "title": "Unaccompanied Minors",
+        "year": "2006",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Uncle Buck (1989)": {
+        "title": "Uncle Buck",
+        "year": "1989",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Us 2019 (1080)": {
+        "title": "Us",
+        "year": "2019",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Venom 2018 (1080)": {
+        "title": "Venom",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Vixen The Movie (2017)": {
+        "title": "Vixen: The Movie",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Fantasy",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "War For The Planet Of The Apes (2017)": {
+        "title": "War for the Planet of the Apes",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "White Snake (2019)": {
+        "title": "White Snake",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "The Suicide Squad (2021)": {
+        "title": "The Suicide Squad",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Titan (2018)": {
+        "title": "The Titan",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Mystery",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "The Woman In Black 2012 (1080)": {
+        "title": "The Woman in Black",
+        "year": "2012",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Tomb Raider 2018 (1080)": {
+        "title": "Tomb Raider",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Top Secret 1984 720p Webrip X264-yts Lt": {
+        "title": "Top Secret!",
+        "year": "1984",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Music"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Top Secret! (1984)": {
+        "title": "Top Secret!",
+        "year": "1984",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Music"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Trolls Band Together (2023)": {
+        "title": "Trolls Band Together",
+        "year": "2023",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Upside-down Magic (2020)": {
+        "title": "Upside-Down Magic",
+        "year": "2020",
+        "genres": [
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Wonder Woman (1984)": {
+        "title": "Wonder Woman 1984",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Zombieland Double Tap (2019)": {
+        "title": "Zombieland: Double Tap",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Zack Snyders Justice League (2021)": {
+        "title": "Zack Snyder's Justice League",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Deadwood.The.Movie.2019.1080p.WEBRip.x264-[YTS.AM]": {
+        "title": "Deadwood: The Movie",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Western"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Deck.The.Halls.2006.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Deck the Halls",
+        "year": "2006",
+        "genres": [
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Deadpool.and.Wolverine.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG": {
+        "title": "Deadpool and Wolverine (2024)",
+        "year": "2024",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Deadwood The Movie 2019 (1080)": {
+        "title": "Deadwood: The Movie",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Western"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Deck The Halls (2006)": {
+        "title": "Deck the Halls",
+        "year": "2006",
+        "genres": [
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Deadpool And Wolverine 2024 1080p Amzn Webrip (1400)": {
+        "title": "Deadpool and Wolverine (2024)",
+        "year": "2024",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Deadwood The Movie (2019)": {
+        "title": "Deadwood: The Movie",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Western"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Deadpool And Wolverine (2024)": {
+        "title": "Deadpool and Wolverine (2024)",
+        "year": "2024",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Arctic.Dogs.2019.720p.BluRay.x264.AAC-[YTS.LT]": {
+        "title": "Arctic Dogs",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Argylle.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG": {
+        "title": "Argylle",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Barbie.A.Perfect.Christmas.2011.DVDRip.XVID.AC3.HQ.Hive-CM8": {
+        "title": "Barbie: A Perfect Christmas",
+        "year": "2011",
+        "genres": [
+            "Animation",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Bear.2010.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Bear",
+        "year": "2010",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Blade.Runner.2049.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "Blade Runner 2049",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Borstal.2017.HDRip.XViD-ETRG": {
+        "title": "Borstal",
+        "year": "2017",
+        "genres": [
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Christmas With The Kranks": {
+        "title": "Christmas with the Kranks",
+        "year": "2004",
+        "genres": [
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Die.Hard.2.1990.720p.BrRip.x264.bitloks.YIFY": {
+        "title": "Die Hard 2",
+        "year": "1990",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dumbo.2019.720p.BluRay.x264-[YTS.LT]": {
+        "title": "Dumbo",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Arctic Dogs (2019)": {
+        "title": "Arctic Dogs",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Argylle 2024 1080p Webrip (1600)": {
+        "title": "Argylle",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Barbie A Perfect Christmas (2011)": {
+        "title": "Barbie: A Perfect Christmas",
+        "year": "2011",
+        "genres": [
+            "Animation",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Bear (2010)": {
+        "title": "Bear",
+        "year": "2010",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Borstal (2017)": {
+        "title": "Borstal",
+        "year": "2017",
+        "genres": [
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Die Hard 2 (1990)": {
+        "title": "Die Hard 2",
+        "year": "1990",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dumbo (2019)": {
+        "title": "Dumbo",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Blade Runner 2049 (2017)": {
+        "title": "Blade Runner 2049",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Argylle (2024)": {
+        "title": "Argylle",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Blade Runner (2049)": {
+        "title": "Blade Runner 2049",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Fantastic Beasts The Crimes Of Grindelwald (2018)": {
+        "title": "Fantastic Beasts: The Crimes of Grindelwald",
+        "year": "2018",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Fantasy Island (2020)": {
+        "title": "Fantasy Island",
+        "year": "2020",
+        "genres": [
+            "Fantasy",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Fast Furious Presents Hobbs Shaw 2019 720p Webrip X264-yts Lt": {
+        "title": "Fast & Furious Presents: Hobbs & Shaw",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Fearless (2020)": {
+        "title": "Fearless",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-Y7"
+    },
+    "Ferngully The Last Rainforest (1992)": {
+        "title": "FernGully: The Last Rainforest",
+        "year": "1992",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Fast And Furious 9 The Fast Saga (2021)": {
+        "title": "F9: The Fast Saga",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "How To Train Your Dragon The Hidden World (2019)": {
+        "title": "How to Train Your Dragon: The Hidden World",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "It Chapter Two (2019)": {
+        "title": "It Chapter Two",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Jungle.Beat.The.Movie.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Jungle Beat: The Movie",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Justice.League.Dark.Apokolips.War.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Justice League Dark: Apokolips War",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Action",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Frozen 2013": {
+        "title": "Frozen",
+        "year": "2013",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Frozen.II.2019.720p.BluRay.x264.AAC-[YTS.MX]": {
+        "title": "Frozen 2 - Priyanka Chopra Jonas and Parineeti Chopra - Promo",
+        "year": "2019",
+        "genres": [
+            "Short"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Gemini.Man.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Gemini Man",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Godzilla.King.Of.The.Monsters.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Godzilla: King of the Monsters",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Grave.Of.The.Fireflies.1988.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Grave of the Fireflies",
+        "year": "1988",
+        "genres": [
+            "Animation",
+            "Drama",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Halloweentown 1998 DSNY 720p WEB X264 Solar": {
+        "title": "Halloweentown",
+        "year": "1998",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Halloweentown High 2004 DSNY 720p WEB X264 Solar": {
+        "title": "Halloweentown High",
+        "year": "2004",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Happy.Halloween.Scooby.Doo.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Happy Halloween, Scooby-Doo!",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Harry.Potter.and.the.Order.of.the.Phoenix.2007.1080p.BrRip.x264.YIFY": {
+        "title": "Harry Potter and the Order of the Phoenix",
+        "year": "2007",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Hell.or.High.Water.2016.720p.BRRip.x264.AAC-ETRG": {
+        "title": "Hell or High Water",
+        "year": "2016",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "How The Grinch Stole Christmas (1966)": {
+        "title": "How the Grinch Stole Christmas!",
+        "year": "1966",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Next.Gen.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Next Gen",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Mulan.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Mulan",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "My.Little.Pony.The.Movie.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "My Little Pony: The Movie",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "My.Little.Pony_.Equestria.Girls.2013.720p.BluRay.x264.YIFY": {
+        "title": "My Little Pony: Equestria Girls",
+        "year": "2013",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-Y"
+    },
+    "Naked.Gun.33.1.3.The.Final.Insult.1994.720p.BluRay.x264.AAC-[YTS.MX]": {
+        "title": "Naked Gun 33 1/3: The Final Insult",
+        "year": "1994",
+        "genres": [
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "National.Lampoons.Christmas.Vacation.1989.BrRip.720p.YIFY": {
+        "title": "National Lampoon's Christmas Vacation",
+        "year": "1989",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Predator.2018.1080p.WEBRip.x264-[YTS.AM]": {
+        "title": "The Predator",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Princess.Diaries.2001.720p.BluRay.x264-[YTS.AM]": {
+        "title": "The Princess Diaries",
+        "year": "2001",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "The.Santa.Clause.3.The.Escape.Clause.2006.720p.BrRip.x264.YIFY": {
+        "title": "The Santa Clause 3: The Escape Clause",
+        "year": "2006",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "The.Santa.Clause.2002.720p.BrRip.x264.YIFY": {
+        "title": "The Santa Clause 2",
+        "year": "2002",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "A.Bad.Moms.Christmas.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "A Bad Moms Christmas",
+        "year": "2017",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "A.Very.Harold.Kumar.Christmas.2011.BrRip.x264.YIFY": {
+        "title": "A Very Harold & Kumar Christmas",
+        "year": "2011",
+        "genres": [
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Abigail.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG": {
+        "title": "Abigail",
+        "year": "2024",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ad.Astra.2019.720p.BluRay.x264-[YTS.LT]": {
+        "title": "Ad Astra",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Airplane!.1980.720p.BluRay.x264-[YTS.LT]": {
+        "title": "Airplane!",
+        "year": "1980",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Alien.Romulus.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG": {
+        "title": "Alien: Romulus",
+        "year": "2024",
+        "genres": [
+            "Horror",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "An.Inconvenient.Sequel.Truth.to.Power.2017.HDRip.XviD.AC3-EVO": {
+        "title": "An Inconvenient Sequel: Truth to Power",
+        "year": "2017",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Fahrenheit.11.9.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Fahrenheit 11/9",
+        "year": "2018",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Fallout.2024.S01E01.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E02.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E03.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E04.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E05.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E06.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E07.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Fallout.2024.S01E08.720p.AMZN.WEBRip.x264-GalaxyTV": {
+        "title": "Fallout",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "tv",
+        "content_rating": "TV-MA"
+    },
+    "Knives.Out.2019.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Knives Out",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Lady.And.The.Tramp.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Lady and the Tramp",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Late.Night.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Late Night",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Leatherface.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "Leatherface",
+        "year": "2017",
+        "genres": [
+            "Crime",
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Lethal.Weapon.1987.720p.BrRip.x264.BOKUTOX.YIFY": {
+        "title": "Lethal Weapon",
+        "year": "1987",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Life.Of.The.Party.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Life of the Party",
+        "year": "2018",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Long.Shot.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Long Shot",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Magic.Camp.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Magic Camp",
+        "year": "2020",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Men.In.Black.International.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Men in Black: International",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Mission.Impossible.-.Fallout.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Mission: Impossible - Fallout",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Monster.Hunter.2021.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Monster Hunter: Legends of the Guild",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "TV-14"
+    },
+    "Motherless.Brooklyn.2019.720p.BluRay.x264-[YTS.LT]": {
+        "title": "Motherless Brooklyn",
+        "year": "2019",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Mr Bean Funeral (2015)": {
+        "title": "Mr Bean: Funeral",
+        "year": "2015",
+        "genres": [
+            "Short",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "No.Hard.Feelings.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG": {
+        "title": "No Hard Feelings",
+        "year": "2023",
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Nope.2022.1080p.WEBRip.x264-RARBG": {
+        "title": "Nope",
+        "year": "2022",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Once.Upon.A.Main.Street.2020.Lifetime.720P.WEBRip.X264-Solar": {
+        "title": "Once Upon a Main Street",
+        "year": "2020",
+        "genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Once.Upon.A.Time.....In.Hollywood.2019.720p.WEBRip.x264-[YTS.LT]": {
+        "title": "Once Upon a Time in Hollywood Live Q&A",
+        "year": "2019",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Only.The.Brave.2017.1080p.BluRay.x264-[YTS.ME]": {
+        "title": "Only the Brave",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Biography",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Onward.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Onward",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "outtakes": {
+        "title": "Outtakes",
+        "year": "1987",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Palm.Springs.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Palm Springs",
+        "year": "2020",
+        "genres": [
+            "Comedy",
+            "Fantasy",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Path.Of.Blood.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Path of Blood",
+        "year": "2018",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "PAW.Patrol.The.Movie.2021.1080p.AMZN.WEB-DL.DDP5.1.H.264-TEPES": {
+        "title": "PAW Patrol: The Movie",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Phineas.and.Ferb.The.Movie.Candace.Against.the.Universe.2020.720p.DNSP.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Phineas and Ferb the Movie: Candace Against the Universe",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Pixie.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Pixie",
+        "year": "2020",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Pocahontas.1995.720p.BrRip.x264.YIFY": {
+        "title": "Pocahontas",
+        "year": "1995",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Practical.Magic.1998.720p.BluRay.x264-[YTS.AG]": {
+        "title": "Practical Magic",
+        "year": "1998",
+        "genres": [
+            "Comedy",
+            "Drama",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Project.Power.2020.720p.NF.WEBrip.800MB.x264-GalaxyRG": {
+        "title": "Project Power",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Crime",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Project.Power.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Project Power",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Crime",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ralph.Breaks.The.Internet.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Ralph Breaks the Internet",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Rampage.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Rampage",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "RBG.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "RBG",
+        "year": "2018",
+        "genres": [
+            "Documentary",
+            "Biography"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Ready.Player.One.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Ready Player One",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Red.Shoes.And.The.Seven.Dwarfs.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX]": {
+        "title": "Red Shoes and the Seven Dwarfs",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Return to Halloweentown (2006) Disney 720p Webrip X264 Solar": {
+        "title": "Return to Halloweentown",
+        "year": "2006",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Richie.Rich.1994.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Richie Rich",
+        "year": "1994",
+        "genres": [
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Roman.J.Israel.Esq.2017.1080p.BluRay.x264-[YTS.ME]": {
+        "title": "Roman J. Israel, Esq.",
+        "year": "2017",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Rough.Night.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "Rough Night",
+        "year": "2017",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Scoob.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Scoob!",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Shadow.in.the.Cloud.2020.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG": {
+        "title": "Shadow in the Cloud",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Horror",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Shazam!.2019.1080p.BluRay.x264-[YTS.LT]": {
+        "title": "Shazam!",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Sicario.Day.Of.The.Soldado.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Sicario: Day of the Soldado",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Smallfoot.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Smallfoot",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Solaris.2002.720p.BluRay.x264-[YTS.ME]": {
+        "title": "Solaris",
+        "year": "2002",
+        "genres": [
+            "Drama",
+            "Mystery",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Solo.A.Star.Wars.Story.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Solo: A Star Wars Story",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Sonic.The.Hedgehog.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Sonic the Hedgehog",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Star.Wars.The.Rise.Of.Skywalker.2019.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Live from the Red Carpet of Star Wars: The Rise of Skywalker",
+        "year": "2019",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Sundown.The.Vampire.In.Retreat.1989.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "Sundown: The Vampire in Retreat",
+        "year": "1989",
+        "genres": [
+            "Comedy",
+            "Horror",
+            "Western"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Super.Troopers.2.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Super Troopers 2",
+        "year": "2018",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Superman.Red.Son.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "Superman: Red Son",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Action",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Tag.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "Tag",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Tenet.2020.INTERNAL.720p.WEBRip.2CH.x265.HEVC-PSA": {
+        "title": "Tenet",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Incredibles 2004.720p.BrRip.x264.YIFY": {
+        "title": "The Incredibles",
+        "year": "2004",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The.Black.Phone.2021.1080p.WEBRip.x264-RARBG": {
+        "title": "The Black Phone",
+        "year": "2021",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Craft.Legacy.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "The Craft: Legacy",
+        "year": "2020",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Dark.Tower.2017.720p.BluRay.x264-[YTS.AG]": {
+        "title": "The Dark Tower",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Dawnseeker.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "The Dawnseeker",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Fantasy",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "The.Equalizer.2.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "The Equalizer 2",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Gentlemen.2020.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "The Gentlemen. Mini Version",
+        "year": "2020",
+        "genres": [
+            "Short",
+            "Action",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "The.House.2017.1080p.BluRay.x264-[YTS.AG]": {
+        "title": "The House",
+        "year": "2017",
+        "genres": [
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.House.With.A.Clock.In.Its.Walls.2018.720p.BluRay.x264-[YTS.AM]": {
+        "title": "The House with a Clock in Its Walls",
+        "year": "2018",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The.King.Of.Staten.Island.2020.HDRip.XviD.AC3-EVO": {
+        "title": "The King of Staten Island",
+        "year": "2020",
+        "genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Menu.2022.720p.WEBRip.800MB.x264-GalaxyRG": {
+        "title": "The Menu",
+        "year": "2022",
+        "genres": [
+            "Comedy",
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Muppet.Christmas.Carol.1992.720p.HDTV.x264YIFY": {
+        "title": "The Muppet Christmas Carol",
+        "year": "1992",
+        "genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "The.Naked.Gun.2\u00bd.The.Smell.Of.Fear.1991.720p.BluRay.x264.AAC-[YTS.MX]": {
+        "title": "The Naked Gun 2\u00bd: The Smell of Fear",
+        "year": "1991",
+        "genres": [
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Naked.Gun.From.The.Files.Of.Police.Squad!.1988.720p.BluRay.x264.AAC-[YTS.MX]": {
+        "title": "The Naked Gun: From the Files of Police Squad!",
+        "year": "1988",
+        "genres": [
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.New.Mutants.2020.720p.BluRay.800MB.x264-GalaxyRG": {
+        "title": "The New Mutants",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.New.Mutants.2020.1080p.BluRay.H264.AAC-RARBG": {
+        "title": "The New Mutants",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Nutcracker.And.The.Four.Realms.2018.DVDRip.XviD.AC3-EVO": {
+        "title": "The Nutcracker and the Four Realms",
+        "year": "2018",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The.Old.Guard.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "The Old Guard",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Poughkeepsie.Tapes.2007.720p.BluRay.x264-[YTS.AG]": {
+        "title": "The Poughkeepsie Tapes",
+        "year": "2007",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Mortal.Kombat.Legends.Scorpions.Revenge.2020.720p.WEBRip.x264.AAC-[YTS.MX]": {
+        "title": "Mortal Kombat Legends: Scorpion's Revenge",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.15.17.To.Paris.2018.720p.WEBRip.x264-[YTS.AM]": {
+        "title": "The 15:17 to Paris",
+        "year": "2018",
+        "genres": [
+            "Biography",
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "A Prophet [Un Prophete] 2009 720p BRRip x264 AAC-BeLLBoY (Kingdom-Release)": {
+        "title": "A Prophet",
+        "year": "2009",
+        "genres": [
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Devil's.Rejects.2005.720p.BluRay.x264-[YTS.AG]": {
+        "title": "The Devil's Rejects",
+        "year": "2005",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The.Lord.of.the.Rings.the.Fellowship.of.the.Ring.EXTENDED.2001.720p.BrRip.x264.BOKUTOX.YIFY": {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": "2001",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Lord.of.the.Rings.The.Return.of.the.King.EXTENDED.2003.720p.BrRip.x264.BOKUTOX.YIFY": {
+        "title": "The Lord of the Rings: The Return of the King",
+        "year": "2003",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The.Lord.of.the.Rings.The.Two.Towers.EXTENDED.2002.720p.BrRip.x264.BOKUTOX.YIFY": {
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": "2002",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Isle Of Dogs (2018)": {
+        "title": "Isle of Dogs",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jexi (2019)": {
+        "title": "Jexi",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Romance",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "John Wick Chapter 3 - Parabellum 2019 720p Webrip X264-yts Lt": {
+        "title": "John Wick: Chapter 3 - Parabellum",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Naked Gun 2\u00bd The Smell Of Fear 1991": {
+        "title": "The Naked Gun 2\u00bd: The Smell of Fear",
+        "year": "1991",
+        "genres": [
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Dune 2021 (1080)": {
+        "title": "Dune: Part One",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "A Very Harold Kumar Christmas (2011)": {
+        "title": "A Very Harold & Kumar Christmas",
+        "year": "2011",
+        "genres": [
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Abigail (2024)": {
+        "title": "Abigail",
+        "year": "2024",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ad Astra (2019)": {
+        "title": "Ad Astra",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Airplane (1980)": {
+        "title": "Airplane!",
+        "year": "1980",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Alita Battle Angel 2019 (1080)": {
+        "title": "Alita: Battle Angel",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Angel Has Fallen (2019)": {
+        "title": "Angel Has Fallen",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Angel Has Fallen (2019) (1)": {
+        "title": "Angel Has Fallen",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Apocalypse Now (1979)": {
+        "title": "Apocalypse Now",
+        "year": "1979",
+        "genres": [
+            "Drama",
+            "Mystery",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Appleseed Ex Machina (2007)": {
+        "title": "Appleseed: Ex Machina",
+        "year": "2007",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Bad Boys For Life (2020)": {
+        "title": "Bad Boys for Life",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Bad Santa (2003)": {
+        "title": "Bad Santa",
+        "year": "2003",
+        "genres": [
+            "Comedy",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Batman Hush (2019)": {
+        "title": "Batman: Hush",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Romance",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Batman Returns (1992)": {
+        "title": "Batman Returns",
+        "year": "1992",
+        "genres": [
+            "Action",
+            "Crime",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Batman Vs Teenage Mutant Ninja Turtles (2019)": {
+        "title": "Batman vs Teenage Mutant Ninja Turtles",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Fantasy",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Berserk The Golden Age Arc Ii - The Battle For Doldrey 2012": {
+        "title": "Berserk: The Golden Age Arc II - The Battle for Doldrey",
+        "year": "2012",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Berserk The Golden Age Arc Iii - The Advent 2013": {
+        "title": "Berserk: The Golden Age Arc III - The Advent",
+        "year": "2013",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Birds Of Prey And The Fantabulous Emancipation Of One Harley Quinn (2020)": {
+        "title": "Birds of Prey and the Fantabulous Emancipation of One Harley Quinn",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Black Mirror Bandersnatch (2018)": {
+        "title": "Black Mirror: Bandersnatch",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Fantasy",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Bloodsucking Bastards (2015)": {
+        "title": "Bloodsucking Bastards",
+        "year": "2015",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Boss Level (2020)": {
+        "title": "Boss Level",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Break Even (2020)": {
+        "title": "Break Even",
+        "year": "2020",
+        "genres": [
+            "Action"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Cinderella (1950)": {
+        "title": "Cinderella",
+        "year": "1950",
+        "genres": [
+            "Animation",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Cinderella (2015)": {
+        "title": "Cinderella",
+        "year": "2015",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Code 8 (2019)": {
+        "title": "Code 8",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Creature Designers - The Frankenstein Complex 2015 720p Bluray X264-yts Am": {
+        "title": "Creature Designers - The Frankenstein Complex",
+        "year": "2015",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Danger Close (2019)": {
+        "title": "Danger Close",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Drama",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Deadpool 2 (2018)": {
+        "title": "Deadpool 2",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dune Part Two 2024 (1080)": {
+        "title": "Dune: Part Two",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Frozen Fever (2015)": {
+        "title": "Frozen Fever",
+        "year": "2015",
+        "genres": [
+            "Animation",
+            "Short",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Godzilla Vs Kong 2021 (1080)": {
+        "title": "Godzilla vs Kong (2021)",
+        "year": "2021",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Hamilton (2020)": {
+        "title": "Hamilton",
+        "year": "2020",
+        "genres": [
+            "Biography",
+            "Drama",
+            "History"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Hereditary (2018)": {
+        "title": "Hereditary",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Holes (2003)": {
+        "title": "Holes",
+        "year": "2003",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Alita Battle Angel (2019)": {
+        "title": "Alita: Battle Angel",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Angel Has Fallen (2019) (1) (2)": {
+        "title": "Angel Has Fallen",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dune (2021)": {
+        "title": "Dune: Part One",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Dune Part Two (2024)": {
+        "title": "Dune: Part Two",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Godzilla Vs Kong (2021)": {
+        "title": "Godzilla vs Kong (2021)",
+        "year": "2021",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Spider-man Into The Spider-verse 2018 1080p Webrip X264-yts Am": {
+        "title": "Spider-Man: Into the Spider-Verse",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Terminator Dark Fate 2019 (1080)": {
+        "title": "Terminator: Dark Fate",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Incredibles (2004)": {
+        "title": "The Incredibles",
+        "year": "2004",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Gentlemen 2019 (1080)": {
+        "title": "The Gentlemen",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Grinch (2018)": {
+        "title": "The Grinch",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Incredibles 2004 (1080)": {
+        "title": "The Incredibles",
+        "year": "2004",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Suicide Squad 2021 (1080)": {
+        "title": "The Suicide Squad",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Wicked 2024 (1080)": {
+        "title": "Wicked",
+        "year": "2024",
+        "genres": [
+            "Fantasy",
+            "Musical",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Abigail 2024 1080p Webrip (1400)": {
+        "title": "Abigail",
+        "year": "2024",
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Alien Romulus 2024 1080p Amzn Webrip (1400)": {
+        "title": "Alien: Romulus",
+        "year": "2024",
+        "genres": [
+            "Horror",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Aquaman 2018 (1080)": {
+        "title": "Aquaman",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Avengers Endgame 2019 (1080)": {
+        "title": "Avengers: Endgame",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Avengers Infinity War 2018 (1080)": {
+        "title": "Avengers: Infinity War",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Captain Marvel 2019 (1080)": {
+        "title": "Captain Marvel",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Descendants 2 (2017)": {
+        "title": "Descendants 2",
+        "year": "2017",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Descendants 3 2019 (1080)": {
+        "title": "Descendants 3",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Musical"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Descendants (2015)": {
+        "title": "Descendants",
+        "year": "2015",
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Descendants The Rise Of Red 2024 (1080)": {
+        "title": "Descendants: The Rise of Red",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Descendants The Royal Wedding 2021 (1080)": {
+        "title": "Descendants: The Royal Wedding",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Short",
+            "Action"
+        ],
+        "type": "movie",
+        "content_rating": "TV-G"
+    },
+    "Hotel Transylvania 2": {
+        "title": "Hotel Transylvania 2",
+        "year": "2015",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Hotel Transylvania 3 Summer Vacation 2018 (1080)": {
+        "title": "Hotel Transylvania 3: Summer Vacation",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Hotel Transylvania 2012 (1080)": {
+        "title": "Hotel Transylvania",
+        "year": "2012",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Incredibles 2 (2018)": {
+        "title": "Incredibles 2",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Joker 2019 (1080)": {
+        "title": "Joker",
+        "year": "2019",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Maleficent Mistress Of Evil 2019 (1080)": {
+        "title": "Maleficent: Mistress of Evil",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Monster High 2 (2023)": {
+        "title": "Monster High 2",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Monster High The Movie 2022 (1080)": {
+        "title": "Monster High: The Movie",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Rampage (2018)": {
+        "title": "Rampage",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Ready Player One 2018 (1080)": {
+        "title": "Ready Player One",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Sicario Day Of The Soldado 2018 (1080)": {
+        "title": "Sicario: Day of the Soldado",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Spider-man Far From Home 2019 1080p Webrip X264-yts Lt": {
+        "title": "Spider-Man: Far from Home",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Monster High Why Do Ghouls Fall In Love (2011)": {
+        "title": "Monster High: Why Do Ghouls Fall in Love?",
+        "year": "2012",
+        "genres": [
+            "Animation",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-Y7"
+    },
+    "Solo A Star Wars Story 2018 (1080)": {
+        "title": "Solo: A Star Wars Story",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Venom Let There Be Carnage 2021 (1080)": {
+        "title": "Venom: Let There Be Carnage",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Venom The Last Dance 2024 (1080)": {
+        "title": "Venom: The Last Dance",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Gemini Man 2019 (1080)": {
+        "title": "Gemini Man",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
     }
 }

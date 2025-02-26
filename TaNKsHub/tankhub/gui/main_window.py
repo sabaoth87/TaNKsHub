@@ -107,6 +107,70 @@ class DragDropHandler:
         self.logger.debug(f"Final cleaned file list: {len(cleaned_files)} files")
         return cleaned_files
 
+class ThreadMonitor:
+    """Monitors thread execution and can recover from hung threads."""
+    
+    def __init__(self, app):
+        self.app = app
+        self.monitored_threads = {}
+        self.logger = logging.getLogger(__name__)
+    
+    def register_thread(self, thread, name, timeout_seconds=60):
+        """Register a thread to be monitored."""
+        thread_id = id(thread)
+        self.monitored_threads[thread_id] = {
+            'thread': thread,
+            'name': name,
+            'start_time': time.time(),
+            'timeout': timeout_seconds,
+            'completed': False
+        }
+        self.logger.debug(f"Registered thread: {name} with ID {thread_id}")
+        return thread_id
+    
+    def mark_completed(self, thread_id):
+        """Mark a thread as completed."""
+        if thread_id in self.monitored_threads:
+            self.monitored_threads[thread_id]['completed'] = True
+            self.logger.debug(f"Thread {self.monitored_threads[thread_id]['name']} marked as completed")
+    
+    def check_threads(self):
+        """Check monitored threads for timeouts."""
+        import time
+        current_time = time.time()
+        
+        for thread_id, info in list(self.monitored_threads.items()):
+            # Skip completed threads
+            if info['completed']:
+                # Clean up old completed threads
+                if current_time - info['start_time'] > 300:  # 5 minutes
+                    del self.monitored_threads[thread_id]
+                continue
+            
+            # Check if thread is still alive
+            if not info['thread'].is_alive():
+                self.logger.debug(f"Thread {info['name']} completed normally")
+                self.monitored_threads[thread_id]['completed'] = True
+                continue
+            
+            # Check for timeout
+            elapsed = current_time - info['start_time']
+            if elapsed > info['timeout']:
+                self.logger.warning(f"Thread {info['name']} appears to be hung (running for {elapsed:.1f}s)")
+                # We can't force-terminate threads in Python, but we can notify the user
+                if hasattr(self.app, 'root'):
+                    self.app.root.after(0, lambda n=info['name']: messagebox.showwarning(
+                        "Warning",
+                        f"A background task ({n}) is taking longer than expected.\n"
+                        "You may want to restart the application if this persists."
+                    ))
+                # Mark as completed to prevent repeated warnings
+                self.monitored_threads[thread_id]['completed'] = True
+        
+        # Schedule next check
+        if hasattr(self.app, 'root'):
+            self.app.root.after(10000, self.check_threads)  # Check every 10 seconds
+
 class TaNKsHubGUI:
     def __init__(self, root):
         self.root = root
@@ -114,6 +178,7 @@ class TaNKsHubGUI:
         self.module_manager = ModuleManager()
         self.active_modules: Dict[str, ttk.Frame] = {}
         
+        self.initialize_thread_monitor()
         self.logger = logging.getLogger(__name__)
         
         # Initialize module icons (will be populated in setup_gui)
@@ -129,6 +194,12 @@ class TaNKsHubGUI:
         self.setup_gui()
         self.process_queues()
         
+    def initialize_thread_monitor(self):
+        """Initialize the thread monitor."""
+        import time
+        self.thread_monitor = ThreadMonitor(self)
+        self.root.after(10000, self.thread_monitor.check_threads)  # Start checking after 10 seconds
+
     def configure_styles(self):
         """Configure ttk styles for the application."""
         style = ttk.Style()
@@ -169,6 +240,34 @@ class TaNKsHubGUI:
             for y in range(size[1]):
                 icon.put(color, (x, y))
         return icon
+
+    def run_in_background(self, task_func, callback=None, *args, **kwargs):
+        """
+        Run a function in a background thread to prevent UI lockup.
+    
+        Args:
+            task_func: The function to run in the background
+            callback: Optional function to call when task completes
+            *args, **kwargs: Arguments to pass to task_func
+        """
+        import threading
+    
+        def _thread_task():
+            result = None
+            try:
+                result = task_func(*args, **kwargs)
+            except Exception as e:
+                logger.error(f"Error in background task: {str(e)}")
+                import traceback
+                logger.error(traceback.format_exc())
+        
+            # Call the callback in the main thread if provided
+            if callback:
+                self.root.after(0, lambda: callback(result))
+    
+        thread = threading.Thread(target=_thread_task, daemon=True)
+        thread.start()
+        return thread
 
     def setup_gui(self):
         # Create main notebook for tabs
@@ -237,7 +336,6 @@ class TaNKsHubGUI:
             info_frame,
             text=system_info
         ).pack(anchor='w')
-        
         # Files section
         files_frame = ttk.LabelFrame(self.dashboard_tab, text="Files", padding=10)
         files_frame.pack(fill='x', padx=10, pady=5)
@@ -267,7 +365,7 @@ class TaNKsHubGUI:
                 files_frame,
                 text="No files loaded. Drag and drop files or click the Files tab to add some."
             ).pack(anchor='w', padx=10)
-        
+
         # Module summary section
         modules_frame = ttk.LabelFrame(self.dashboard_tab, text="Modules", padding=10)
         modules_frame.pack(fill='both', expand=True, padx=10, pady=5)
@@ -595,6 +693,21 @@ class TaNKsHubGUI:
                 padding=20
             ).pack(expand=True)
 
+    def add_memory_management_to_settings(self):
+        """Add memory management to settings tab."""
+        memory_frame = ttk.LabelFrame(
+            self.settings_tab,
+            text="Memory Management",
+            padding=5
+        )
+        memory_frame.pack(fill='x', padx=5, pady=5)
+    
+        ttk.Button(
+            memory_frame,
+            text="Free Memory",
+            command=self.free_memory
+        ).pack(padx=5, pady=5)
+
     def setup_settings_tab(self):
         """Set up the application settings interface."""
         # General settings
@@ -653,6 +766,9 @@ class TaNKsHubGUI:
             command=self.save_settings
         ).pack(pady=10)
 
+        # Save settings button
+        self.add_memory_management_to_settings()
+
     def setup_dashboard_tab(self):
         """Set up the dashboard tab with module summaries and status."""
         # Clear existing content
@@ -684,9 +800,16 @@ class TaNKsHubGUI:
         left_column = ttk.Frame(content_frame)
         left_column.pack(side='left', fill='both', expand=True, padx=5)
         
+        # Right column
         right_column = ttk.Frame(content_frame)
         right_column.pack(side='right', fill='both', expand=True, padx=5)
-        
+    
+        # Add API Usage Panel to right column, before or after the modules summary
+        self.create_api_usage_panel(right_column)
+    
+        # Modules summary panel
+        self.create_modules_summary_panel(right_column)
+
         # System info panel (left column, top)
         self.create_system_info_panel(left_column)
         
@@ -1152,40 +1275,138 @@ class TaNKsHubGUI:
         if filename:
             self.log_file_var.set(filename)
 
-    def process_files(self, file_paths):
-        """Process files using enabled modules with improved error handling."""
+    def free_memory(self):
+        """Free memory by clearing caches and unnecessary data."""
+        # Clear module caches
         for module in self.module_manager.get_enabled_modules():
-            for file_path in file_paths:
-                path = Path(file_path)
-                extensions = module.get_supported_extensions()
+            if hasattr(module, 'clear_cache'):
+                module.clear_cache()
+    
+        # Force garbage collection
+        import gc
+        gc.collect()
+    
+        self.logger.info("Memory freed successfully")
+
+    def process_files(self, file_paths):
+        """Process files using enabled modules with background threading."""
+        # Get enabled modules
+        enabled_modules = self.module_manager.get_enabled_modules()
+    
+        if not enabled_modules:
+            return  # No enabled modules
+    
+        # Show a progress dialog for large file sets
+        if len(file_paths) > 10:
+            progress_window = tk.Toplevel(self.root)
+            progress_window.title("Processing Files")
+            progress_window.geometry("400x150")
+            progress_window.transient(self.root)
+        
+            ttk.Label(progress_window, text="Processing files with enabled modules...").pack(pady=10)
+        
+            progress_var = tk.DoubleVar()
+            progress_bar = ttk.Progressbar(
+                progress_window, 
+                variable=progress_var,
+                maximum=len(file_paths) * len(enabled_modules),
+                length=300
+            )
+            progress_bar.pack(pady=10)
+        
+            status_var = tk.StringVar(value="Starting...")
+            status_label = ttk.Label(progress_window, textvariable=status_var)
+            status_label.pack(pady=5)
+        
+            progress_window.update()
+        else:
+            progress_window = None
+            progress_var = None
+            status_var = None
+    
+        # Define the background processing task
+        def process_task():
+            processed = 0
+            for module in enabled_modules:
+                # Skip if module doesn't support file processing
+                if not hasattr(module, 'process_file'):
+                    continue
+                
+                for file_path in file_paths:
+                    path = Path(file_path)
+                    extensions = module.get_supported_extensions()
+                
+                    # Update progress if we have a UI
+                    if progress_window:
+                        processed += 1
+                        progress_var.set(processed)
+                        status_var.set(f"Processing with {module.name}: {path.name}")
+                        self.root.after(0, progress_window.update)
             
-                # Check if module supports this file type
-                if '*' in extensions or path.suffix.lower() in extensions:
-                    try:
-                        # Process using the same source and destination initially
-                        success = module.process_file(path, path)
-                        if success:
-                            self.logger.info(f"Successfully processed {path} with {module.name}")
-                        else:
-                            self.logger.warning(f"Failed to process {path} with {module.name}")
-                    except Exception as e:
-                        self.logger.error(f"Error processing {path} with {module.name}: {str(e)}")
-                        import traceback
-                        self.logger.error(traceback.format_exc())
+                    # Check if module supports this file type
+                    if '*' in extensions or path.suffix.lower() in extensions:
+                        try:
+                            # Process using the same source and destination initially
+                            success = module.process_file(path, path)
+                            #success = True
+                            if success:
+                                self.logger.info(f"Successfully processed {path} with {module.name}")
+                            else:
+                                self.logger.warning(f"Failed to process {path} with {module.name}")
+                        except Exception as e:
+                            self.logger.error(f"Error processing {path} with {module.name}: {str(e)}")
+                            import traceback
+                            self.logger.error(traceback.format_exc())
+        
+            # Close progress window if we have one
+            if progress_window:
+                self.root.after(0, progress_window.destroy)
+    
+        # Run the processing in a background thread
+        self.run_in_background(process_task)
 
     def process_queues(self):
-        """Process module queues."""
-        for module in self.module_manager.get_enabled_modules():
-            # Only process queues for modules that have the method
-            if hasattr(module, 'process_queues'):
-                try:
-                    module.process_queues()
-                except Exception as e:
-                    logger.error(f"Error processing queues for module {module.name}: {str(e)}")
+        """Process module queues with improved efficiency."""
+        try:
+            # Only process active modules that are currently visible
+            current_tab = self.notebook.select()
+            process_modules = self.module_manager.get_enabled_modules()
+        
+            # If we're in the modules tab, only process the visible module
+            if current_tab == str(self.modules_frame) and hasattr(self, 'modules_notebook'):
+                current_module_tab = self.modules_notebook.select()
+                if current_module_tab:
+                    # Get the module name from the tab text
+                    for module_name, frame in self.active_modules.items():
+                        if str(frame) == current_module_tab:
+                            # Only process this module's queues
+                            module = next((m for m in process_modules if m.name == module_name), None)
+                            if module and hasattr(module, 'process_queues'):
+                                try:
+                                    module.process_queues()
+                                except Exception as e:
+                                    logger.error(f"Error processing queues for module {module_name}: {str(e)}")
+                            process_modules = []  # Skip the rest
+                            break
+        
+            # Process the remaining modules' queues
+            for module in process_modules:
+                if hasattr(module, 'process_queues'):
+                    try:
+                        module.process_queues()
+                    except Exception as e:
+                        logger.error(f"Error processing queues for module {module.name}: {str(e)}")
     
-        # Schedule next queue check
+        except Exception as e:
+            logger.error(f"Error in process_queues: {str(e)}")
+    
+        # Schedule next queue check with a longer interval if not in focus
         if hasattr(self, 'root'):  # Check if GUI still exists
-            self.root.after(100, self.process_queues)
+            # Check if window has focus
+            has_focus = self.root.focus_displayof() is not None
+            # Use shorter interval when in focus, longer when not
+            interval = 100 if has_focus else 500
+            self.root.after(interval, self.process_queues)
 
     def save_settings(self):
         """Save application settings."""
@@ -1214,3 +1435,108 @@ class TaNKsHubGUI:
     def get_current_files(self) -> List[str]:
         """Return the current list of files."""
         return self.file_paths
+
+    def create_api_usage_panel(self, parent):
+        """Create the API usage statistics panel for the dashboard."""
+        # Get API usage tracker from MediaSorter module if available
+        api_tracker = None
+        media_sorter = None
+    
+        for module in self.module_manager.modules.values():
+            if module.name == "Media Sorter" and hasattr(module, 'api_tracker'):
+                api_tracker = module.api_tracker
+                media_sorter = module
+                break
+    
+        if not api_tracker:
+            # Create a new tracker if we couldn't find one
+            from tankhub.core.api_tracker import APIUsageTracker
+            api_tracker = APIUsageTracker()
+    
+        # Create the frame
+        api_frame = ttk.LabelFrame(parent, text="API Usage", padding=10)
+        api_frame.pack(fill='x', padx=5, pady=5)
+    
+        # Get current API stats
+        api_stats = api_tracker.get_usage_stats()
+    
+        if not api_stats:
+            ttk.Label(
+                api_frame,
+                text="No API usage data available"
+            ).pack(anchor='w')
+            return api_frame
+    
+        # Create tabs for each API
+        api_notebook = ttk.Notebook(api_frame)
+        api_notebook.pack(fill='both', expand=True, padx=5, pady=5)
+    
+        for api_name, stats in api_stats.items():
+            api_tab = ttk.Frame(api_notebook)
+            api_notebook.add(api_tab, text=api_name.upper())
+        
+            # Daily usage
+            usage_frame = ttk.Frame(api_tab)
+            usage_frame.pack(fill='x', pady=5)
+        
+            # Get daily limit and usage
+            daily_limit = stats["daily_limit"]
+            calls_today = stats["calls_today"]
+            usage_pct = api_tracker.get_usage_percentage(api_name)
+        
+            ttk.Label(
+                usage_frame,
+                text=f"Daily Usage: {calls_today}/{daily_limit} calls ({usage_pct:.1f}%)",
+                font=("", 10, "bold")
+            ).pack(side='left')
+        
+            # Status indicator
+            status_color = "green"
+            if usage_pct > 90:
+                status_color = "red"
+            elif usage_pct > 70:
+                status_color = "orange"
+            
+            status_icon = self.create_colored_icon(status_color, (12, 12))
+            status_label = ttk.Label(usage_frame, image=status_icon)
+            status_label.image = status_icon  # Keep a reference
+            status_label.pack(side='left', padx=5)
+        
+            # Progress bar
+            ttk.Progressbar(
+                api_tab,
+                value=min(usage_pct, 100),
+                maximum=100,
+                length=200
+            ).pack(anchor='w', padx=5, pady=2)
+        
+            # API stats
+            ttk.Label(
+                api_tab,
+                text=f"Total Calls: {stats['total_calls']}"
+            ).pack(anchor='w', padx=5, pady=2)
+        
+            ttk.Label(
+                api_tab,
+                text=f"Successful: {stats['successful_calls']}"
+            ).pack(anchor='w', padx=5, pady=2)
+        
+            ttk.Label(
+                api_tab,
+                text=f"Failed: {stats['failed_calls']}"
+            ).pack(anchor='w', padx=5, pady=2)
+        
+            ttk.Label(
+                api_tab,
+                text=f"Last Reset: {stats['last_reset']}"
+            ).pack(anchor='w', padx=5, pady=2)
+        
+            # Add a button to open API settings if the module is available
+            if media_sorter:
+                ttk.Button(
+                    api_tab,
+                    text="Configure API Settings",
+                    command=lambda: self.goto_module_tab(media_sorter)
+                ).pack(anchor='w', padx=5, pady=10)
+    
+        return api_frame

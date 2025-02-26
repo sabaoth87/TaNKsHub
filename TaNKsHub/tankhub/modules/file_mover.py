@@ -55,9 +55,9 @@ class FileMoverModule(BaseModule):
 
         # Default settings
         self.config = {
-            'operation_type': 'copy',
-            'recursive': True,
-            'preserve_metadata': True,
+            'operation_type': 'move',
+            'recursive': False,
+            'preserve_metadata': False,
             'destination_folder': '',
             'rename_enabled': False
         }
@@ -364,40 +364,56 @@ class FileMoverModule(BaseModule):
         self.logger.debug(f"Queue updated with {self.operation_queue.qsize()} operations")
 
     def _process_current_queue(self):
-        """Process the current queue with current settings."""
+        """Process the current queue with current settings using a background thread."""
         if not self.dest_path.get():
             messagebox.showerror("Error", "Please select a destination folder first!")
             return
-        
+    
         if not self.queued_files:
             messagebox.showinfo("Info", "No files in queue to process")
             return
-    
+
         # Important - re-create the queue with the current settings BEFORE processing
         self.logger.debug(f"Processing queue with rename_enabled={self.rename_enabled}")
         self._update_queue_destination()  # Ensure queue is up to date with latest settings
-    
+
         self.total_operations = self.operation_queue.qsize()
-    
+
         # Debug check an operation from the queue to verify settings
         if not self.operation_queue.empty():
             temp_queue = queue.Queue()
             op = self.operation_queue.get()
             self.logger.debug(f"Sample operation before processing: {os.path.basename(op.source)} -> {os.path.basename(op.dest)}, rename={op.rename}")
             temp_queue.put(op)
-        
+    
             # Restore the queue
             while not self.operation_queue.empty():
                 temp_queue.put(self.operation_queue.get())
             self.operation_queue = temp_queue
-    
+
         self.processing = True
         self.cancel_btn.configure(state="normal")
-        self.current_thread = threading.Thread(
-            target=self._process_queue,
-            daemon=True
-        )
-        self.current_thread.start()
+    
+        # Find the main application instance (to use run_in_background)
+        # This requires a reference to the main TaNKsHubGUI instance from each module
+        main_app = None
+        if hasattr(self, 'app') and hasattr(self.app, 'run_in_background'):
+            main_app = self.app
+    
+        # Start processing in a background thread
+        if main_app:
+            # Use the main app's background thread method if available
+            self.current_thread = main_app.run_in_background(
+                self._process_queue,
+                lambda _: self.logger.debug("Queue processing complete")
+            )
+        else:
+            # Fall back to the old method
+            self.current_thread = threading.Thread(
+                target=self._process_queue,
+                daemon=True
+            )
+            self.current_thread.start()
 
     def process_file(self, file_path: Path, dest_path: Path) -> bool:
         """Queue a file for processing with improved path handling."""

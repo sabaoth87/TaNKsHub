@@ -1,16 +1,16 @@
 {
     "File Mover": {
-        "enabled": true,
+        "enabled": false,
         "settings": {
-            "operation_type": "copy",
-            "recursive": true,
-            "preserve_metadata": true,
+            "operation_type": "move",
+            "recursive": false,
+            "preserve_metadata": false,
             "destination_folder": "",
-            "rename_enabled": true
+            "rename_enabled": false
         }
     },
     "File Name Editor": {
-        "enabled": true,
+        "enabled": false,
         "settings": {
             "pattern": "",
             "preserve_extension": true
@@ -21,7 +21,7 @@
         "settings": {
             "api_key": "68b552d0",
             "api_type": "omdb",
-            "base_folder": "",
+            "base_folder": "F:\\Media",
             "sort_by": "genre",
             "tv_folder": "TV Shows",
             "movie_folder": "Movies",

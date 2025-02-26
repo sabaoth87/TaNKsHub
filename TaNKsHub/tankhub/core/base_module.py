@@ -52,3 +52,39 @@ class BaseModule(ABC):
     def on_enable_changed(self, enabled: bool):
         """Handle module enable/disable state changes."""
         self.enabled = enabled
+
+    def run_in_thread(self, func, callback=None, *args, **kwargs):
+        """
+        Run a function in a background thread to avoid UI blocking.
+        Will use the main app's thread runner if available, otherwise create a new thread.
+    
+        Args:
+            func: The function to run
+            callback: Optional function to call when complete
+            *args, **kwargs: Arguments to pass to func
+        """
+        if hasattr(self, 'app') and hasattr(self.app, 'run_in_background'):
+            # Use main app's thread runner
+            return self.app.run_in_background(func, callback, *args, **kwargs)
+        else:
+            # Fall back to creating our own thread
+            import threading
+        
+            def _thread_task():
+                result = None
+                try:
+                    result = func(*args, **kwargs)
+                except Exception as e:
+                    import logging
+                    logger = logging.getLogger(__name__)
+                    logger.error(f"Error in background task: {str(e)}")
+                    import traceback
+                    logger.error(traceback.format_exc())
+            
+                # Call the callback in the main thread if provided
+                if callback and hasattr(self, 'app') and hasattr(self.app, 'root'):
+                    self.app.root.after(0, lambda: callback(result))
+        
+            thread = threading.Thread(target=_thread_task, daemon=True)
+            thread.start()
+            return thread

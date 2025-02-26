@@ -79,6 +79,19 @@ def main():
     app.module_manager.register_module(filename_editor)  # Register filename editor
     app.module_manager.register_module(media_sorter)
     
+    # Give modules reference to main app for background processing
+    file_mover.app = app
+    filename_editor.app = app
+    media_sorter.app = app
+    
+    # Add methods to modules to get files from main app
+    def get_main_files():
+        return app.get_current_files()
+    
+    file_mover.request_file_list = get_main_files
+    filename_editor.request_file_list = get_main_files
+    media_sorter.request_file_list = get_main_files
+    
     # Check registered modules
     enabled_modules = app.module_manager.get_enabled_modules()
     logger.debug(f"Enabled modules: {[m.name for m in enabled_modules]}")
@@ -94,5 +107,35 @@ def main():
     logger.info("TaNKsHub started")
     root.mainloop()
 
+def setup_global_exception_handler():
+    """Set up a global exception handler to catch unhandled exceptions."""
+    import sys
+    
+    def global_exception_handler(exc_type, exc_value, exc_traceback):
+        """Handle uncaught exceptions and log them properly."""
+        # Log the error
+        logger.critical("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
+        
+        # Format the traceback for display
+        import traceback
+        tb_lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+        tb_text = ''.join(tb_lines)
+        
+        # Show error dialog if we have a UI
+        try:
+            from tkinter import messagebox
+            messagebox.showerror(
+                "Unhandled Error",
+                f"An unexpected error occurred:\n\n{exc_value}\n\n"
+                f"The error has been logged. Please restart the application."
+            )
+        except:
+            # If we can't show a dialog, at least print to console
+            print(f"CRITICAL ERROR: {exc_value}\n{tb_text}", file=sys.stderr)
+    
+    # Set the exception handler
+    sys.excepthook = global_exception_handler
+
 if __name__ == "__main__":
+    setup_global_exception_handler()
     main()

@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from tankhub.core.base_module import BaseModule
 from tankhub.modules.file_mover import FileMoverModule
 from tankhub.modules.file_name_editor import FileNameEditorModule, MediaInfo
+from tankhub.core.api_tracker import APIUsageTracker
 
 logger = logging.getLogger(__name__)
 
@@ -21,25 +22,56 @@ class MediaDetails:
     year: Optional[str] = None
     genres: List[str] = None
     type: str = "unknown"  # "movie" or "tv"
+    content_rating: Optional[str] = None  # Store content rating if available (e.g., PG, R, TV-MA)
     
     def __post_init__(self):
         if self.genres is None:
             self.genres = []
+    
+    def get_audience_category(self) -> str:
+        """Determine audience category based on genres and content rating."""
+        # First, check content rating if available
+        if self.content_rating:
+            if self.content_rating in ["G", "TV-Y", "TV-Y7", "TV-G"]:
+                return "Kids"
+            elif self.content_rating in ["PG", "TV-PG", "PG-13"]:
+                return "Family"
+            elif self.content_rating in ["R", "NC-17", "TV-MA", "TV-14"]:
+                return "Adult"
+        
+        # If no content rating, use genres to categorize
+        kids_genres = ["Animation", "Family", "Children"]
+        adult_genres = ["Horror", "Thriller", "Crime", "War"]
+        
+        # Check if any genre matches kids content
+        for genre in self.genres:
+            if genre in kids_genres:
+                return "Kids"
+            elif genre in adult_genres:
+                return "Adult"
+        
+        # Default to family if we can't determine
+        return "Family"
 
 class MediaSorterModule(BaseModule):
     """Module for sorting media files by genre using external API information."""
     
     def __init__(self):
-        super().__init__("Media Sorter", "Sort media files by genre using online databases")
+        super().__init__("Media Sorter", "Sort media files by audience category, genre, and type")
         
         # API keys
-        self.TMDB_API_KEY = 'e78d4b98a932657d06d26feb3308adb4'
-        self.OMDB_API_KEY = '68b552d0'
+        # FREE KEYS - GET YOUR OWN!!
+        self.TMDB_API_KEY = 'e78d4b98a932657d06d26feb3308adb4'  # https://www.themoviedb.org/
+        self.OMDB_API_KEY = '68b552d0'                          # https://www.omdbapi.com/
+        #                      DON'T BE LAME. GET YOUR OWN              ^   ^   ^
 
         # Initialize module-specific variables
         self.logger = logging.getLogger(__name__)
         self.queued_files: List[Path] = []
-        
+
+        # API Usage Tracker
+        self.api_tracker = APIUsageTracker()
+
         # Module references
         self.file_mover = None  # Will be set in main.py
         self.filename_editor = None  # Will be set in main.py - IMPROVED INTEGRATION
@@ -60,13 +92,14 @@ class MediaSorterModule(BaseModule):
         self.config = {
             'api_key': self.OMDB_API_KEY,
             'api_type': 'omdb',  # tmdb, omdb
-            'base_folder': '',
+            'base_folder': 'F:\Media',
             'sort_by': 'genre',  # genre, type, year
             'tv_folder': 'TV Shows',
             'movie_folder': 'Movies',
             'unknown_folder': 'Unknown',
             'create_genre_folders': True,
             'create_type_folders': True,
+            'create_audience_folders': True,  # New option for audience categorization
             'simulate': True,  # Don't actually move files, just log what would happen
             'pre_process_filenames': True  # New setting to enable filename preprocessing
         }
@@ -87,7 +120,8 @@ class MediaSorterModule(BaseModule):
                     'title': value.title,
                     'year': value.year,
                     'genres': value.genres,
-                    'type': value.type
+                    'type': value.type,
+                    'content_rating': value.content_rating
                 }
         
             with open(self.cache_file, 'w') as f:
@@ -110,7 +144,8 @@ class MediaSorterModule(BaseModule):
                         title=value.get('title', ''),
                         year=value.get('year'),
                         genres=value.get('genres', []),
-                        type=value.get('type', 'unknown')
+                        type=value.get('type', 'unknown'),
+                        content_rating=value.get('content_rating')
                     )
             
                 self.logger.info(f"Loaded {len(self.api_cache)} media items from cache")
@@ -118,6 +153,12 @@ class MediaSorterModule(BaseModule):
                 self.logger.info("No media cache file found")
         except Exception as e:
             self.logger.error(f"Error loading media cache: {str(e)}")
+
+    def clear_cache(self):
+        """Clear the API cache to free memory."""
+        self.api_cache = {}
+        self.logger.info("API cache cleared")
+
     def get_supported_extensions(self) -> List[str]:
         """Define which file types this module can handle."""
         return ['.mp4', '.mkv', '.avi', '.mov', '.wmv', '.m4v']
@@ -181,7 +222,7 @@ class MediaSorterModule(BaseModule):
         ).pack(side='right', padx=5)
         
         # Sort By selection
-        ttk.Label(folder_frame, text="Primary Sort:").pack(anchor='w', padx=5, pady=2)
+        ttk.Label(folder_frame, text="Primary Sort (after audience category):").pack(anchor='w', padx=5, pady=2)
         self.sort_by_var = tk.StringVar(value=self.config['sort_by'])
         ttk.Combobox(
             folder_frame,
@@ -202,14 +243,15 @@ class MediaSorterModule(BaseModule):
         ttk.Entry(tv_movie_frame, textvariable=self.movie_folder_var, width=15).pack(side='left', padx=5)
         
         # Folder creation options
-        options_frame = ttk.Frame(folder_frame)
+        options_frame = ttk.LabelFrame(folder_frame, text="Organization Options", padding=5)
         options_frame.pack(fill='x', padx=5, pady=5)
         
-        self.create_genre_var = tk.BooleanVar(value=self.config['create_genre_folders'])
+        # NEW: Audience folder option
+        self.create_audience_var = tk.BooleanVar(value=self.config['create_audience_folders'])
         ttk.Checkbutton(
             options_frame,
-            text="Create Genre Folders",
-            variable=self.create_genre_var
+            text="Create Audience Folders (Adult, Family, Kids)",
+            variable=self.create_audience_var
         ).pack(anchor='w', padx=5)
         
         self.create_type_var = tk.BooleanVar(value=self.config['create_type_folders'])
@@ -219,12 +261,23 @@ class MediaSorterModule(BaseModule):
             variable=self.create_type_var
         ).pack(anchor='w', padx=5)
         
-        self.simulate_var = tk.BooleanVar(value=self.config['simulate'])
+        self.create_genre_var = tk.BooleanVar(value=self.config['create_genre_folders'])
         ttk.Checkbutton(
             options_frame,
+            text="Create Genre Folders",
+            variable=self.create_genre_var
+        ).pack(anchor='w', padx=5)
+        
+        # Simulation mode option
+        simulation_frame = ttk.Frame(options_frame)
+        simulation_frame.pack(fill='x', padx=5, pady=5)
+        
+        self.simulate_var = tk.BooleanVar(value=self.config['simulate'])
+        ttk.Checkbutton(
+            simulation_frame,
             text="Simulation Mode (don't actually move files)",
             variable=self.simulate_var
-        ).pack(anchor='w', padx=5)
+        ).pack(anchor='w')
         
         # NEW: Pre-process filenames option
         self.preprocess_var = tk.BooleanVar(value=self.config['pre_process_filenames'])
@@ -263,7 +316,7 @@ class MediaSorterModule(BaseModule):
             command=self._clear_queue
         ).pack(side='left', padx=5)
         
-        # NEW: Add a button to preprocess filenames
+        # Add a button to preprocess filenames
         ttk.Button(
             button_frame,
             text="Preprocess Filenames",
@@ -271,7 +324,79 @@ class MediaSorterModule(BaseModule):
         ).pack(side='left', padx=5)
         
         return frame
+  
+    def _show_analysis_results(self, results, failed, skipped):
+        """Show results of media analysis in a results window."""
+        if results:
+            # Create results window
+            results_window = tk.Toplevel()
+            results_window.title("Media Analysis Results")
+            results_window.geometry("600x400")
+            results_window.transient(self.queue_text.master.master)
+        
+            # Results text area
+            results_text = tk.Text(results_window, wrap=tk.WORD)
+            results_text.pack(fill='both', expand=True, padx=10, pady=10)
+        
+            # Add scrollbar
+            scrollbar = ttk.Scrollbar(results_text, command=results_text.yview)
+            scrollbar.pack(side='right', fill='y')
+            results_text.configure(yscrollcommand=scrollbar.set)
+        
+            # Display results
+            results_text.insert(tk.END, f"== Analysis Results ==\n\n")
+        
+            for file_path, media_details in results:
+                results_text.insert(tk.END, f"File: {file_path.name}\n")
+                results_text.insert(tk.END, f"Title: {media_details.title}\n")
+                results_text.insert(tk.END, f"Year: {media_details.year or 'Unknown'}\n")
+                results_text.insert(tk.END, f"Type: {media_details.type}\n")
+                results_text.insert(tk.END, f"Genres: {', '.join(media_details.genres)}\n\n")
+        
+            if failed:
+                results_text.insert(tk.END, f"== Failed to analyze ({len(failed)}) ==\n")
+                for file_path in failed:
+                    results_text.insert(tk.END, f"- {file_path.name}\n")
+                results_text.insert(tk.END, "\n")
+        
+            if skipped:
+                results_text.insert(tk.END, f"== Skipped files ({len(skipped)}) ==\n")
+                for file_path in skipped:
+                    results_text.insert(tk.END, f"- {file_path.name}\n")
+        
+            # Add buttons for actions
+            button_frame = ttk.Frame(results_window)
+            button_frame.pack(pady=10)
+        
+            # Add button to preprocess skipped files
+            if skipped:
+                ttk.Button(
+                    button_frame,
+                    text="Preprocess Skipped Files",
+                    command=lambda: self._preprocess_specific_files(skipped, results_window)
+                ).pack(side='left', padx=5)
+        
+            # Add button to retry failed files
+            if failed:
+                ttk.Button(
+                    button_frame,
+                    text="Retry Failed Files",
+                    command=lambda: self._retry_failed_files(failed, results_window)
+                ).pack(side='left', padx=5)
+        
+            # Close button
+            ttk.Button(
+                button_frame,
+                text="Close",
+                command=results_window.destroy
+            ).pack(side='left', padx=5)
     
+        else:
+            if failed:
+                messagebox.showerror("Error", f"Failed to analyze any files. {len(failed)} files could not be processed.")
+            else:
+                messagebox.showinfo("Information", "No files were analyzed.")
+
     def _on_preprocess_toggle(self, *args):
         """Handle changes to the preprocess checkbox."""
         self.config['pre_process_filenames'] = self.preprocess_var.get()
@@ -568,28 +693,28 @@ class MediaSorterModule(BaseModule):
         return None
     
     def _analyze_files(self):
-        """Analyze queued files and fetch media information."""
+        """Analyze queued files and fetch media information using background threads."""
         if not self.queued_files:
             messagebox.showinfo("Information", "No files in queue to analyze.")
             return
-            
+        
         if not self.api_key_var.get():
             messagebox.showerror("Error", "Please enter an API key first.")
             return
-            
+        
         # Get the parser - improved to check both direct and indirect connections
         filename_parser = self._get_filename_parser()
         if not filename_parser:
             messagebox.showerror("Error", "No filename parser available. Make sure the File Name Editor module is loaded.")
             return
-        
+    
         # Create a progress dialog
         progress_window = tk.Toplevel()
         progress_window.title("Analyzing Media Files")
         progress_window.geometry("400x150")
         progress_window.transient(self.queue_text.master.master)
         progress_window.grab_set()
-        
+    
         # Add progress bar and status label
         ttk.Label(progress_window, text="Fetching media information...").pack(pady=10)
         progress_var = tk.DoubleVar()
@@ -600,141 +725,128 @@ class MediaSorterModule(BaseModule):
             length=300
         )
         progress_bar.pack(pady=10)
-        
+    
         status_var = tk.StringVar(value="Preparing...")
         status_label = ttk.Label(progress_window, textvariable=status_var)
         status_label.pack(pady=5)
-        
-        # Process files
+    
+        # Update GUI to show initial progress
         progress_window.update()
-        
+    
+        # Check if we should preprocess filenames first
+        if self.config['pre_process_filenames'] and self.preprocess_var.get():
+            status_var.set("Pre-processing filenames...")
+            progress_window.update()
+            self._preprocess_queued_filenames()
+    
+        # Create shared data containers
         results = []
         failed = []
         skipped = []
         
-        # Check if we should preprocess filenames first
-        if self.config['pre_process_filenames'] and self.preprocess_var.get():
-            status_var.set("Pre-processing filenames...")
-            self._preprocess_queued_filenames()
-        
-        for i, file_path in enumerate(self.queued_files):
+        def analyze_file(index, file_path):
             try:
-                # Update progress
-                progress_var.set(i)
-                status_var.set(f"Processing: {file_path.name}")
-                progress_window.update()
-                
                 # Check if we already have this info cached
                 cache_key = file_path.stem
                 if cache_key in self.api_cache:
                     self.logger.info(f"Using cached data for {file_path.name}")
-                    results.append((file_path, self.api_cache[cache_key]))
-                    continue
-                
+                    return {"status": "success", "file_path": file_path, "media_details": self.api_cache[cache_key]}
+            
                 # Parse filename
                 media_info = filename_parser.parse_filename(file_path.stem)
-                
+            
                 # Fetch media info from API
                 title = media_info.title
                 year = media_info.year
-                
+            
                 # Skip if we don't have enough info
                 if not title:
                     self.logger.warning(f"Could not parse title from {file_path.name}")
-                    skipped.append(file_path)
-                    continue
-                
+                    return {"status": "skipped", "file_path": file_path}
+            
                 # Fetch API data
                 media_details = self._fetch_media_info(title, year, media_info.season is not None)
-                
+            
                 if media_details:
                     # Cache the result
                     self.api_cache[cache_key] = media_details
-                    results.append((file_path, media_details))
+                    return {"status": "success", "file_path": file_path, "media_details": media_details}
                 else:
                     self.logger.warning(f"No API data found for {title} ({year if year else 'unknown year'})")
-                    failed.append(file_path)
-            
+                    return {"status": "failed", "file_path": file_path}
+        
             except Exception as e:
                 self.logger.error(f"Error analyzing {file_path.name}: {str(e)}")
-                failed.append(file_path)
+                import traceback
+                self.logger.error(traceback.format_exc())
+                return {"status": "failed", "file_path": file_path, "error": str(e)}
+
+        # Define a callback for when file analysis is done
+        def update_progress(index, result):
+            nonlocal results, failed, skipped
         
-        # Save updated cache
-        self._save_cache()
+            if result["status"] == "success":
+                results.append((result["file_path"], result["media_details"]))
+            elif result["status"] == "failed":
+                failed.append(result["file_path"])
+            elif result["status"] == "skipped":
+                skipped.append(result["file_path"])
         
-        # Close progress window
-        progress_window.destroy()
+            # Update progress UI
+            progress_var.set(index + 1)
+            status_var.set(f"Processing: {index + 1}/{len(self.queued_files)}")
+            progress_window.update()
         
-        # Show results
-        if results:
-            # Create results window
-            results_window = tk.Toplevel()
-            results_window.title("Media Analysis Results")
-            results_window.geometry("600x400")
-            results_window.transient(self.queue_text.master.master)
-            
-            # Results text area
-            results_text = tk.Text(results_window, wrap=tk.WORD)
-            results_text.pack(fill='both', expand=True, padx=10, pady=10)
-            
-            # Add scrollbar
-            scrollbar = ttk.Scrollbar(results_text, command=results_text.yview)
-            scrollbar.pack(side='right', fill='y')
-            results_text.configure(yscrollcommand=scrollbar.set)
-            
-            # Display results
-            results_text.insert(tk.END, f"== Analysis Results ==\n\n")
-            
-            for file_path, media_details in results:
-                results_text.insert(tk.END, f"File: {file_path.name}\n")
-                results_text.insert(tk.END, f"Title: {media_details.title}\n")
-                results_text.insert(tk.END, f"Year: {media_details.year or 'Unknown'}\n")
-                results_text.insert(tk.END, f"Type: {media_details.type}\n")
-                results_text.insert(tk.END, f"Genres: {', '.join(media_details.genres)}\n\n")
-            
-            if failed:
-                results_text.insert(tk.END, f"== Failed to analyze ({len(failed)}) ==\n")
-                for file_path in failed:
-                    results_text.insert(tk.END, f"- {file_path.name}\n")
-                results_text.insert(tk.END, "\n")
-            
-            if skipped:
-                results_text.insert(tk.END, f"== Skipped files ({len(skipped)}) ==\n")
-                for file_path in skipped:
-                    results_text.insert(tk.END, f"- {file_path.name}\n")
-            
-            # Add buttons for actions
-            button_frame = ttk.Frame(results_window)
-            button_frame.pack(pady=10)
-            
-            # Add button to preprocess skipped files
-            if skipped:
-                ttk.Button(
-                    button_frame,
-                    text="Preprocess Skipped Files",
-                    command=lambda: self._preprocess_specific_files(skipped, results_window)
-                ).pack(side='left', padx=5)
-            
-            # Add button to retry failed files
-            if failed:
-                ttk.Button(
-                    button_frame,
-                    text="Retry Failed Files",
-                    command=lambda: self._retry_failed_files(failed, results_window)
-                ).pack(side='left', padx=5)
-            
-            # Close button
-            ttk.Button(
-                button_frame,
-                text="Close",
-                command=results_window.destroy
-            ).pack(side='left', padx=5)
+            # Check if we're done
+            if index + 1 >= len(self.queued_files):
+                # All files processed, save cache and show results
+                self._save_cache()
+                progress_window.destroy()
+                self._show_analysis_results(results, failed, skipped)
+    
+        # Start a separate thread for each file (with limit on concurrent tasks)
+        import threading
+        max_concurrent = 5  # Limit concurrent API requests
+        active_threads = []
+    
+        for i, file_path in enumerate(self.queued_files):
+            # Define a callback for this specific file
+            callback = lambda idx=i, res=None: update_progress(idx, res)
         
-        else:
-            if failed:
-                messagebox.showerror("Error", f"Failed to analyze any files. {len(failed)} files could not be processed.")
-            else:
-                messagebox.showinfo("Information", "No files were analyzed.")
+            # Create a new thread for this file
+            thread = threading.Thread(
+                target=lambda idx=i, fp=file_path: callback(idx, analyze_file(idx, fp)),
+                daemon=True
+            )
+        
+            # Control concurrency
+            if len(active_threads) >= max_concurrent:
+                # Wait for at least one thread to finish
+                active_threads[0].join()
+                active_threads.pop(0)
+        
+            # Start the thread and add to active list
+            thread.start()
+            active_threads.append(thread)
+        
+            # Let the UI update before starting the next thread
+            progress_window.update()
+    
+        # Create a monitoring thread to ensure completion
+        def monitor_threads():
+            # Wait for all threads to complete
+            for thread in active_threads:
+                thread.join()
+        
+            # If we haven't processed all files yet, make sure we finish
+            if progress_var.get() < len(self.queued_files):
+                progress_var.set(len(self.queued_files))
+                self._save_cache()
+                progress_window.destroy()
+                self._show_analysis_results(results, failed, skipped)
+    
+        monitor_thread = threading.Thread(target=monitor_threads, daemon=True)
+        monitor_thread.start()
     
     def _preprocess_specific_files(self, files, parent_window=None):
         """Preprocess only specific files for better parsing."""
@@ -970,119 +1082,94 @@ class MediaSorterModule(BaseModule):
             return False
 
     def _sort_files(self):
-        """Sort files based on their genres and media type."""
+        """Sort files based on audience category, genre, and media type."""
         if not self.queued_files:
             messagebox.showinfo("Information", "No files in queue to sort.")
             return
-        
+    
         base_folder = self.base_folder_var.get()
         if not base_folder:
             messagebox.showerror("Error", "Please select a base folder for sorting.")
             return
-        
+    
         # Make sure the FileMover module is available
         if not self.file_mover:
             messagebox.showerror("Error", "FileMover module is not available.")
             return
-        
+    
         # Get sort options
         sort_by = self.sort_by_var.get()
         create_type_folders = self.create_type_var.get()
         create_genre_folders = self.create_genre_var.get()
+        create_audience_folders = self.create_audience_var.get()
         tv_folder = self.tv_folder_var.get()
         movie_folder = self.movie_folder_var.get()
         simulation = self.simulate_var.get()
-        
+    
         # Create results window to show sorting plan
         results_window = tk.Toplevel(self.queue_text.master.master)
         results_window.title("Media Sorting Plan")
         results_window.geometry("700x500")
         results_window.transient(self.queue_text.master.master)
-        
+    
         # Results text area
         results_text = tk.Text(results_window, wrap=tk.WORD)
         results_text.pack(fill='both', expand=True, padx=10, pady=10)
-        
+    
         # Add scrollbar
         scrollbar = ttk.Scrollbar(results_text, command=results_text.yview)
         scrollbar.pack(side='right', fill='y')
         results_text.configure(yscrollcommand=scrollbar.set)
-        
+    
         # Display sort plan header
         results_text.insert(tk.END, "== Media Sorting Plan ==\n\n")
-        
+    
         if simulation:
             results_text.insert(tk.END, "⚠️ SIMULATION MODE - Files will not be moved ⚠️\n\n")
-        
+    
         results_text.insert(tk.END, f"Base folder: {base_folder}\n")
-        results_text.insert(tk.END, f"Primary sort by: {sort_by}\n")
+        results_text.insert(tk.END, f"Using audience categorization: {create_audience_folders}\n")
+        results_text.insert(tk.END, f"Secondary sort by: {sort_by}\n")
         results_text.insert(tk.END, f"Create type folders: {create_type_folders}\n")
         results_text.insert(tk.END, f"Create genre folders: {create_genre_folders}\n\n")
-        
+    
         # Process each file
         sort_ops = []
         unknown_files = []
-        
+    
         for file_path in self.queued_files:
             # Check if we have cached info for this file
             cache_key = file_path.stem
             if cache_key in self.api_cache:
                 media_details = self.api_cache[cache_key]
+            
+                # Determine audience category
+                audience_category = media_details.get_audience_category()
                 
                 # Determine destination path based on sort options
                 dest_path = Path(base_folder)
                 
-                if sort_by == "type" and create_type_folders:
-                    # Sort primarily by media type
+                # UPDATED SORTING LOGIC: Start with audience folders if enabled
+                if create_audience_folders:
+                    dest_path = dest_path / audience_category
+                
+                # Then arrange by type if enabled
+                if create_type_folders:
                     if media_details.type == "tv":
                         dest_path = dest_path / tv_folder
                     elif media_details.type == "movie":
                         dest_path = dest_path / movie_folder
                     else:
                         dest_path = dest_path / self.config['unknown_folder']
-                    
-                    # Then by genre if enabled
-                    if create_genre_folders and media_details.genres:
-                        primary_genre = media_details.genres[0]
-                        dest_path = dest_path / primary_genre
-                    
-                elif sort_by == "genre" and create_genre_folders and media_details.genres:
-                    # Sort primarily by genre
+                
+                # Then sort by other criteria if enabled
+                if sort_by == "genre" and create_genre_folders and media_details.genres:
+                    # Add genre subfolder
                     primary_genre = media_details.genres[0]
                     dest_path = dest_path / primary_genre
-                    
-                    # Then by media type if enabled
-                    if create_type_folders:
-                        if media_details.type == "tv":
-                            dest_path = dest_path / tv_folder
-                        elif media_details.type == "movie":
-                            dest_path = dest_path / movie_folder
-                
                 elif sort_by == "year" and media_details.year:
-                    # Sort primarily by year
+                    # Add year subfolder
                     dest_path = dest_path / media_details.year
-                    
-                    # Then by type if enabled
-                    if create_type_folders:
-                        if media_details.type == "tv":
-                            dest_path = dest_path / tv_folder
-                        elif media_details.type == "movie":
-                            dest_path = dest_path / movie_folder
-                    
-                    # Then by genre if enabled
-                    if create_genre_folders and media_details.genres:
-                        primary_genre = media_details.genres[0]
-                        dest_path = dest_path / primary_genre
-                
-                else:
-                    # Fallback sort structure
-                    if create_type_folders:
-                        if media_details.type == "tv":
-                            dest_path = dest_path / tv_folder
-                        elif media_details.type == "movie":
-                            dest_path = dest_path / movie_folder
-                        else:
-                            dest_path = dest_path / self.config['unknown_folder']
                 
                 # Create the final path including the filename
                 # Get the final filename based on whether renaming is enabled
@@ -1093,34 +1180,235 @@ class MediaSorterModule(BaseModule):
                     final_name = f"{new_name}{file_path.suffix}"
                 else:
                     final_name = file_path.name
-                
+            
                 final_dest = dest_path / final_name
-                
+            
                 # Add to sort operations
                 sort_ops.append((file_path, final_dest))
-                
+            
                 # Show in results
                 results_text.insert(tk.END, f"File: {file_path.name}\n")
                 results_text.insert(tk.END, f"  Title: {media_details.title}\n")
                 results_text.insert(tk.END, f"  Type: {media_details.type}\n")
+                results_text.insert(tk.END, f"  Audience: {audience_category}\n")
                 results_text.insert(tk.END, f"  Genres: {', '.join(media_details.genres)}\n")
+                if media_details.content_rating:
+                    results_text.insert(tk.END, f"  Rating: {media_details.content_rating}\n")
                 results_text.insert(tk.END, f"  → {final_dest}\n\n")
-            
+        
             else:
                 # No info for this file
                 unknown_files.append(file_path)
                 results_text.insert(tk.END, f"⚠️ No media info for: {file_path.name}\n")
+    
+        # Report summary
+        results_text.insert(tk.END, f"\n== Summary ==\n")
+        results_text.insert(tk.END, f"Files to sort: {len(sort_ops)}\n")
+        results_text.insert(tk.END, f"Unknown files: {len(unknown_files)}\n")
+    
+        # Add buttons to execute or cancel
+        button_frame = ttk.Frame(results_window)
+        button_frame.pack(fill='x', padx=10, pady=10)
+    
+        # Add a button to execute the sorting operations
+        ttk.Button(
+            button_frame,
+            text="Execute Sorting Plan" if not simulation else "Run Simulation",
+            command=lambda: self._execute_sort_plan(sort_ops, simulation, results_window, results_text)
+        ).pack(side='left', padx=5)
+    
+        ttk.Button(
+            button_frame,
+            text="Cancel",
+            command=results_window.destroy
+        ).pack(side='right', padx=5)
+    
+        # Add analyze unknown files button if needed
+        if unknown_files:
+            ttk.Button(
+                button_frame,
+                text="Analyze Unknown Files",
+                command=lambda: self._retry_failed_files(unknown_files, results_window)
+            ).pack(side='left', padx=5)
+
+    def _execute_sort_plan(self, sort_ops, simulation, results_window, results_text):
+        """Execute the sorting plan by copying/moving files to their destinations."""
+        if not self.file_mover:
+            messagebox.showerror("Error", "FileMover module is not available.")
+            return
+    
+        # Create a progress dialog
+        progress_window = tk.Toplevel()
+        progress_window.title("Executing Sort Plan")
+        progress_window.geometry("400x200")
+        progress_window.transient(results_window)
+        progress_window.grab_set()
+    
+        # Add progress indicators
+        ttk.Label(progress_window, text="Processing files...").pack(pady=10)
+        progress_var = tk.DoubleVar()
+        progress_bar = ttk.Progressbar(
+            progress_window, 
+            variable=progress_var,
+            maximum=len(sort_ops),
+            length=300
+        )
+        progress_bar.pack(pady=10)
+    
+        current_file_var = tk.StringVar(value="Preparing...")
+        ttk.Label(progress_window, textvariable=current_file_var).pack(pady=5)
+    
+        status_var = tk.StringVar(value="")
+        status_label = ttk.Label(progress_window, textvariable=status_var)
+        status_label.pack(pady=5)
+    
+        # Add a log text area
+        log_frame = ttk.Frame(progress_window)
+        log_frame.pack(fill='both', expand=True, padx=10, pady=5)
+    
+        log_text = tk.Text(log_frame, height=5, wrap=tk.WORD)
+        log_scrollbar = ttk.Scrollbar(log_frame, command=log_text.yview)
+        log_text.configure(yscrollcommand=log_scrollbar.set)
+    
+        log_text.pack(side='left', fill='both', expand=True)
+        log_scrollbar.pack(side='right', fill='y')
+    
+        # Update the UI before starting
+        progress_window.update()
+    
+        # Get file mover operation type (copy or move)
+        operation_type = self.file_mover.operation_var.get() if hasattr(self.file_mover, 'operation_var') else "copy"
+    
+        # Function to add log message
+        def add_log(message):
+            log_text.insert(tk.END, f"{message}\n")
+            log_text.see(tk.END)
+            self.logger.info(message)
+    
+        # Process files
+        success_count = 0
+        failed_count = 0
+    
+        try:
+            # Process each operation
+            for i, (source_path, dest_path) in enumerate(sort_ops):
+                try:
+                    # Update progress
+                    progress_var.set(i)
+                    current_file_var.set(f"Processing: {source_path.name}")
+                    status_var.set(f"File {i+1} of {len(sort_ops)}")
+                    progress_window.update()
+                
+                    if simulation:
+                        # In simulation mode, just log what would happen
+                        log_msg = f"SIMULATION: Would {operation_type} '{source_path.name}' to '{dest_path}'"
+                        add_log(log_msg)
+                        success_count += 1
+                        # Small delay to see progress in simulation
+                        progress_window.after(100)
+                    else:
+                        # Ensure destination directory exists
+                        dest_path.parent.mkdir(parents=True, exist_ok=True)
+                    
+                        # Execute the operation
+                        if operation_type == "copy":
+                            import shutil
+                            # Check if destination exists
+                            if dest_path.exists():
+                                add_log(f"Warning: Destination file already exists: {dest_path}")
+                                # Modify filename to avoid overwriting
+                                stem = dest_path.stem
+                                suffix = dest_path.suffix
+                                counter = 1
+                                while dest_path.exists():
+                                    dest_path = dest_path.with_name(f"{stem} ({counter}){suffix}")
+                                    counter += 1
+                                add_log(f"Using alternative name: {dest_path.name}")
+                        
+                            # Copy the file
+                            shutil.copy2(source_path, dest_path)
+                            add_log(f"Copied: {source_path.name} -> {dest_path}")
+                        else:  # move
+                            # Check if destination exists
+                            if dest_path.exists():
+                                add_log(f"Warning: Destination file already exists: {dest_path}")
+                                # Modify filename to avoid overwriting
+                                stem = dest_path.stem
+                                suffix = dest_path.suffix
+                                counter = 1
+                                while dest_path.exists():
+                                    dest_path = dest_path.with_name(f"{stem} ({counter}){suffix}")
+                                    counter += 1
+                                add_log(f"Using alternative name: {dest_path.name}")
+                        
+                            # Move the file
+                            import shutil
+                            shutil.move(source_path, dest_path)
+                            add_log(f"Moved: {source_path.name} -> {dest_path}")
+                    
+                        success_count += 1
+            
+                except Exception as e:
+                    add_log(f"Error processing {source_path.name}: {str(e)}")
+                    failed_count += 1
+                    import traceback
+                    self.logger.error(traceback.format_exc())
+    
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred during sorting: {str(e)}")
+    
+        finally:
+            # Update progress to show completion
+            progress_var.set(len(sort_ops))
+            current_file_var.set("Completed")
+            status_var.set(f"Success: {success_count}, Failed: {failed_count}")
+        
+            # Update the results window with completion message
+            results_text.insert(tk.END, "\n== Execution Complete ==\n")
+            results_text.insert(tk.END, f"Files processed: {success_count}\n")
+            results_text.insert(tk.END, f"Failed: {failed_count}\n")
+            if simulation:
+                results_text.insert(tk.END, "NOTE: This was a simulation. No files were actually moved.\n")
+        
+            # Add a close button to the progress window
+            ttk.Button(
+                progress_window,
+                text="Close",
+                command=progress_window.destroy
+            ).pack(pady=10)
+        
+            # If this was a real operation (not simulation) and it moved files, clear the queue
+            if not simulation and operation_type == "move" and success_count > 0:
+                # Only remove successfully processed files
+                processed_files = set(op[0] for op in sort_ops[:success_count])
+                self.queued_files = [f for f in self.queued_files if f not in processed_files]
+                self._update_queue_display()
 
     def _fetch_media_info(self, title: str, year: Optional[str], is_tv: bool) -> Optional[MediaDetails]:
         """Fetch media information from the selected API."""
         api_type = self.api_type_var.get()
         api_key = self.api_key_var.get()
 
+        # Check if we've reached the daily limit for the chosen API
+        if self.api_tracker.is_limit_reached(api_type):
+            # Switch to alternate API if primary is at limit
+            alternate_api = "tmdb" if api_type == "omdb" else "omdb"
+            if not self.api_tracker.is_limit_reached(alternate_api):
+                self.logger.warning(f"{api_type.upper()} daily limit reached, switching to {alternate_api.upper()}")
+                api_type = alternate_api
+                api_key = self.TMDB_API_KEY if api_type == "tmdb" else self.OMDB_API_KEY
+            else:
+                self.logger.error("Daily limits reached for both APIs")
+                return None
+
         if api_type == "tmdb":
             # The Movie Database API
             search_type = "tv" if is_tv else "movie"
             
             try:
+                # Record API call attempt
+                self.api_tracker.record_api_call("tmdb", success=False)  # Will update to success if it works
+            
                 # Search for the media
                 search_params = {
                     "api_key": api_key,
@@ -1158,10 +1446,11 @@ class MediaSorterModule(BaseModule):
                     # Get detailed info including genres
                     details_response = requests.get(
                         f"https://api.themoviedb.org/3/{search_type}/{result['id']}",
-                        params={"api_key": api_key}
+                        params={"api_key": api_key, "append_to_response": "release_dates,content_ratings"}
                     )
                     
                     if details_response.ok:
+                        self.api_tracker.record_api_call("tmdb", success=True)
                         details = details_response.json()
                         
                         # Extract information
@@ -1175,11 +1464,35 @@ class MediaSorterModule(BaseModule):
                         # Get genres
                         genres = [genre["name"] for genre in details.get("genres", [])]
                         
+                        # Try to get content rating
+                        content_rating = None
+                        
+                        # For movies, check release_dates
+                        if search_type == "movie" and "release_dates" in details:
+                            # Look for US rating first
+                            for country in details["release_dates"].get("results", []):
+                                if country.get("iso_3166_1") == "US":
+                                    for release in country.get("release_dates", []):
+                                        if release.get("certification"):
+                                            content_rating = release["certification"]
+                                            break
+                                    if content_rating:
+                                        break
+                        
+                        # For TV shows, check content_ratings
+                        elif search_type == "tv" and "content_ratings" in details:
+                            # Look for US rating first
+                            for rating in details["content_ratings"].get("results", []):
+                                if rating.get("iso_3166_1") == "US":
+                                    content_rating = rating.get("rating")
+                                    break
+                        
                         return MediaDetails(
                             title=title,
                             year=year_str,
                             genres=genres,
-                            type="tv" if search_type == "tv" else "movie"
+                            type="tv" if search_type == "tv" else "movie",
+                            content_rating=content_rating
                         )
             
             except Exception as e:
@@ -1189,6 +1502,9 @@ class MediaSorterModule(BaseModule):
         elif api_type == "omdb":
             # OMDb API (Open Movie Database)
             try:
+                # Record API call attempt
+                self.api_tracker.record_api_call("omdb", success=False)  # Will update to success if it works
+            
                 # Prepare search parameters
                 search_params = {
                     "t": title,
@@ -1218,12 +1534,18 @@ class MediaSorterModule(BaseModule):
                     data = response.json()
                     
                     if data.get("Response") == "True":
+                        # If successful, update API call status
+                        self.api_tracker.record_api_call("omdb", success=True)
+
                         # If we find a result, extract the info
                         title = data.get("Title", "Unknown")
                         year_str = data.get("Year", "").split("–")[0]  # Handle TV show ranges like "2005–2013"
                         
                         # Parse genres
                         genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
+                        
+                        # Get content rating
+                        content_rating = data.get("Rated", None)
                         
                         # Determine type
                         media_type = "tv" if data.get("Type") == "series" else "movie"
@@ -1232,7 +1554,8 @@ class MediaSorterModule(BaseModule):
                             title=title,
                             year=year_str,
                             genres=genres,
-                            type=media_type
+                            type=media_type,
+                            content_rating=content_rating
                         )
                     
                     # If search with specified type fails, try without type
@@ -1248,17 +1571,20 @@ class MediaSorterModule(BaseModule):
                             data = response.json()
                             
                             if data.get("Response") == "True":
+
                                 # Extract info
                                 title = data.get("Title", "Unknown")
                                 year_str = data.get("Year", "").split("–")[0]
                                 genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
                                 media_type = "tv" if data.get("Type") == "series" else "movie"
+                                content_rating = data.get("Rated", None)
                                 
                                 return MediaDetails(
                                     title=title,
                                     year=year_str,
                                     genres=genres,
-                                    type=media_type
+                                    type=media_type,
+                                    content_rating=content_rating
                                 )
             
             except Exception as e:
