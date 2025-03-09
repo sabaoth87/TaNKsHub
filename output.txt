@@ -1,223 +1,1129 @@
-2025-02-25 06:59:26,657 - __main__ - DEBUG - Starting TaNKsHub initialization
-2025-02-25 06:59:26,728 - __main__ - DEBUG - Creating FileMoverModule instance
-2025-02-25 06:59:26,728 - __main__ - DEBUG - Creating FileNameEditorModule instance
-2025-02-25 06:59:26,729 - __main__ - DEBUG - Creating MediaSorterModule instance
-2025-02-25 06:59:26,730 - tankhub.modules.media_sorter - INFO - Loaded 0 media items from cache
-2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileNameEditor to FileMover: True
-2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileMover to MediaSorter: True
-2025-02-25 06:59:26,730 - __main__ - DEBUG - Connected FileNameEditor to MediaSorter: True
-2025-02-25 06:59:26,733 - __main__ - DEBUG - Test parse: Test.Movie.2021.mp4 -> Test Movie (2021).mp4
-2025-02-25 06:59:26,734 - __main__ - DEBUG - Creating GUI
-2025-02-25 06:59:26,734 - tankhub.core.module_manager - INFO - Loaded module configuration
-2025-02-25 06:59:26,743 - tankhub.gui.main_window - DEBUG - Loaded 4 module icons
-2025-02-25 06:59:26,773 - tankhub.gui.main_window - DEBUG - Setting up modules tab
-2025-02-25 06:59:26,775 - tankhub.gui.main_window - DEBUG - Found 0 total modules
-2025-02-25 06:59:26,775 - tankhub.gui.main_window - DEBUG - No modules found, adding placeholder tab
-2025-02-25 06:59:26,781 - __main__ - DEBUG - Registering modules
-2025-02-25 06:59:26,782 - tankhub.core.module_manager - DEBUG - Registered module: File Mover
-2025-02-25 06:59:26,782 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover']
-2025-02-25 06:59:26,783 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:26,783 - tankhub.core.module_manager - DEBUG - Registered module: File Name Editor
-2025-02-25 06:59:26,783 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor']
-2025-02-25 06:59:26,785 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:26,785 - tankhub.core.module_manager - DEBUG - Registered module: Media Sorter
-2025-02-25 06:59:26,785 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor', 'Media Sorter']
-2025-02-25 06:59:26,787 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:26,787 - __main__ - DEBUG - Enabled modules: ['File Mover', 'File Name Editor', 'Media Sorter']
-2025-02-25 06:59:26,788 - __main__ - INFO - TaNKsHub started
-2025-02-25 06:59:26,894 - __main__ - DEBUG - Refreshing modules tab
-2025-02-25 06:59:26,894 - tankhub.gui.main_window - DEBUG - Setting up modules tab
-2025-02-25 06:59:26,933 - tankhub.gui.main_window - DEBUG - Found 3 total modules
-2025-02-25 06:59:26,933 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Mover
-2025-02-25 06:59:26,947 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Mover
-2025-02-25 06:59:26,947 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Name Editor
-2025-02-25 06:59:26,956 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Name Editor
-2025-02-25 06:59:26,956 - tankhub.gui.main_window - DEBUG - Creating tab for module: Media Sorter
-2025-02-25 06:59:26,972 - tankhub.gui.main_window - DEBUG - Successfully created tab for Media Sorter
-2025-02-25 06:59:32,385 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:32,425 - tankhub.gui.main_window - INFO - Module File Mover disabled
-2025-02-25 06:59:37,431 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:37,470 - tankhub.gui.main_window - INFO - Module File Name Editor disabled
-2025-02-25 06:59:38,323 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 06:59:38,360 - tankhub.gui.main_window - INFO - Module File Name Editor enabled
-2025-02-25 06:59:49,565 - tankhub.modules.file_mover - DEBUG - Rename setting changed to: True
-2025-02-25 07:00:28,889 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 with File Name Editor
-2025-02-25 07:00:28,890 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 with Media Sorter
-2025-02-25 07:00:28,890 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 with File Name Editor
-2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 with Media Sorter
-2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Name Editor
-2025-02-25 07:00:28,891 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with Media Sorter
-2025-02-25 07:00:52,708 - tankhub.modules.media_sorter - INFO - Renamed: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
-2025-02-25 07:00:52,709 - tankhub.modules.media_sorter - INFO - Renamed: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
-2025-02-25 07:00:52,711 - tankhub.modules.media_sorter - INFO - Renamed: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
-2025-02-25 07:01:02,228 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
-2025-02-25 07:01:02,433 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=24%20Little%20Hours&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
-2025-02-25 07:01:02,441 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
-2025-02-25 07:01:02,634 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=6%20Underground&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
-2025-02-25 07:01:02,650 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
-2025-02-25 07:01:02,789 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=21%20Bridges&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
-2025-02-25 07:01:02,791 - tankhub.modules.media_sorter - INFO - Saved 3 media items to cache
-2025-02-25 07:01:46,611 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:01:46,612 - tankhub.modules.file_mover - DEBUG - Processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT] for renaming
-2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Generated new name: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
-2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Created operation with source=24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4, dest=24 Little Hours (2020).mp4, rename=True
-2025-02-25 07:01:46,613 - tankhub.modules.file_mover - DEBUG - Processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT] for renaming
-2025-02-25 07:01:46,614 - tankhub.modules.file_mover - DEBUG - Generated new name: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
-2025-02-25 07:01:46,614 - tankhub.modules.file_mover - DEBUG - Created operation with source=6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4, dest=6 Underground (2019).mp4, rename=True
-2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX] for renaming
-2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Generated new name: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
-2025-02-25 07:01:46,615 - tankhub.modules.file_mover - DEBUG - Created operation with source=21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4, dest=21 Bridges (2019).mp4, rename=True
-2025-02-25 07:01:46,616 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
-2025-02-25 07:01:46,617 - tankhub.core.module_manager - INFO - Saved module configuration
-2025-02-25 07:01:46,662 - tankhub.gui.main_window - INFO - Module File Mover enabled
-2025-02-25 07:01:52,134 - tankhub.modules.media_sorter - INFO - Using cached data for 24 Little Hours (2020).mp4
-2025-02-25 07:01:52,137 - tankhub.modules.media_sorter - INFO - Using cached data for 6 Underground (2019).mp4
-2025-02-25 07:01:52,139 - tankhub.modules.media_sorter - INFO - Using cached data for 21 Bridges (2019).mp4
-2025-02-25 07:01:52,140 - tankhub.modules.media_sorter - INFO - Saved 3 media items to cache
-2025-02-25 07:03:53,885 - tankhub.modules.file_mover - DEBUG - Processing queue with rename_enabled=True
-2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:03:53,886 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:03:53,887 - tankhub.modules.file_mover - DEBUG - Processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT] for renaming
-2025-02-25 07:03:53,887 - tankhub.modules.file_mover - DEBUG - Generated new name: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4
-2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Created operation with source=24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4, dest=24 Little Hours (2020).mp4, rename=True
-2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT] for renaming
-2025-02-25 07:03:53,888 - tankhub.modules.file_mover - DEBUG - Generated new name: 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> 6 Underground (2019).mp4
-2025-02-25 07:03:53,889 - tankhub.modules.file_mover - DEBUG - Created operation with source=6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4, dest=6 Underground (2019).mp4, rename=True
-2025-02-25 07:03:53,889 - tankhub.modules.file_mover - DEBUG - Processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX] for renaming
-2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Generated new name: 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> 21 Bridges (2019).mp4
-2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Created operation with source=21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4, dest=21 Bridges (2019).mp4, rename=True
-2025-02-25 07:03:53,890 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
-2025-02-25 07:03:53,891 - tankhub.modules.file_mover - DEBUG - Sample operation before processing: 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> 24 Little Hours (2020).mp4, rename=True
-2025-02-25 07:03:53,892 - tankhub.modules.file_mover - DEBUG - Starting to process queue
-2025-02-25 07:03:53,893 - tankhub.modules.file_mover - DEBUG - Queue size: 3
-2025-02-25 07:03:53,893 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4 -> F:\Media\24 Little Hours (2020).mp4
-2025-02-25 07:03:53,894 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
-2025-02-25 07:03:53,895 - tankhub.modules.file_mover - ERROR - Error processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
-2025-02-25 07:03:53,895 - tankhub.modules.file_mover - INFO - Error processing 24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
-2025-02-25 07:03:53,904 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
-    os.rename(src, real_dst)
-FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4' -> 'F:\\Media\\24 Little Hours (2020).mp4'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
-    shutil.move(operation.source, operation.dest)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
-    copy_function(src, real_dst)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
-    copyfile(src, dst, follow_symlinks=follow_symlinks)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
-    with open(src, 'rb') as fsrc:
-FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\24.Little.Hours.2020.720p.WEBRip.x264-[YTS.LT].mp4'
-
-2025-02-25 07:03:53,904 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> F:\Media\6 Underground (2019).mp4
-2025-02-25 07:03:53,906 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
-2025-02-25 07:03:53,907 - tankhub.modules.file_mover - ERROR - Error processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
-2025-02-25 07:03:53,907 - tankhub.modules.file_mover - INFO - Error processing 6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
-2025-02-25 07:03:53,908 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
-    os.rename(src, real_dst)
-FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4' -> 'F:\\Media\\6 Underground (2019).mp4'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
-    shutil.move(operation.source, operation.dest)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
-    copy_function(src, real_dst)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
-    copyfile(src, dst, follow_symlinks=follow_symlinks)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
-    with open(src, 'rb') as fsrc:
-FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\6.Underground.2019.720p.WEBRip.x264-[YTS.LT].mp4'
-
-2025-02-25 07:03:53,908 - tankhub.modules.file_mover - DEBUG - Processing operation: I:\Video\Movies\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> F:\Media\21 Bridges (2019).mp4
-2025-02-25 07:03:53,909 - tankhub.modules.file_mover - DEBUG - Operation type: move, Rename: True
-2025-02-25 07:03:53,910 - tankhub.modules.file_mover - ERROR - Error processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
-2025-02-25 07:03:53,910 - tankhub.modules.file_mover - INFO - Error processing 21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
-2025-02-25 07:03:53,910 - tankhub.modules.file_mover - ERROR - Traceback (most recent call last):
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 566, in move
-    os.rename(src, real_dst)
-FileNotFoundError: [WinError 2] The system cannot find the file specified: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4' -> 'F:\\Media\\21 Bridges (2019).mp4'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Xeno\source\repos\TaNKsHub\TaNKsHub\tankhub\modules\file_mover.py", line 444, in _process_queue
-    shutil.move(operation.source, operation.dest)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 580, in move
-    copy_function(src, real_dst)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 266, in copy2
-    copyfile(src, dst, follow_symlinks=follow_symlinks)
-  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\shutil.py", line 120, in copyfile
-    with open(src, 'rb') as fsrc:
-FileNotFoundError: [Errno 2] No such file or directory: 'I:\\Video\\Movies\\21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
-
+2025-02-27 11:57:07,618 - __main__ - DEBUG - Starting TaNKsHub initialization
+2025-02-27 11:57:07,769 - __main__ - DEBUG - Creating FileMoverModule instance
+2025-02-27 11:57:07,770 - __main__ - DEBUG - Creating FileNameEditorModule instance
+2025-02-27 11:57:07,770 - __main__ - DEBUG - Creating MediaSorterModule instance
+2025-02-27 11:57:07,771 - tankhub.core.api_tracker - INFO - Loaded API usage statistics
+2025-02-27 11:57:07,774 - tankhub.modules.media_sorter - INFO - Loaded 308 media items from cache
+2025-02-27 11:57:07,774 - __main__ - DEBUG - Connected FileNameEditor to FileMover: True
+2025-02-27 11:57:07,775 - __main__ - DEBUG - Connected FileMover to MediaSorter: True
+2025-02-27 11:57:07,775 - __main__ - DEBUG - Connected FileNameEditor to MediaSorter: True
+2025-02-27 11:57:07,775 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Test.Movie.2021
+2025-02-27 11:57:07,777 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 11:57:07,780 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Test Movie', year='2021', season=None, episode=None)
+2025-02-27 11:57:07,780 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Test Movie (2021)
+2025-02-27 11:57:07,780 - __main__ - DEBUG - Test parse: Test.Movie.2021.mp4 -> Test Movie (2021).mp4
+2025-02-27 11:57:07,781 - __main__ - DEBUG - Creating GUI
+2025-02-27 11:57:07,782 - tankhub.core.module_manager - INFO - Loaded module configuration
+2025-02-27 11:57:07,790 - tankhub.gui.main_window - DEBUG - Loaded 4 module icons
+2025-02-27 11:57:07,802 - tankhub.core.api_tracker - INFO - Loaded API usage statistics
+2025-02-27 11:57:07,811 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 11:57:07,812 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 11:57:07,852 - tankhub.gui.main_window - DEBUG - Setting up modules tab
+2025-02-27 11:57:07,854 - tankhub.gui.main_window - DEBUG - Found 0 total modules
+2025-02-27 11:57:07,860 - tankhub.gui.main_window - DEBUG - No modules found, adding placeholder tab
+2025-02-27 11:57:07,868 - __main__ - DEBUG - Registering modules
+2025-02-27 11:57:07,868 - tankhub.core.module_manager - DEBUG - Registered module: File Mover
+2025-02-27 11:57:07,868 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover']
+2025-02-27 11:57:07,870 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-27 11:57:07,870 - tankhub.core.module_manager - DEBUG - Registered module: File Name Editor
+2025-02-27 11:57:07,870 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor']
+2025-02-27 11:57:07,871 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-27 11:57:07,872 - tankhub.core.module_manager - DEBUG - Registered module: Media Sorter
+2025-02-27 11:57:07,872 - tankhub.core.module_manager - DEBUG - Current modules: ['File Mover', 'File Name Editor', 'Media Sorter']
+2025-02-27 11:57:07,874 - tankhub.core.module_manager - INFO - Saved module configuration
+2025-02-27 11:57:07,874 - __main__ - DEBUG - Enabled modules: ['File Mover', 'File Name Editor', 'Media Sorter']
+2025-02-27 11:57:07,874 - __main__ - INFO - TaNKsHub started
+2025-02-27 11:57:07,986 - __main__ - DEBUG - Refreshing modules tab
+2025-02-27 11:57:07,986 - tankhub.gui.main_window - DEBUG - Setting up modules tab
+2025-02-27 11:57:08,030 - tankhub.gui.main_window - DEBUG - Found 3 total modules
+2025-02-27 11:57:08,031 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Mover
+2025-02-27 11:57:08,046 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Mover
+2025-02-27 11:57:08,047 - tankhub.gui.main_window - DEBUG - Creating tab for module: File Name Editor
+2025-02-27 11:57:08,055 - tankhub.gui.main_window - DEBUG - Successfully created tab for File Name Editor
+2025-02-27 11:57:08,055 - tankhub.gui.main_window - DEBUG - Creating tab for module: Media Sorter
+2025-02-27 11:57:08,072 - tankhub.gui.main_window - DEBUG - Successfully created tab for Media Sorter
+2025-02-27 11:59:55,123 - tankhub.gui.main_window - DEBUG - Raw drop data: 'F:/Video/Movies/Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv F:/Video/Movies/Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv F:/Video/Movies/The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv {F:/Video/Movies/Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4} {F:/Video/Movies/Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4} F:/Video/Movies/Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 {F:/Video/Movies/Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4} F:/Video/Movies/Brave.2012.1080p.BRrip.x264.YIFY.mp4 {F:/Video/Movies/Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4} {F:/Video/Movies/Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4} F:/Video/Movies/Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 {F:/Video/Movies/Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4} F:/Video/Movies/Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 F:/Video/Movies/Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 {F:/Video/Movies/How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4} F:/Video/Movies/Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 F:/Video/Movies/John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 F:/Video/Movies/Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 F:/Video/Movies/Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 {F:/Video/Movies/Madagascar 2005.1080p.BrRip.x264.YIFY.mp4} F:/Video/Movies/Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 F:/Video/Movies/Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 {F:/Video/Movies/Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4} F:/Video/Movies/Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 F:/Video/Movies/No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 F:/Video/Movies/Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 F:/Video/Movies/Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 {F:/Video/Movies/Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4} {F:/Video/Movies/The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4} F:/Video/Movies/The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 F:/Video/Movies/The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 {F:/Video/Movies/The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4} {F:/Video/Movies/The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4} {F:/Video/Movies/The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4} {F:/Video/Movies/The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4} F:/Video/Movies/The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 {F:/Video/Movies/The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4} {F:/Video/Movies/The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4} {F:/Video/Movies/The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4} F:/Video/Movies/Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 F:/Video/Movies/Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 {F:/Video/Movies/Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4} F:/Video/Movies/Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 {F:/Video/Movies/Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4}'
+2025-02-27 11:59:55,124 - tankhub.gui.main_window - DEBUG - Detected Windows-style drop (curly braces)
+2025-02-27 11:59:55,124 - tankhub.gui.main_window - DEBUG - Multiple paths with potential braces
+2025-02-27 11:59:55,126 - tankhub.gui.main_window - DEBUG - Parsed 56 files from drop data:
+2025-02-27 11:59:55,127 - tankhub.gui.main_window - DEBUG -   1: F:/Video/Movies/Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,127 - tankhub.gui.main_window - DEBUG -   2: F:/Video/Movies/Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,127 - tankhub.gui.main_window - DEBUG -   3: F:/Video/Movies/Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,127 - tankhub.gui.main_window - DEBUG -   4: F:/Video/Movies/Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,128 - tankhub.gui.main_window - DEBUG -   5: F:/Video/Movies/Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,128 - tankhub.gui.main_window - DEBUG -   6: F:/Video/Movies/Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,128 - tankhub.gui.main_window - DEBUG -   7: F:/Video/Movies/Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,129 - tankhub.gui.main_window - DEBUG -   8: F:/Video/Movies/Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,129 - tankhub.gui.main_window - DEBUG -   9: F:/Video/Movies/Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,129 - tankhub.gui.main_window - DEBUG -   10: F:/Video/Movies/The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,129 - tankhub.gui.main_window - DEBUG -   11: F:/Video/Movies/The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,130 - tankhub.gui.main_window - DEBUG -   12: F:/Video/Movies/The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,130 - tankhub.gui.main_window - DEBUG -   13: F:/Video/Movies/The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,130 - tankhub.gui.main_window - DEBUG -   14: F:/Video/Movies/The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,131 - tankhub.gui.main_window - DEBUG -   15: F:/Video/Movies/The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,131 - tankhub.gui.main_window - DEBUG -   16: F:/Video/Movies/Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,131 - tankhub.gui.main_window - DEBUG -   17: F:/Video/Movies/Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,131 - tankhub.gui.main_window - DEBUG -   18: F:/Video/Movies/Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,132 - tankhub.gui.main_window - DEBUG -   19: F:/Video/Movies/Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,132 - tankhub.gui.main_window - DEBUG -   20: F:/Video/Movies/Brave.2012.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,132 - tankhub.gui.main_window - DEBUG -   21: F:/Video/Movies/Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:55,132 - tankhub.gui.main_window - DEBUG -   22: F:/Video/Movies/Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,132 - tankhub.gui.main_window - DEBUG -   23: F:/Video/Movies/Encanto.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,133 - tankhub.gui.main_window - DEBUG -   24: F:/Video/Movies/Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:55,133 - tankhub.gui.main_window - DEBUG -   25: F:/Video/Movies/Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,133 - tankhub.gui.main_window - DEBUG -   26: F:/Video/Movies/Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,133 - tankhub.gui.main_window - DEBUG -   27: F:/Video/Movies/How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,134 - tankhub.gui.main_window - DEBUG -   28: F:/Video/Movies/Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,134 - tankhub.gui.main_window - DEBUG -   29: F:/Video/Movies/John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,134 - tankhub.gui.main_window - DEBUG -   30: F:/Video/Movies/Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,135 - tankhub.gui.main_window - DEBUG -   31: F:/Video/Movies/Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,135 - tankhub.gui.main_window - DEBUG -   32: F:/Video/Movies/Madagascar 2005.1080p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,135 - tankhub.gui.main_window - DEBUG -   33: F:/Video/Movies/Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,135 - tankhub.gui.main_window - DEBUG -   34: F:/Video/Movies/Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,135 - tankhub.gui.main_window - DEBUG -   35: F:/Video/Movies/Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,137 - tankhub.gui.main_window - DEBUG -   36: F:/Video/Movies/Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,137 - tankhub.gui.main_window - DEBUG -   37: F:/Video/Movies/No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,137 - tankhub.gui.main_window - DEBUG -   38: F:/Video/Movies/Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,137 - tankhub.gui.main_window - DEBUG -   39: F:/Video/Movies/Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,138 - tankhub.gui.main_window - DEBUG -   40: F:/Video/Movies/Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,138 - tankhub.gui.main_window - DEBUG -   41: F:/Video/Movies/The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4
+2025-02-27 11:59:55,138 - tankhub.gui.main_window - DEBUG -   42: F:/Video/Movies/The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4
+2025-02-27 11:59:55,138 - tankhub.gui.main_window - DEBUG -   43: F:/Video/Movies/The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,139 - tankhub.gui.main_window - DEBUG -   44: F:/Video/Movies/The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,139 - tankhub.gui.main_window - DEBUG -   45: F:/Video/Movies/The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4
+2025-02-27 11:59:55,139 - tankhub.gui.main_window - DEBUG -   46: F:/Video/Movies/The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:55,139 - tankhub.gui.main_window - DEBUG -   47: F:/Video/Movies/The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,140 - tankhub.gui.main_window - DEBUG -   48: F:/Video/Movies/The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,140 - tankhub.gui.main_window - DEBUG -   49: F:/Video/Movies/The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,140 - tankhub.gui.main_window - DEBUG -   50: F:/Video/Movies/The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4
+2025-02-27 11:59:55,141 - tankhub.gui.main_window - DEBUG -   51: F:/Video/Movies/The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4
+2025-02-27 11:59:55,141 - tankhub.gui.main_window - DEBUG -   52: F:/Video/Movies/Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,141 - tankhub.gui.main_window - DEBUG -   53: F:/Video/Movies/Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,142 - tankhub.gui.main_window - DEBUG -   54: F:/Video/Movies/Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4
+2025-02-27 11:59:55,142 - tankhub.gui.main_window - DEBUG -   55: F:/Video/Movies/Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,142 - tankhub.gui.main_window - DEBUG -   56: F:/Video/Movies/Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,143 - tankhub.gui.main_window - DEBUG - Final cleaned file list: 56 files
+2025-02-27 11:59:55,733 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,734 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,735 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,736 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,737 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,739 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,744 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,744 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,745 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,747 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,748 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,752 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,761 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,762 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,763 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,764 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,765 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,765 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,766 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,767 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,767 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,770 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,771 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,772 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,773 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,774 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,774 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,775 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,777 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,777 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,778 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,780 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,780 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,781 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,783 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,783 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,784 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,786 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,787 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,788 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,790 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,790 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,792 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv (exists: True)
+2025-02-27 11:59:55,794 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+2025-02-27 11:59:55,795 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Mover
+2025-02-27 11:59:55,796 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:55,799 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,799 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:55,800 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 (exists: True)
+2025-02-27 11:59:55,802 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,803 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Mover
+2025-02-27 11:59:55,805 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,807 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,808 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,809 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 (exists: True)
+2025-02-27 11:59:55,811 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,812 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Mover
+2025-02-27 11:59:55,813 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Brave.2012.1080p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,817 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Brave.2012.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,817 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Brave.2012.1080p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,818 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4 (exists: True)
+2025-02-27 11:59:55,821 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:55,822 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4 with File Mover
+2025-02-27 11:59:55,823 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:55,826 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,827 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:55,828 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,831 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Encanto.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,834 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,836 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4 (exists: True)
+2025-02-27 11:59:55,839 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:55,841 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4 with File Mover
+2025-02-27 11:59:55,844 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,848 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,850 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,855 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,860 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,865 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,867 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:55,870 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,871 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:55,872 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,876 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,877 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,878 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,882 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,882 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,884 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,888 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,888 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,891 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,895 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,896 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,898 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Madagascar 2005.1080p.BrRip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,902 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Madagascar 2005.1080p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,902 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar 2005.1080p.BrRip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,904 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,909 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,910 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,911 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,915 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:55,916 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,917 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:55,922 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,922 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:55,923 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,927 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4
+2025-02-27 11:59:55,928 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,929 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,935 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,935 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,936 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:55,942 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:55,946 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:55,948 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,954 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,957 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,959 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 (exists: True)
+2025-02-27 11:59:55,965 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+2025-02-27 11:59:55,969 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Mover
+2025-02-27 11:59:55,970 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4 (exists: True)
+2025-02-27 11:59:55,975 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4
+2025-02-27 11:59:55,975 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4 with File Mover
+2025-02-27 11:59:55,976 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,981 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4
+2025-02-27 11:59:55,981 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,982 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 (exists: True)
+2025-02-27 11:59:55,988 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4
+2025-02-27 11:59:55,989 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 with File Mover
+2025-02-27 11:59:55,989 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:55,995 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:55,995 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:55,996 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4 (exists: True)
+2025-02-27 11:59:56,001 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4
+2025-02-27 11:59:56,002 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Mover
+2025-02-27 11:59:56,004 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4 (exists: True)
+2025-02-27 11:59:56,010 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4
+2025-02-27 11:59:56,010 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4 with File Mover
+2025-02-27 11:59:56,012 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:56,018 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:56,019 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:56,019 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:56,025 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4
+2025-02-27 11:59:56,026 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:56,027 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:56,034 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:56,034 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:56,036 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4 (exists: True)
+2025-02-27 11:59:56,044 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4
+2025-02-27 11:59:56,046 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4 with File Mover
+2025-02-27 11:59:56,049 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4 (exists: True)
+2025-02-27 11:59:56,057 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4
+2025-02-27 11:59:56,062 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Mover
+2025-02-27 11:59:56,064 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:56,072 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:56,076 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:56,078 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:56,085 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:56,085 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:56,087 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4 (exists: True)
+2025-02-27 11:59:56,094 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4
+2025-02-27 11:59:56,097 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4 with File Mover
+2025-02-27 11:59:56,098 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 (exists: True)
+2025-02-27 11:59:56,106 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4
+2025-02-27 11:59:56,107 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 with File Mover
+2025-02-27 11:59:56,109 - tankhub.modules.file_mover - DEBUG - Processing file: F:\Video\Movies\Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4 (exists: True)
+2025-02-27 11:59:56,116 - tankhub.modules.file_mover - DEBUG - Added file to queue: F:\Video\Movies\Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4
+2025-02-27 11:59:56,116 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Mover
+2025-02-27 11:59:56,120 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,122 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,124 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,125 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,127 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,130 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,132 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,134 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,136 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,138 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,142 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,150 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,156 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,165 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,170 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with File Name Editor
+2025-02-27 11:59:56,176 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,180 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Name Editor
+2025-02-27 11:59:56,184 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,187 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Name Editor
+2025-02-27 11:59:56,191 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Brave.2012.1080p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,196 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4 with File Name Editor
+2025-02-27 11:59:56,200 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,204 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,211 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4 with File Name Editor
+2025-02-27 11:59:56,216 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,220 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,225 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,230 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,235 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,242 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,255 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,265 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar 2005.1080p.BrRip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,276 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,282 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,288 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,294 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,301 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,309 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,317 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,323 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with File Name Editor
+2025-02-27 11:59:56,330 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4 with File Name Editor
+2025-02-27 11:59:56,336 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,346 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 with File Name Editor
+2025-02-27 11:59:56,356 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,370 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Name Editor
+2025-02-27 11:59:56,379 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4 with File Name Editor
+2025-02-27 11:59:56,386 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,396 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,404 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,411 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4 with File Name Editor
+2025-02-27 11:59:56,420 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4 with File Name Editor
+2025-02-27 11:59:56,428 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,437 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,449 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4 with File Name Editor
+2025-02-27 11:59:56,465 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 with File Name Editor
+2025-02-27 11:59:56,480 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4 with File Name Editor
+2025-02-27 11:59:56,482 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,484 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,485 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,487 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,489 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,492 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,495 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,497 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,499 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,502 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,505 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,508 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,511 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,514 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,518 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv with Media Sorter
+2025-02-27 11:59:56,522 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,526 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with Media Sorter
+2025-02-27 11:59:56,530 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,534 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with Media Sorter
+2025-02-27 11:59:56,539 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Brave.2012.1080p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,544 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4 with Media Sorter
+2025-02-27 11:59:56,550 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,558 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,570 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4 with Media Sorter
+2025-02-27 11:59:56,577 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,583 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,587 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,593 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,599 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,604 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,612 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,618 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar 2005.1080p.BrRip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,623 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,629 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,634 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,642 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,648 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,657 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,670 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,679 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 with Media Sorter
+2025-02-27 11:59:56,686 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4 with Media Sorter
+2025-02-27 11:59:56,692 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,700 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 with Media Sorter
+2025-02-27 11:59:56,707 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,715 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4 with Media Sorter
+2025-02-27 11:59:56,723 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4 with Media Sorter
+2025-02-27 11:59:56,730 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,738 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,747 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
+2025-02-27 11:59:56,755 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4 with Media Sorter
+2025-02-27 11:59:56,769 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4 with Media Sorter
+2025-02-27 11:59:56,782 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,794 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,802 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4 with Media Sorter
+2025-02-27 11:59:56,811 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 with Media Sorter
+2025-02-27 11:59:56,819 - tankhub.gui.main_window - INFO - Successfully processed F:\Video\Movies\Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4 with Media Sorter
 The thread 0x2 has exited with code 0 (0x0).
-2025-02-25 07:05:16,524 - tankhub.modules.file_mover - DEBUG - Added file to queue: I:\Video\Movies\24
-2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:05:16,526 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:05:16,527 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
-2025-02-25 07:05:16,527 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
-2025-02-25 07:05:16,528 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
-2025-02-25 07:05:16,528 - tankhub.modules.file_mover - DEBUG - Queue updated with 1 operations
-2025-02-25 07:05:16,528 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24 with File Mover
-2025-02-25 07:05:16,529 - tankhub.gui.main_window - INFO - Successfully processed I:\Video\Movies\24 with File Name Editor
-2025-02-25 07:05:16,529 - tankhub.modules.file_mover - DEBUG - Added file to queue: Little
-2025-02-25 07:05:16,530 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:05:16,531 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
-2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
-2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
-2025-02-25 07:05:16,532 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
-2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
-2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
-2025-02-25 07:05:16,533 - tankhub.modules.file_mover - DEBUG - Queue updated with 2 operations
-2025-02-25 07:05:16,533 - tankhub.gui.main_window - INFO - Successfully processed Little with File Mover
-2025-02-25 07:05:16,535 - tankhub.gui.main_window - INFO - Successfully processed Little with File Name Editor
-2025-02-25 07:05:16,535 - tankhub.modules.file_mover - DEBUG - Added file to queue: Hours
-2025-02-25 07:05:16,536 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:05:16,536 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
-2025-02-25 07:05:16,537 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
-2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
-2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
-2025-02-25 07:05:16,538 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
-2025-02-25 07:05:16,539 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
-2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Processing Hours for renaming
-2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Generated new name: Hours -> Hours
-2025-02-25 07:05:16,540 - tankhub.modules.file_mover - DEBUG - Created operation with source=Hours, dest=Hours, rename=True
-2025-02-25 07:05:16,541 - tankhub.modules.file_mover - DEBUG - Queue updated with 3 operations
-2025-02-25 07:05:16,541 - tankhub.gui.main_window - INFO - Successfully processed Hours with File Mover
-2025-02-25 07:05:16,541 - tankhub.gui.main_window - INFO - Successfully processed Hours with File Name Editor
-2025-02-25 07:05:16,542 - tankhub.modules.file_mover - DEBUG - Added file to queue: (2020).mp4
-2025-02-25 07:05:16,543 - tankhub.modules.file_mover - DEBUG - Updating queue destination to F:\Media
-2025-02-25 07:05:16,543 - tankhub.modules.file_mover - DEBUG - Rename enabled: True
-2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Filename editor available: True
-2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Processing 24 for renaming
-2025-02-25 07:05:16,544 - tankhub.modules.file_mover - DEBUG - Generated new name: 24 -> 24
-2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Created operation with source=24, dest=24, rename=True
-2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Processing Little for renaming
-2025-02-25 07:05:16,545 - tankhub.modules.file_mover - DEBUG - Generated new name: Little -> Little
-2025-02-25 07:05:16,546 - tankhub.modules.file_mover - DEBUG - Created operation with source=Little, dest=Little, rename=True
-2025-02-25 07:05:16,546 - tankhub.modules.file_mover - DEBUG - Processing Hours for renaming
-2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Generated new name: Hours -> Hours
-2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Created operation with source=Hours, dest=Hours, rename=True
-2025-02-25 07:05:16,547 - tankhub.modules.file_mover - DEBUG - Processing (2020) for renaming
-2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Generated new name: (2020).mp4 ->  (2020).mp4
-2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Created operation with source=(2020).mp4, dest= (2020).mp4, rename=True
-2025-02-25 07:05:16,548 - tankhub.modules.file_mover - DEBUG - Queue updated with 4 operations
-2025-02-25 07:05:16,549 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with File Mover
-2025-02-25 07:05:16,549 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with File Name Editor
-2025-02-25 07:05:16,550 - tankhub.gui.main_window - INFO - Successfully processed (2020).mp4 with Media Sorter
-The thread 'MainThread' (0x1) has exited with code 0 (0x0).
-The program 'python.exe' has exited with code 0 (0x0).
+2025-02-27 12:00:26,798 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,799 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,800 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,801 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,802 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Civil War', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,802 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Civil War (2024)
+2025-02-27 12:00:26,804 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,806 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,808 - tankhub.modules.file_name_editor - DEBUG - Matched year '1600' is out of valid range, ignoring
+2025-02-27 12:00:26,809 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,809 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Dungeons And Dragons Honor Among Thieves', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,809 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Dungeons And Dragons Honor Among Thieves (2023)
+2025-02-27 12:00:26,827 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,828 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,828 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,828 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,829 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Expend4bles', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,829 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Expend4bles (2023)
+2025-02-27 12:00:26,831 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,832 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,832 - tankhub.modules.file_name_editor - DEBUG - Matched year '1600' is out of valid range, ignoring
+2025-02-27 12:00:26,833 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,833 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Furiosa A Mad Max Saga', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,833 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Furiosa A Mad Max Saga (2024)
+2025-02-27 12:00:26,835 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,835 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,836 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,836 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,836 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Inside Out 2', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,837 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Inside Out 2 (2024)
+2025-02-27 12:00:26,838 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,839 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,839 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,840 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,840 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Kraven The Hunter', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,840 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Kraven The Hunter (2024)
+2025-02-27 12:00:26,847 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG
+2025-02-27 12:00:26,847 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,848 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Leo', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,848 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Leo (2023)
+2025-02-27 12:00:26,850 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,853 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,853 - tankhub.modules.file_name_editor - DEBUG - Matched year '1600' is out of valid range, ignoring
+2025-02-27 12:00:26,855 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,855 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Mission Impossible Dead Reckoning Part One', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,856 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Mission Impossible Dead Reckoning Part One (2023)
+2025-02-27 12:00:26,857 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,858 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,858 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,858 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,859 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Monkey Man', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,859 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Monkey Man (2024)
+2025-02-27 12:00:26,861 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,862 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,862 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,863 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,863 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Beekeeper', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,865 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Beekeeper (2024)
+2025-02-27 12:00:26,870 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,871 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,871 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,871 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,872 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Crow', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,872 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Crow (2024)
+2025-02-27 12:00:26,874 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,874 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,875 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,875 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,876 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Fall Guy', year='2024', season=None, episode=None)
+2025-02-27 12:00:26,877 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Fall Guy (2024)
+2025-02-27 12:00:26,881 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,881 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,881 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,882 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,882 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Flash', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,882 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Flash (2023)
+2025-02-27 12:00:26,884 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,901 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,901 - tankhub.modules.file_name_editor - DEBUG - Matched year '1600' is out of valid range, ignoring
+2025-02-27 12:00:26,909 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,909 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Hunger Games The Ballad Of Songbirds And Snakes', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,910 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Hunger Games The Ballad Of Songbirds And Snakes (2023)
+2025-02-27 12:00:26,927 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG
+2025-02-27 12:00:26,928 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,929 - tankhub.modules.file_name_editor - DEBUG - Matched year '1400' is out of valid range, ignoring
+2025-02-27 12:00:26,930 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,930 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Last Voyage Of The Demeter', year='2023', season=None, episode=None)
+2025-02-27 12:00:26,931 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Last Voyage Of The Demeter (2023)
+2025-02-27 12:00:26,932 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:26,932 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,933 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Ant-man And The Wasp', year='2018', season=None, episode=None)
+2025-02-27 12:00:26,933 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Ant-man And The Wasp (2018)
+2025-02-27 12:00:26,935 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX]
+2025-02-27 12:00:26,935 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,936 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,936 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,937 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Artemis Fowl', year='2020', season=None, episode=None)
+2025-02-27 12:00:26,937 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Artemis Fowl (2020)
+2025-02-27 12:00:26,940 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Black.Widow.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:26,941 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,941 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,941 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,942 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Black Widow', year='2021', season=None, episode=None)
+2025-02-27 12:00:26,942 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Black Widow (2021)
+2025-02-27 12:00:26,951 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX]
+2025-02-27 12:00:26,951 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,951 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,952 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,952 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Bloodshot', year='2020', season=None, episode=None)
+2025-02-27 12:00:26,953 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Bloodshot (2020)
+2025-02-27 12:00:26,957 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Brave.2012.1080p.BRrip.x264.YIFY
+2025-02-27 12:00:26,958 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,958 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,959 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,959 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Brave', year='2012', season=None, episode=None)
+2025-02-27 12:00:26,959 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Brave (2012)
+2025-02-27 12:00:26,962 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Coco.2017.1080p.BluRay.x264-[YTS.AG]
+2025-02-27 12:00:26,962 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,962 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,962 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,963 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Coco', year='2017', season=None, episode=None)
+2025-02-27 12:00:26,963 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Coco (2017)
+2025-02-27 12:00:26,965 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:26,966 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,966 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Destination Wedding', year='2018', season=None, episode=None)
+2025-02-27 12:00:26,967 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Destination Wedding (2018)
+2025-02-27 12:00:26,969 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Encanto.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:26,969 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,970 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,970 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,970 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Encanto', year='2021', season=None, episode=None)
+2025-02-27 12:00:26,971 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Encanto (2021)
+2025-02-27 12:00:26,979 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG]
+2025-02-27 12:00:26,979 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,980 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,980 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,981 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Finding Dory', year='2016', season=None, episode=None)
+2025-02-27 12:00:26,981 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Finding Dory (2016)
+2025-02-27 12:00:26,984 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Finding.Nemo.2003.720p.BluRay.x264.YIFY
+2025-02-27 12:00:26,984 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,984 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Finding Nemo', year='2003', season=None, episode=None)
+2025-02-27 12:00:26,985 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Finding Nemo (2003)
+2025-02-27 12:00:26,987 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:26,987 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,988 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,988 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,989 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Ghostbusters Afterlife', year='2021', season=None, episode=None)
+2025-02-27 12:00:26,989 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Ghostbusters Afterlife (2021)
+2025-02-27 12:00:26,993 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:26,993 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:26,993 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:26,994 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:26,994 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='How It Ends', year='2018', season=None, episode=None)
+2025-02-27 12:00:26,995 - tankhub.modules.file_name_editor - DEBUG - Generated filename: How It Ends (2018)
+2025-02-27 12:00:27,003 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Inside.Out.2015.1080p.BluRay.x264.YIFY
+2025-02-27 12:00:27,004 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,004 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,004 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,005 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Inside Out', year='2015', season=None, episode=None)
+2025-02-27 12:00:27,005 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Inside Out (2015)
+2025-02-27 12:00:27,007 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:27,008 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,008 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,009 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,009 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='John Wick Chapter 4', year='2023', season=None, episode=None)
+2025-02-27 12:00:27,009 - tankhub.modules.file_name_editor - DEBUG - Generated filename: John Wick Chapter 4 (2023)
+2025-02-27 12:00:27,030 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:27,030 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,031 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,031 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,031 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Jurassic World 3 Dominion', year='2022', season=None, episode=None)
+2025-02-27 12:00:27,032 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Jurassic World 3 Dominion (2022)
+2025-02-27 12:00:27,035 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY
+2025-02-27 12:00:27,035 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,036 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Leon The Professional Extended', year='1994', season=None, episode=None)
+2025-02-27 12:00:27,037 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Leon The Professional Extended (1994)
+2025-02-27 12:00:27,040 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar 2005.1080p.BrRip.x264.YIFY
+2025-02-27 12:00:27,040 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,041 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Madagascar', year='2005', season=None, episode=None)
+2025-02-27 12:00:27,041 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Madagascar (2005)
+2025-02-27 12:00:27,050 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY
+2025-02-27 12:00:27,050 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,051 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Madagascar 3 Europes Most Wanted', year='2012', season=None, episode=None)
+2025-02-27 12:00:27,052 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Madagascar 3 Europes Most Wanted (2012)
+2025-02-27 12:00:27,057 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY
+2025-02-27 12:00:27,058 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,058 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,059 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,059 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Madagascar Escape 2 Africa', year='2008', season=None, episode=None)
+2025-02-27 12:00:27,059 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Madagascar Escape 2 Africa (2008)
+2025-02-27 12:00:27,063 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:27,063 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,065 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,065 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,066 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Mortal Engines', year='2018', season=None, episode=None)
+2025-02-27 12:00:27,066 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Mortal Engines (2018)
+2025-02-27 12:00:27,069 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY
+2025-02-27 12:00:27,069 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,070 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,070 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,070 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Night At The Museum', year='2006', season=None, episode=None)
+2025-02-27 12:00:27,071 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Night At The Museum (2006)
+2025-02-27 12:00:27,077 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:27,078 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,078 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,079 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,079 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='No Time To Die', year='2021', season=None, episode=None)
+2025-02-27 12:00:27,080 - tankhub.modules.file_name_editor - DEBUG - Generated filename: No Time To Die (2021)
+2025-02-27 12:00:27,082 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY
+2025-02-27 12:00:27,082 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,082 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,084 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,084 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Penguins Of Madagascar', year='2014', season=None, episode=None)
+2025-02-27 12:00:27,085 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Penguins Of Madagascar (2014)
+2025-02-27 12:00:27,087 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:27,087 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,088 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,088 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,089 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Raya And The Last Dragon', year='2021', season=None, episode=None)
+2025-02-27 12:00:27,089 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Raya And The Last Dragon (2021)
+2025-02-27 12:00:27,091 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX]
+2025-02-27 12:00:27,091 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,092 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,092 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,092 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Star Wars The Rise Of Skywalker', year='2019', season=None, episode=None)
+2025-02-27 12:00:27,093 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Star Wars The Rise Of Skywalker (2019)
+2025-02-27 12:00:27,095 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips
+2025-02-27 12:00:27,095 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,095 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Super Mario Bros Movie', year='2023', season=None, episode=None)
+2025-02-27 12:00:27,097 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Super Mario Bros Movie (2023)
+2025-02-27 12:00:27,102 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Batman.2022.1080p.WEBRip.x265-RARBG
+2025-02-27 12:00:27,102 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,103 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,103 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,104 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Batman', year='2022', season=None, episode=None)
+2025-02-27 12:00:27,104 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Batman (2022)
+2025-02-27 12:00:27,106 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG
+2025-02-27 12:00:27,107 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,107 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,108 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,109 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Conjuring The Devil Made Me Do It', year='2021', season=None, episode=None)
+2025-02-27 12:00:27,109 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Conjuring The Devil Made Me Do It (2021)
+2025-02-27 12:00:27,121 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:27,122 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,122 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,123 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,123 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Equalizer 2', year='2018', season=None, episode=None)
+2025-02-27 12:00:27,123 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Equalizer 2 (2018)
+2025-02-27 12:00:27,134 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX]
+2025-02-27 12:00:27,135 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,135 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Invisible Man', year='2020', season=None, episode=None)
+2025-02-27 12:00:27,135 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Invisible Man (2020)
+2025-02-27 12:00:27,138 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG]
+2025-02-27 12:00:27,139 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,139 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,140 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,140 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Lego Batman Movie', year='2017', season=None, episode=None)
+2025-02-27 12:00:27,140 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Lego Batman Movie (2017)
+2025-02-27 12:00:27,144 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:27,145 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,145 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,146 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,146 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Lego Movie 2 The Second Part', year='2019', season=None, episode=None)
+2025-02-27 12:00:27,147 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Lego Movie 2 The Second Part (2019)
+2025-02-27 12:00:27,155 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Lego.Movie.2014.1080p.BluRay.x264.YIFY
+2025-02-27 12:00:27,155 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,155 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,156 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,156 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Lego Movie', year='2014', season=None, episode=None)
+2025-02-27 12:00:27,157 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Lego Movie (2014)
+2025-02-27 12:00:27,161 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Meg.2018.720p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:27,161 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,162 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Meg', year='2018', season=None, episode=None)
+2025-02-27 12:00:27,162 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Meg (2018)
+2025-02-27 12:00:27,164 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT]
+2025-02-27 12:00:27,165 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,165 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Secret Life Of Pets 2', year='2019', season=None, episode=None)
+2025-02-27 12:00:27,166 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Secret Life Of Pets 2 (2019)
+2025-02-27 12:00:27,168 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX]
+2025-02-27 12:00:27,168 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,169 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,169 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,169 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='The Silencing', year='2020', season=None, episode=None)
+2025-02-27 12:00:27,170 - tankhub.modules.file_name_editor - DEBUG - Generated filename: The Silencing (2020)
+2025-02-27 12:00:27,178 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy.Story.2.1999.1080p.BRrip.x264.YIFY
+2025-02-27 12:00:27,178 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,178 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,179 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,180 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Toy Story 2', year='1999', season=None, episode=None)
+2025-02-27 12:00:27,180 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Toy Story 2 (1999)
+2025-02-27 12:00:27,181 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy.Story.3.2010.1080p.BRrip.x264.YIFY
+2025-02-27 12:00:27,182 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,182 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,182 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,182 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Toy Story 3', year='2010', season=None, episode=None)
+2025-02-27 12:00:27,184 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Toy Story 3 (2010)
+2025-02-27 12:00:27,186 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT]
+2025-02-27 12:00:27,186 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,187 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,187 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,187 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Toy Story 4', year='2019', season=None, episode=None)
+2025-02-27 12:00:27,188 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Toy Story 4 (2019)
+2025-02-27 12:00:27,191 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy.Story.1995.1080p.BRrip.x264.YIFY
+2025-02-27 12:00:27,191 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,191 - tankhub.modules.file_name_editor - DEBUG - Skipping matched year '1080' because it appears to be a resolution/codec
+2025-02-27 12:00:27,192 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[\.\s](\d{4})[\.\s]
+2025-02-27 12:00:27,192 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Toy Story', year='1995', season=None, episode=None)
+2025-02-27 12:00:27,193 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Toy Story (1995)
+2025-02-27 12:00:27,199 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Upgrade.2018.720p.WEBRip.x264-[YTS.AM]
+2025-02-27 12:00:27,199 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:27,200 - tankhub.modules.file_name_editor - DEBUG - Generating filename from: MediaInfo(title='Upgrade', year='2018', season=None, episode=None)
+2025-02-27 12:00:27,200 - tankhub.modules.file_name_editor - DEBUG - Generated filename: Upgrade (2018)
+2025-02-27 12:00:29,706 - tankhub.modules.media_sorter - INFO - Renamed: Civil.War.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> Civil War (2024).mkv
+2025-02-27 12:00:29,717 - tankhub.modules.media_sorter - INFO - Renamed: Dungeons.and.Dragons.Honor.Among.Thieves.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv -> Dungeons And Dragons Honor Among Thieves (2023).mkv
+2025-02-27 12:00:29,726 - tankhub.modules.media_sorter - INFO - Renamed: Expend4bles.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> Expend4bles (2023).mkv
+2025-02-27 12:00:29,735 - tankhub.modules.media_sorter - INFO - Renamed: Furiosa.A.Mad.Max.Saga.2024.1080p.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv -> Furiosa A Mad Max Saga (2024).mkv
+2025-02-27 12:00:29,744 - tankhub.modules.media_sorter - INFO - Renamed: Inside.Out.2.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> Inside Out 2 (2024).mkv
+2025-02-27 12:00:29,752 - tankhub.modules.media_sorter - INFO - Renamed: Kraven.The.Hunter.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> Kraven The Hunter (2024).mkv
+2025-02-27 12:00:29,761 - tankhub.modules.media_sorter - INFO - Renamed: Leo.2023.720p.WEBRip.800MB.x264-GalaxyRG.mkv -> Leo (2023).mkv
+2025-02-27 12:00:29,771 - tankhub.modules.media_sorter - INFO - Renamed: Mission.Impossible.Dead.Reckoning.Part.One.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv -> Mission Impossible Dead Reckoning Part One (2023).mkv
+2025-02-27 12:00:29,781 - tankhub.modules.media_sorter - INFO - Renamed: Monkey.Man.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> Monkey Man (2024).mkv
+2025-02-27 12:00:29,790 - tankhub.modules.media_sorter - INFO - Renamed: The.Beekeeper.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> The Beekeeper (2024).mkv
+2025-02-27 12:00:29,799 - tankhub.modules.media_sorter - INFO - Renamed: The.Crow.2024.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> The Crow (2024).mkv
+2025-02-27 12:00:29,807 - tankhub.modules.media_sorter - INFO - Renamed: The.Fall.Guy.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> The Fall Guy (2024).mkv
+2025-02-27 12:00:29,817 - tankhub.modules.media_sorter - INFO - Renamed: The.Flash.2023.1080p.WEBRip.DD5.1.x264-GalaxyRG.mkv -> The Flash (2023).mkv
+2025-02-27 12:00:29,826 - tankhub.modules.media_sorter - INFO - Renamed: The.Hunger.Games.The.Ballad.of.Songbirds.and.Snakes.2023.1080p.AMZN.WEBRip.1600MB.DD5.1.x264-GalaxyRG.mkv -> The Hunger Games The Ballad Of Songbirds And Snakes (2023).mkv
+2025-02-27 12:00:29,834 - tankhub.modules.media_sorter - INFO - Renamed: The.Last.Voyage.of.the.Demeter.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv -> The Last Voyage Of The Demeter (2023).mkv
+2025-02-27 12:00:29,843 - tankhub.modules.media_sorter - INFO - Renamed: Ant-Man.And.The.Wasp.2018.720p.WEBRip.x264-[YTS.AM].mp4 -> Ant-man And The Wasp (2018).mp4
+2025-02-27 12:00:29,854 - tankhub.modules.media_sorter - INFO - Renamed: Artemis.Fowl.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 -> Artemis Fowl (2020).mp4
+2025-02-27 12:00:29,863 - tankhub.modules.media_sorter - INFO - Renamed: Black.Widow.2021.1080p.WEBRip.x264-RARBG.mp4 -> Black Widow (2021).mp4
+2025-02-27 12:00:29,872 - tankhub.modules.media_sorter - INFO - Renamed: Bloodshot.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 -> Bloodshot (2020).mp4
+2025-02-27 12:00:29,882 - tankhub.modules.media_sorter - INFO - Renamed: Brave.2012.1080p.BRrip.x264.YIFY.mp4 -> Brave (2012).mp4
+2025-02-27 12:00:29,892 - tankhub.modules.media_sorter - INFO - Renamed: Coco.2017.1080p.BluRay.x264-[YTS.AG].mp4 -> Coco (2017).mp4
+2025-02-27 12:00:29,901 - tankhub.modules.media_sorter - INFO - Renamed: Destination.Wedding.2018.720p.WEBRip.x264-[YTS.AM].mp4 -> Destination Wedding (2018).mp4
+2025-02-27 12:00:29,910 - tankhub.modules.media_sorter - INFO - Renamed: Encanto.2021.1080p.WEBRip.x264-RARBG.mp4 -> Encanto (2021).mp4
+2025-02-27 12:00:29,920 - tankhub.modules.media_sorter - INFO - Renamed: Finding.Dory.2016.1080p.BluRay.x264-[YTS.AG].mp4 -> Finding Dory (2016).mp4
+2025-02-27 12:00:29,930 - tankhub.modules.media_sorter - INFO - Renamed: Finding.Nemo.2003.720p.BluRay.x264.YIFY.mp4 -> Finding Nemo (2003).mp4
+2025-02-27 12:00:29,939 - tankhub.modules.media_sorter - INFO - Renamed: Ghostbusters.Afterlife.2021.1080p.WEBRip.x264-RARBG.mp4 -> Ghostbusters Afterlife (2021).mp4
+2025-02-27 12:00:29,948 - tankhub.modules.media_sorter - INFO - Renamed: How.It.Ends.2018.1080p.WEBRip.x264-[YTS.AM].mp4 -> How It Ends (2018).mp4
+2025-02-27 12:00:29,957 - tankhub.modules.media_sorter - INFO - Renamed: Inside.Out.2015.1080p.BluRay.x264.YIFY.mp4 -> Inside Out (2015).mp4
+2025-02-27 12:00:29,966 - tankhub.modules.media_sorter - INFO - Renamed: John.Wick.Chapter.4.2023.1080p.WEBRip.x264-RARBG.mp4 -> John Wick Chapter 4 (2023).mp4
+2025-02-27 12:00:29,977 - tankhub.modules.media_sorter - INFO - Renamed: Jurassic.World.3.Dominion.2022.1080p.WEBRip.x264-RARBG.mp4 -> Jurassic World 3 Dominion (2022).mp4
+2025-02-27 12:00:29,986 - tankhub.modules.media_sorter - INFO - Renamed: Leon.the.Professional.Extended.1994.720p.BrRip.x264.YIFY.mp4 -> Leon The Professional Extended (1994).mp4
+2025-02-27 12:00:29,996 - tankhub.modules.media_sorter - INFO - Renamed: Madagascar 2005.1080p.BrRip.x264.YIFY.mp4 -> Madagascar (2005).mp4
+2025-02-27 12:00:30,005 - tankhub.modules.media_sorter - INFO - Renamed: Madagascar.3.Europes.Most.Wanted.2012.720p.BRrip.x264.YIFY.mp4 -> Madagascar 3 Europes Most Wanted (2012).mp4
+2025-02-27 12:00:30,014 - tankhub.modules.media_sorter - INFO - Renamed: Madagascar.Escape.2.Africa.2008.1080p.BRrip.x264.YIFY.mp4 -> Madagascar Escape 2 Africa (2008).mp4
+2025-02-27 12:00:30,024 - tankhub.modules.media_sorter - INFO - Renamed: Mortal.Engines.2018.1080p.WEBRip.x264-[YTS.AM].mp4 -> Mortal Engines (2018).mp4
+2025-02-27 12:00:30,033 - tankhub.modules.media_sorter - INFO - Renamed: Night.at.the.Museum.2006.1080p.BrRip.x264.YIFY.mp4 -> Night At The Museum (2006).mp4
+2025-02-27 12:00:30,043 - tankhub.modules.media_sorter - INFO - Renamed: No.Time.To.Die.2021.1080p.WEBRip.x264-RARBG.mp4 -> No Time To Die (2021).mp4
+2025-02-27 12:00:30,053 - tankhub.modules.media_sorter - INFO - Renamed: Penguins.of.Madagascar.2014.1080p.BluRay.x264.YIFY.mp4 -> Penguins Of Madagascar (2014).mp4
+2025-02-27 12:00:30,063 - tankhub.modules.media_sorter - INFO - Renamed: Raya.and.the.Last.Dragon.2021.1080p.WEBRip.x264-RARBG.mp4 -> Raya And The Last Dragon (2021).mp4
+2025-02-27 12:00:30,073 - tankhub.modules.media_sorter - INFO - Renamed: Star.Wars.The.Rise.Of.Skywalker.2019.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4 -> Star Wars The Rise Of Skywalker (2019).mp4
+2025-02-27 12:00:30,082 - tankhub.modules.media_sorter - INFO - Renamed: The Super Mario Bros Movie (2023) 1080p HDTS x264 AAC - HushRips.mp4 -> The Super Mario Bros Movie (2023).mp4
+2025-02-27 12:00:30,091 - tankhub.modules.media_sorter - INFO - Renamed: The.Batman.2022.1080p.WEBRip.x265-RARBG.mp4 -> The Batman (2022).mp4
+2025-02-27 12:00:30,101 - tankhub.modules.media_sorter - INFO - Renamed: The.Conjuring.The.Devil.Made.Me.Do.It.2021.1080p.WEBRip.x264-RARBG.mp4 -> The Conjuring The Devil Made Me Do It (2021).mp4
+2025-02-27 12:00:30,110 - tankhub.modules.media_sorter - INFO - Renamed: The.Equalizer.2.2018.1080p.WEBRip.x264-[YTS.AM].mp4 -> The Equalizer 2 (2018).mp4
+2025-02-27 12:00:30,120 - tankhub.modules.media_sorter - INFO - Renamed: The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4 -> The Invisible Man (2020).mp4
+2025-02-27 12:00:30,130 - tankhub.modules.media_sorter - INFO - Renamed: The.LEGO.Batman.Movie.2017.1080p.BluRay.x264-[YTS.AG].mp4 -> The Lego Batman Movie (2017).mp4
+2025-02-27 12:00:30,139 - tankhub.modules.media_sorter - INFO - Renamed: The.Lego.Movie.2.The.Second.Part.2019.1080p.WEBRip.x264-[YTS.AM].mp4 -> The Lego Movie 2 The Second Part (2019).mp4
+2025-02-27 12:00:30,149 - tankhub.modules.media_sorter - INFO - Renamed: The.Lego.Movie.2014.1080p.BluRay.x264.YIFY.mp4 -> The Lego Movie (2014).mp4
+2025-02-27 12:00:30,159 - tankhub.modules.media_sorter - INFO - Renamed: The.Meg.2018.720p.WEBRip.x264-[YTS.AM].mp4 -> The Meg (2018).mp4
+2025-02-27 12:00:30,167 - tankhub.modules.media_sorter - INFO - Renamed: The.Secret.Life.Of.Pets.2.2019.720p.WEBRip.x264-[YTS.LT].mp4 -> The Secret Life Of Pets 2 (2019).mp4
+2025-02-27 12:00:30,177 - tankhub.modules.media_sorter - INFO - Renamed: The.Silencing.2020.1080p.WEBRip.x264.AAC-[YTS.MX].mp4 -> The Silencing (2020).mp4
+2025-02-27 12:00:30,186 - tankhub.modules.media_sorter - INFO - Renamed: Toy.Story.2.1999.1080p.BRrip.x264.YIFY.mp4 -> Toy Story 2 (1999).mp4
+2025-02-27 12:00:30,196 - tankhub.modules.media_sorter - INFO - Renamed: Toy.Story.3.2010.1080p.BRrip.x264.YIFY.mp4 -> Toy Story 3 (2010).mp4
+2025-02-27 12:00:30,205 - tankhub.modules.media_sorter - INFO - Renamed: Toy.Story.4.2019.1080p.BluRay.x264-[YTS.LT].mp4 -> Toy Story 4 (2019).mp4
+2025-02-27 12:00:30,214 - tankhub.modules.media_sorter - INFO - Renamed: Toy.Story.1995.1080p.BRrip.x264.YIFY.mp4 -> Toy Story (1995).mp4
+2025-02-27 12:00:30,224 - tankhub.modules.media_sorter - INFO - Renamed: Upgrade.2018.720p.WEBRip.x264-[YTS.AM].mp4 -> Upgrade (2018).mp4
+2025-02-27 12:00:36,700 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Civil War (2024)
+2025-02-27 12:00:36,701 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,709 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Dungeons And Dragons Honor Among Thieves (2023)
+2025-02-27 12:00:36,709 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,714 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Expend4bles (2023)
+2025-02-27 12:00:36,714 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,719 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Furiosa A Mad Max Saga (2024)
+2025-02-27 12:00:36,719 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,724 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Inside Out 2 (2024)
+2025-02-27 12:00:36,725 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,729 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Kraven The Hunter (2024)
+2025-02-27 12:00:36,730 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,734 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Leo (2023)
+2025-02-27 12:00:36,735 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,740 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Mission Impossible Dead Reckoning Part One (2023)
+2025-02-27 12:00:36,740 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,745 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Monkey Man (2024)
+2025-02-27 12:00:36,746 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,750 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Beekeeper (2024)
+2025-02-27 12:00:36,750 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,758 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Crow (2024)
+2025-02-27 12:00:36,758 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,763 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Fall Guy (2024)
+2025-02-27 12:00:36,763 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,768 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Flash (2023)
+2025-02-27 12:00:36,768 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,773 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Hunger Games The Ballad Of Songbirds And Snakes (2023)
+2025-02-27 12:00:36,774 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,779 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Last Voyage Of The Demeter (2023)
+2025-02-27 12:00:36,779 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,785 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Ant-man And The Wasp (2018)
+2025-02-27 12:00:36,786 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^(.*?)[_\-\.\s]\((\d{4})\)
+2025-02-27 12:00:36,791 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Artemis Fowl (2020)
+2025-02-27 12:00:36,791 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,797 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Black Widow (2021)
+2025-02-27 12:00:36,797 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,802 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Bloodshot (2020)
+2025-02-27 12:00:36,804 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,808 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Brave (2012)
+2025-02-27 12:00:36,808 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,815 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Coco (2017)
+2025-02-27 12:00:36,815 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,820 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Destination Wedding (2018)
+2025-02-27 12:00:36,820 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,826 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Encanto (2021)
+2025-02-27 12:00:36,826 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,832 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Finding Dory (2016)
+2025-02-27 12:00:36,832 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,837 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Finding Nemo (2003)
+2025-02-27 12:00:36,837 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,843 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Ghostbusters Afterlife (2021)
+2025-02-27 12:00:36,843 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,849 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: How It Ends (2018)
+2025-02-27 12:00:36,849 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,854 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Inside Out (2015)
+2025-02-27 12:00:36,854 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,859 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: John Wick Chapter 4 (2023)
+2025-02-27 12:00:36,859 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,864 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Jurassic World 3 Dominion (2022)
+2025-02-27 12:00:36,864 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,869 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Leon The Professional Extended (1994)
+2025-02-27 12:00:36,869 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,874 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar (2005)
+2025-02-27 12:00:36,874 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,881 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar 3 Europes Most Wanted (2012)
+2025-02-27 12:00:36,881 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,885 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Madagascar Escape 2 Africa (2008)
+2025-02-27 12:00:36,885 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,891 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Mortal Engines (2018)
+2025-02-27 12:00:36,891 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,897 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Night At The Museum (2006)
+2025-02-27 12:00:36,898 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,902 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: No Time To Die (2021)
+2025-02-27 12:00:36,902 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,907 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Penguins Of Madagascar (2014)
+2025-02-27 12:00:36,908 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,916 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Raya And The Last Dragon (2021)
+2025-02-27 12:00:36,916 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,921 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Star Wars The Rise Of Skywalker (2019)
+2025-02-27 12:00:36,921 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,928 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Super Mario Bros Movie (2023)
+2025-02-27 12:00:36,929 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,935 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Batman (2022)
+2025-02-27 12:00:36,935 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,941 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Conjuring The Devil Made Me Do It (2021)
+2025-02-27 12:00:36,942 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,950 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Equalizer 2 (2018)
+2025-02-27 12:00:36,950 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,956 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Invisible Man (2020)
+2025-02-27 12:00:36,956 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,962 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Lego Batman Movie (2017)
+2025-02-27 12:00:36,962 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,968 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Lego Movie 2 The Second Part (2019)
+2025-02-27 12:00:36,968 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,975 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Lego Movie (2014)
+2025-02-27 12:00:36,976 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,982 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Meg (2018)
+2025-02-27 12:00:36,983 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,989 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Secret Life Of Pets 2 (2019)
+2025-02-27 12:00:36,989 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:36,996 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: The Silencing (2020)
+2025-02-27 12:00:36,996 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:37,002 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy Story 2 (1999)
+2025-02-27 12:00:37,002 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:37,008 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy Story 3 (2010)
+2025-02-27 12:00:37,009 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:37,016 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy Story 4 (2019)
+2025-02-27 12:00:37,016 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:37,022 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Toy Story (1995)
+2025-02-27 12:00:37,023 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:37,032 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Upgrade (2018)
+2025-02-27 12:00:37,032 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:00:58,182 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:58,183 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:58,198 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:00:58,530 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Civil%20War&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:00:58,533 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:58,556 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:58,559 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:00:58,899 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Dungeons%20And%20Dragons%20Honor%20Among%20Thieves&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 47
+2025-02-27 12:00:58,902 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:00:59,040 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Dungeons+And+Dragons+Honor+Among+Thieves&apikey=68b552d0&y=2023 HTTP/1.1" 200 47
+2025-02-27 12:00:59,042 - tankhub.modules.media_sorter - WARNING - No API data found for Dungeons And Dragons Honor Among Thieves (2023)
+2025-02-27 12:00:59,063 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:59,067 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:00:59,298 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Expend4bles&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 47
+2025-02-27 12:00:59,302 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:00:59,510 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Expend4bles&apikey=68b552d0&y=2023 HTTP/1.1" 200 47
+2025-02-27 12:00:59,512 - tankhub.modules.media_sorter - WARNING - No API data found for Expend4bles (2023)
+2025-02-27 12:00:59,533 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:00:59,536 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:00,061 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Furiosa%20A%20Mad%20Max%20Saga&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:00,063 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,083 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,086 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:00,305 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Inside%20Out%202&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:00,307 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,329 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,332 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:00,521 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Kraven%20The%20Hunter&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:00,523 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,546 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,550 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:00,742 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Leo&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:00,745 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,764 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:00,767 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:01,047 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Mission%20Impossible%20Dead%20Reckoning%20Part%20One&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:01,049 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:01,068 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:01,071 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:01,359 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Monkey%20Man&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:01,361 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:01,382 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:01,385 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:02,047 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Beekeeper&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:02,049 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,071 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,074 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:02,377 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Crow&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:02,379 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,400 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,404 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:02,624 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Fall%20Guy&apikey=68b552d0&y=2024&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:02,627 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,649 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,652 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:02,865 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Flash&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:02,867 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,887 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:02,891 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:03,148 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Hunger%20Games%20The%20Ballad%20Of%20Songbirds%20And%20Snakes&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:03,152 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:03,759 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The+Hunger+Games+The+Ballad+Of+Songbirds+And+Snakes&apikey=68b552d0&y=2023 HTTP/1.1" 200 47
+2025-02-27 12:01:03,761 - tankhub.modules.media_sorter - WARNING - No API data found for The Hunger Games The Ballad Of Songbirds And Snakes (2023)
+2025-02-27 12:01:03,781 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:03,785 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:04,044 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Last%20Voyage%20Of%20The%20Demeter&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:04,046 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,068 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,071 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:04,256 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Ant-man%20And%20The%20Wasp&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:04,258 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,279 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,282 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:04,454 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Artemis%20Fowl&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:04,456 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,476 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,480 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:04,896 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Black%20Widow&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:04,898 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,919 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:04,922 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:05,208 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Bloodshot&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:05,210 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,231 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,234 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:05,427 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Brave&apikey=68b552d0&y=2012&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:05,429 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,450 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,453 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:05,656 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Coco&apikey=68b552d0&y=2017&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:05,658 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,679 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,681 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:05,939 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Destination%20Wedding&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:05,942 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,963 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:05,967 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:06,155 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Encanto&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:06,157 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,179 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,182 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:06,389 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Finding%20Dory&apikey=68b552d0&y=2016&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:06,391 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,411 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,414 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:06,614 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Finding%20Nemo&apikey=68b552d0&y=2003&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:06,616 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,636 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,640 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:06,813 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Ghostbusters%20Afterlife&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:06,816 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,836 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:06,839 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:07,028 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=How%20It%20Ends&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:07,030 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,051 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,054 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:07,260 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Inside%20Out&apikey=68b552d0&y=2015&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:07,262 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,286 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,289 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:07,539 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=John%20Wick%20Chapter%204&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:07,543 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,563 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:07,567 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:07,820 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Jurassic%20World%203%20Dominion&apikey=68b552d0&y=2022&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:07,823 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:08,239 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Jurassic+World+3+Dominion&apikey=68b552d0&y=2022 HTTP/1.1" 200 47
+2025-02-27 12:01:08,239 - tankhub.modules.media_sorter - WARNING - No API data found for Jurassic World 3 Dominion (2022)
+2025-02-27 12:01:08,262 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:08,266 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:08,465 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Leon%20The%20Professional%20Extended&apikey=68b552d0&y=1994&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:08,469 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:08,677 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Leon+The+Professional+Extended&apikey=68b552d0&y=1994 HTTP/1.1" 200 47
+2025-02-27 12:01:08,678 - tankhub.modules.media_sorter - WARNING - No API data found for Leon The Professional Extended (1994)
+2025-02-27 12:01:08,698 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:08,702 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:08,989 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Madagascar&apikey=68b552d0&y=2005&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:08,991 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:09,013 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:09,016 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:09,330 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Madagascar%203%20Europes%20Most%20Wanted&apikey=68b552d0&y=2012&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:09,334 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:09,990 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Madagascar+3+Europes+Most+Wanted&apikey=68b552d0&y=2012 HTTP/1.1" 200 47
+2025-02-27 12:01:09,991 - tankhub.modules.media_sorter - WARNING - No API data found for Madagascar 3 Europes Most Wanted (2012)
+2025-02-27 12:01:10,014 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:10,017 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:10,720 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Madagascar%20Escape%202%20Africa&apikey=68b552d0&y=2008&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:10,722 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:10,745 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:10,748 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:10,952 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Mortal%20Engines&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:10,954 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:10,974 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:10,979 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:11,151 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Night%20At%20The%20Museum&apikey=68b552d0&y=2006&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:11,153 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,172 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,176 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:11,334 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=No%20Time%20To%20Die&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:11,336 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,355 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,358 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:11,564 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Penguins%20Of%20Madagascar&apikey=68b552d0&y=2014&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:11,566 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,587 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,590 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:11,829 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Raya%20And%20The%20Last%20Dragon&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:11,831 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,853 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:11,856 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:12,058 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Star%20Wars%20The%20Rise%20Of%20Skywalker&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:12,061 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,082 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,085 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:12,300 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Super%20Mario%20Bros%20Movie&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:12,302 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,322 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,327 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:12,625 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Batman&apikey=68b552d0&y=2022&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:12,628 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,647 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,652 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:12,894 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Conjuring%20The%20Devil%20Made%20Me%20Do%20It&apikey=68b552d0&y=2021&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:12,895 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,916 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:12,920 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:13,104 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Equalizer%202&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:13,107 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,128 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,131 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:13,298 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Invisible%20Man&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:13,301 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,322 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,327 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:13,527 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Lego%20Batman%20Movie&apikey=68b552d0&y=2017&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:13,529 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,551 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,554 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:13,754 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Lego%20Movie%202%20The%20Second%20Part&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:13,757 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,780 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,783 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:13,974 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Lego%20Movie&apikey=68b552d0&y=2014&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:13,977 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:13,998 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:14,002 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:14,224 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Meg&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:14,225 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:14,246 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:14,249 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:14,971 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Secret%20Life%20Of%20Pets%202&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:14,973 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:14,994 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:14,997 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:15,291 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=The%20Silencing&apikey=68b552d0&y=2020&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:15,292 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:15,313 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:15,317 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:15,884 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Toy%20Story%202&apikey=68b552d0&y=1999&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:15,886 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:15,906 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:15,910 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,092 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Toy%20Story%203&apikey=68b552d0&y=2010&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:16,094 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,115 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,119 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,312 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Toy%20Story%204&apikey=68b552d0&y=2019&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:16,316 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,336 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,339 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,565 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Toy%20Story&apikey=68b552d0&y=1995&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:16,567 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,587 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,591 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,729 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Upgrade&apikey=68b552d0&y=2018&type=movie HTTP/1.1" 200 None
+2025-02-27 12:01:16,731 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+2025-02-27 12:01:16,792 - tankhub.modules.media_sorter - INFO - Saved 358 media items to cache
+2025-02-27 12:01:16,848 - tankhub.modules.media_sorter - INFO - Using cached data for Civil War (2024).mkv
+2025-02-27 12:01:16,848 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Dungeons And Dragons Honor Among Thieves (2023)
+2025-02-27 12:01:16,850 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:01:16,851 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+The thread 0x3 has exited with code 0 (0x0).
+2025-02-27 12:01:16,855 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,855 - tankhub.modules.file_name_editor - DEBUG - Parsing filename: Expend4bles (2023)
+2025-02-27 12:01:16,856 - tankhub.modules.file_name_editor - DEBUG - Matched movie pattern: ^((?:[A-Za-z0-9.]+[. ])*?)(?:[\[(]?(\d{4})[\])]?)
+2025-02-27 12:01:16,857 - tankhub.modules.media_sorter - INFO - Using cached data for Furiosa A Mad Max Saga (2024).mkv
+2025-02-27 12:01:16,858 - tankhub.core.api_tracker - INFO - Saved API usage statistics
+The thread 0x6 has exited with code 0 (0x0).
+2025-02-27 12:01:16,862 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:16,862 - tankhub.modules.media_sorter - INFO - Using cached data for Inside Out 2 (2024).mkv
+2025-02-27 12:01:16,865 - tankhub.modules.media_sorter - INFO - Using cached data for Kraven The Hunter (2024).mkv
+The thread 0x8 has exited with code 0 (0x0).
+The thread 0x7 has exited with code 0 (0x0).
+2025-02-27 12:01:16,991 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Dungeons%20And%20Dragons%20Honor%20Among%20Thieves&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:16,995 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:17,040 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Expend4bles&apikey=68b552d0&y=2023&type=movie HTTP/1.1" 200 47
+2025-02-27 12:01:17,044 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): www.omdbapi.com:80
+2025-02-27 12:01:17,085 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Dungeons+And+Dragons+Honor+Among+Thieves&apikey=68b552d0&y=2023 HTTP/1.1" 200 47
+2025-02-27 12:01:17,086 - tankhub.modules.media_sorter - WARNING - No API data found for Dungeons And Dragons Honor Among Thieves (2023)
+2025-02-27 12:01:17,118 - urllib3.connectionpool - DEBUG - http://www.omdbapi.com:80 "GET /?t=Expend4bles&apikey=68b552d0&y=2023 HTTP/1.1" 200 47
+2025-02-27 12:01:17,120 - tankhub.modules.media_sorter - WARNING - No API data found for Expend4bles (2023)
+The program 'python.exe' has exited with code -1 (0xffffffff).

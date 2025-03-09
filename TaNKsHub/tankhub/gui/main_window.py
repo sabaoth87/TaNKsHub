@@ -439,8 +439,7 @@ class TaNKsHubGUI:
             status_text = "Enabled" if module.enabled else "Disabled"
             
             status_frame = ttk.Frame(header_frame)
-            status_frame.pack(side='right', padx=5)
-            
+            status_frame.pack(side='right', padx=5)          
         
     def create_module_filter(self, parent):
         """Create a search/filter area for modules."""
@@ -1217,7 +1216,6 @@ class TaNKsHubGUI:
         if hasattr(self, 'file_count_label'):
             self.file_count_label.config(text=f"Total: {len(files)} files")
 
-
     def add_tooltip(self, widget, text):
         """Add a tooltip to a widget."""
         def enter(event):
@@ -1241,13 +1239,11 @@ class TaNKsHubGUI:
         widget.bind("<Enter>", enter)
         widget.bind("<Leave>", leave)
 
-
     def remove_file(self, index):
         """Remove a file from the list."""
         if 0 <= index < len(self.file_paths):
             del self.file_paths[index]
             self.update_file_list_display(self.file_paths)
-
 
     def clear_file_list(self):
         """Clear the entire file list."""

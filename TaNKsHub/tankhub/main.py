@@ -3,7 +3,8 @@ from tkinterdnd2 import TkinterDnD
 from tankhub.gui.main_window import TaNKsHubGUI
 from tankhub.modules.file_mover import FileMoverModule
 from tankhub.modules.file_name_editor import FileNameEditorModule
-from tankhub.modules.media_sorter import MediaSorterModule  # Import the new module
+from tankhub.modules.media_sorter import MediaSorterModule
+from tankhub.modules.video_converter import VideoConverterModule
 
 """
 tankhub/
@@ -20,7 +21,8 @@ tankhub/
     ├── __init__.py
     ├── file_mover.py
     ├── file_name_editor.py
-    └── media_sorter.py    # New module for media organization
+    ├── media_sorter.py         # New module for media organization
+    └── video_converter.py      # New module for video conversion
 """
 
 # Set up logging
@@ -50,15 +52,20 @@ def main():
     logger.debug("Creating MediaSorterModule instance")
     media_sorter = MediaSorterModule()
     
+    # Create the video converter module
+    logger.debug("Creating VideoConverterModule instance")
+    video_converter = VideoConverterModule()
+
     # Connect the modules - IMPROVED CONNECTIONS
     file_mover.filename_editor = filename_editor
     media_sorter.file_mover = file_mover
-    # Direct connection between MediaSorter and FileNameEditor for better integration
     media_sorter.filename_editor = filename_editor
-    
+    video_converter.filename_editor = filename_editor
+
     logger.debug(f"Connected FileNameEditor to FileMover: {file_mover.filename_editor is not None}")
     logger.debug(f"Connected FileMover to MediaSorter: {media_sorter.file_mover is not None}")
     logger.debug(f"Connected FileNameEditor to MediaSorter: {media_sorter.filename_editor is not None}")
+    logger.debug(f"Connected FileNameEditor to VideoConverter: {video_converter.filename_editor is not None}")
 
     # Verify the filename parser works
     test_filename = "Test.Movie.2021.mp4"
@@ -78,12 +85,14 @@ def main():
     app.module_manager.register_module(file_mover)
     app.module_manager.register_module(filename_editor)  # Register filename editor
     app.module_manager.register_module(media_sorter)
+    app.module_manager.register_module(video_converter)
     
     # Give modules reference to main app for background processing
     file_mover.app = app
     filename_editor.app = app
     media_sorter.app = app
-    
+    video_converter.app = app
+
     # Add methods to modules to get files from main app
     def get_main_files():
         return app.get_current_files()

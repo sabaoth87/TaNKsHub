@@ -3256,5 +3256,1401 @@
         ],
         "type": "movie",
         "content_rating": "PG-13"
+    },
+    "Prometheus 2012": {
+        "title": "Prometheus",
+        "year": "2012",
+        "genres": [
+            "Adventure",
+            "Mystery",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Alien.Covenant.2017.1080p.BluRay.x264-[YTS.AG]": {
+        "title": "Alien: Covenant",
+        "year": "2017",
+        "genres": [
+            "Horror",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Angelas Christmas Wish (2020)": {
+        "title": "Angela's Christmas Wish",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "TV-Y7-FV"
+    },
+    "Howls Moving Castle 2004 720p Bluray X264-yts Am": {
+        "title": "Howl's Moving Castle",
+        "year": "2004",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Civil War (2024)": {
+        "title": "Civil War",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Furiosa A Mad Max Saga (2024)": {
+        "title": "Furiosa: A Mad Max Saga",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Inside Out 2 (2024)": {
+        "title": "Inside Out 2",
+        "year": "2024",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Kraven The Hunter (2024)": {
+        "title": "Kraven the Hunter",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Leo (2023)": {
+        "title": "Leo",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "Mission Impossible Dead Reckoning Part One (2023)": {
+        "title": "Mission Impossible: Dead Reckoning Part One (2023)",
+        "year": "2023",
+        "genres": [
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Monkey Man (2024)": {
+        "title": "Monkey Man",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Beekeeper (2024)": {
+        "title": "The Beekeeper",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Crow (2024)": {
+        "title": "The Crow",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Crime",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Fall Guy (2024)": {
+        "title": "The Fall Guy",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Flash (2023)": {
+        "title": "The Flash",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Last Voyage Of The Demeter (2023)": {
+        "title": "The Last Voyage of the Demeter",
+        "year": "2023",
+        "genres": [
+            "Fantasy",
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ant-man And The Wasp (2018)": {
+        "title": "Ant-Man and the Wasp",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Artemis Fowl (2020)": {
+        "title": "Artemis Fowl",
+        "year": "2020",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Black Widow (2021)": {
+        "title": "Black Widow",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Bloodshot (2020)": {
+        "title": "Bloodshot",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Brave (2012)": {
+        "title": "Brave",
+        "year": "2012",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Coco (2017)": {
+        "title": "Coco",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Destination Wedding (2018)": {
+        "title": "Destination Wedding",
+        "year": "2018",
+        "genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Encanto (2021)": {
+        "title": "Encanto",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Finding Dory (2016)": {
+        "title": "Finding Dory",
+        "year": "2016",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Finding Nemo (2003)": {
+        "title": "Finding Nemo",
+        "year": "2003",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Ghostbusters Afterlife (2021)": {
+        "title": "Ghostbusters: Afterlife",
+        "year": "2021",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "How It Ends (2018)": {
+        "title": "How It Ends",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Drama",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "TV-MA"
+    },
+    "Inside Out (2015)": {
+        "title": "Inside Out",
+        "year": "2015",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "John Wick Chapter 4 (2023)": {
+        "title": "John Wick: Chapter 4",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Madagascar (2005)": {
+        "title": "Madagascar",
+        "year": "2005",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Madagascar Escape 2 Africa (2008)": {
+        "title": "Madagascar: Escape 2 Africa",
+        "year": "2008",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Mortal Engines (2018)": {
+        "title": "Mortal Engines",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Night At The Museum (2006)": {
+        "title": "Night at the Museum",
+        "year": "2006",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "No Time To Die (2021)": {
+        "title": "No Time to Die",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Penguins Of Madagascar (2014)": {
+        "title": "Penguins of Madagascar",
+        "year": "2014",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Raya And The Last Dragon (2021)": {
+        "title": "Raya and the Last Dragon",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Star Wars The Rise Of Skywalker (2019)": {
+        "title": "Live from the Red Carpet of Star Wars: The Rise of Skywalker",
+        "year": "2019",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "The Super Mario Bros Movie (2023)": {
+        "title": "The Super Mario Bros. Movie",
+        "year": "2023",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Batman (2022)": {
+        "title": "The Batman",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Conjuring The Devil Made Me Do It (2021)": {
+        "title": "The Conjuring: The Devil Made Me Do It",
+        "year": "2021",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Equalizer 2 (2018)": {
+        "title": "The Equalizer 2",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Invisible Man (2020)": {
+        "title": "The Invisible Man",
+        "year": "2020",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Lego Batman Movie (2017)": {
+        "title": "The Lego Batman Movie",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Lego Movie 2 The Second Part (2019)": {
+        "title": "The Lego Movie 2: The Second Part",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Lego Movie (2014)": {
+        "title": "The Lego Movie",
+        "year": "2014",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Meg (2018)": {
+        "title": "The Meg",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Horror",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Secret Life Of Pets 2 (2019)": {
+        "title": "The Secret Life of Pets 2",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Silencing (2020)": {
+        "title": "The Silencing",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Crime",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Toy Story 2 (1999)": {
+        "title": "Toy Story 2",
+        "year": "1999",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Toy Story 3 (2010)": {
+        "title": "Toy Story 3",
+        "year": "2010",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Toy Story 4 (2019)": {
+        "title": "Toy Story 4",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Toy Story (1995)": {
+        "title": "Toy Story",
+        "year": "1995",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "G"
+    },
+    "Upgrade (2018)": {
+        "title": "Upgrade",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dungeons And Dragons Honor Among Thieves (2023)": {
+        "title": "Dungeons & Dragons: Honor Among Thieves",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Expend4bles (2023)": {
+        "title": "Expend4bles",
+        "year": "2023",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "The Hunger Games The Ballad Of Songbirds And Snakes (2023)": {
+        "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jurassic World 3 Dominion (2022)": {
+        "title": "Jurassic World Dominion",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Leon The Professional Extended (1994)": {
+        "title": "Leon: The Professional (1994)",
+        "year": "1994",
+        "genres": [
+            "Talk-Show"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Madagascar 3 Europes Most Wanted (2012)": {
+        "title": "Madagascar 3: Europe's Most Wanted",
+        "year": "2012",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Fast X (2023)": {
+        "title": "Fast X",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Kung Fu Panda 4 (2024)": {
+        "title": "Kung Fu Panda 4",
+        "year": "2024",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Lesbian Vampire Killers (2009)": {
+        "title": "Lesbian Vampire Killers",
+        "year": "2009",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Madame Web (2024)": {
+        "title": "Madame Web",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Morbius (2022)": {
+        "title": "Morbius",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Mr And Mrs Smith 2024 - S01E01": {
+        "title": "Mr And Mrs Smith",
+        "year": "2024",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "tv",
+        "content_rating": null
+    },
+    "Mr And Mrs Smith 2024 - S01E02": {
+        "title": "Mr And Mrs Smith",
+        "year": "2024",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "tv",
+        "content_rating": null
+    },
+    "Puss In Boots The Last Wish (2022)": {
+        "title": "Puss in Boots: The Last Wish",
+        "year": "2022",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Equalizer 3 (2023)": {
+        "title": "The Equalizer 3",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Exorcist Believer (2023)": {
+        "title": "The Exorcist: Believer",
+        "year": "2023",
+        "genres": [
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Green Knight (2021)": {
+        "title": "The Green Knight",
+        "year": "2021",
+        "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Killer (2024)": {
+        "title": "The Killer",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Thor Love And Thunder (2022)": {
+        "title": "Thor: Love and Thunder",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Top Gun Maverick (2022)": {
+        "title": "Top Gun: Maverick",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Transformers One (2024)": {
+        "title": "Transformers One",
+        "year": "2024",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Twisters (2024)": {
+        "title": "Twisters",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Wonka (2023)": {
+        "title": "Wonka",
+        "year": "2023",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Family"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Blackkklansman (2018)": {
+        "title": "BlacKkKlansman",
+        "year": "2018",
+        "genres": [
+            "Biography",
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dragon Ball Super Broly (2018)": {
+        "title": "Dragon Ball Super: Broly",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Eternals (2021)": {
+        "title": "Eternals",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Halloween Kills (2021)": {
+        "title": "Halloween Kills",
+        "year": "2021",
+        "genres": [
+            "Action",
+            "Drama",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "I Am Mother (2019)": {
+        "title": "I Am Mother",
+        "year": "2019",
+        "genres": [
+            "Drama",
+            "Mystery",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "TV-14"
+    },
+    "Jurassic Park (1993)": {
+        "title": "Jurassic Park",
+        "year": "1993",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jurassic Park Ii The Lost World (1997)": {
+        "title": "The Lost World: Jurassic Park",
+        "year": "1997",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jurassic Park Iii (2001)": {
+        "title": "Jurassic Park III",
+        "year": "2001",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jurassic World Fallen Kingdom (2018)": {
+        "title": "Jurassic World: Fallen Kingdom",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Malignant (2021)": {
+        "title": "Malignant",
+        "year": "2021",
+        "genres": [
+            "Crime",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Nope (2022)": {
+        "title": "Nope",
+        "year": "2022",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Pig (2021)": {
+        "title": "Pig",
+        "year": "2021",
+        "genres": [
+            "Drama",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Primal (2019)": {
+        "title": "Primal",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Scary Stories To Tell In The Dark (2019)": {
+        "title": "Scary Stories to Tell in the Dark",
+        "year": "2019",
+        "genres": [
+            "Adventure",
+            "Horror",
+            "Mystery"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Sonic The Hedgehog (2020)": {
+        "title": "Sonic the Hedgehog",
+        "year": "2020",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Croods A New Age (2020)": {
+        "title": "The Croods: A New Age",
+        "year": "2020",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The Death Of Superman (2018)": {
+        "title": "The Death of Superman",
+        "year": "2018",
+        "genres": [
+            "Animation",
+            "Action",
+            "Family",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Northman (2022)": {
+        "title": "The Northman",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Avatar The Way Of Water (2022)": {
+        "title": "Avatar: The Way of Water",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Beetlejuice Beetlejuice (2024)": {
+        "title": "Beetlejuice Beetlejuice",
+        "year": "2024",
+        "genres": [
+            "Comedy",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Bullet Train (2022)": {
+        "title": "Bullet Train",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Dave Chappelle Sticks And Stones (2019)": {
+        "title": "Dave Chappelle Sticks And Stones",
+        "year": "2019",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Extraction 2 (2023)": {
+        "title": "Damn You Hollywood: Extraction 2/Flamin Hot (2023)",
+        "year": "2023",
+        "genres": [
+            "N/A"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "How To Train Your Dragon 2 (2014)": {
+        "title": "How to Train Your Dragon 2",
+        "year": "2014",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "How To Train Your Dragon (2010)": {
+        "title": "How to Train Your Dragon",
+        "year": "2010",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "How To Train Your Dragon Homecoming (2019)": {
+        "title": "How to Train Your Dragon: Homecoming",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Action",
+            "Adventure"
+        ],
+        "type": "movie",
+        "content_rating": "TV-PG"
+    },
+    "Harry Potter And The Deathly Hallows Part 1 (2010)": {
+        "title": "Harry Potter and the Deathly Hallows: Part 1",
+        "year": "2010",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Jumanji The Next Level (2019)": {
+        "title": "Jumanji: The Next Level",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Long Shot (2019)": {
+        "title": "Long Shot",
+        "year": "2019",
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Maze Runner The Death Cure (2018)": {
+        "title": "Maze Runner: The Death Cure",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Meg 2 The Trench (2023)": {
+        "title": "Meg 2: The Trench",
+        "year": "2023",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Prey (2022)": {
+        "title": "Prey",
+        "year": "2022",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Sing 2 (2021)": {
+        "title": "Sing 2",
+        "year": "2021",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "The First Purge (2018)": {
+        "title": "The First Purge",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Horror",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Hitmans Wifes Bodyguard (2021)": {
+        "title": "The Hitmans Wifes Bodyguard",
+        "year": "2021",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Tomb Raider (2018)": {
+        "title": "Tomb Raider",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Venom (2018)": {
+        "title": "Venom",
+        "year": "2018",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "A Quiet Place (2018)": {
+        "title": "A Quiet Place",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "A Star Is Born (2018)": {
+        "title": "A Star Is Born",
+        "year": "2018",
+        "genres": [
+            "Drama",
+            "Music",
+            "Romance"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Black And Blue (2019)": {
+        "title": "Black and Blue",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Despicable Me 2 (2013)": {
+        "title": "Despicable Me 2",
+        "year": "2013",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Despicable Me 3 (2017)": {
+        "title": "Despicable Me 3",
+        "year": "2017",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Despicable Me (2010)": {
+        "title": "Despicable Me",
+        "year": "2010",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Fantastic Beasts The Secrets Of Dumbledore (2022)": {
+        "title": "Fantastic Beasts: The Secrets of Dumbledore",
+        "year": "2022",
+        "genres": [
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Fantastic Beasts And Where To Find Them (2016)": {
+        "title": "Fantastic Beasts and Where to Find Them",
+        "year": "2016",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Harry Potter And The Deathly Hallows Part 2 (2011)": {
+        "title": "Harry Potter and the Deathly Hallows: Part 2",
+        "year": "2011",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Harry Potter And The Goblet Of Fire (2005)": {
+        "title": "Harry Potter and the Goblet of Fire",
+        "year": "2005",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Harry Potter And The Half Blood Prince (2009)": {
+        "title": "Big Movie Premiere: Harry Potter and the Half Blood Prince",
+        "year": "2009",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Harry Potter And The Sorcerers Stone (2001)": {
+        "title": "Harry Potter And The Sorcerers Stone",
+        "year": "2001",
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Harry Potter And The Chamber Of Secrets 2002": {
+        "title": "Harry Potter and the Chamber of Secrets",
+        "year": "2002",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Harry Potter And The Prisoner Of Azkaban 2004": {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "year": "2004",
+        "genres": [
+            "Adventure",
+            "Family",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "How To Train Your Dragon Snoggletog Log (2019)": {
+        "title": "How to Train Your Dragon: Snoggletog Log",
+        "year": "2019",
+        "genres": [
+            "Animation",
+            "Short"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    " (1917)": {
+        "title": "1917",
+        "year": "2019",
+        "genres": [
+            "Action",
+            "Drama",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "R"
     }
 }

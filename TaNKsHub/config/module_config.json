@@ -32,5 +32,12 @@
             "simulate": true,
             "pre_process_filenames": true
         }
+    },
+    "Video Converter": {
+        "enabled": true,
+        "settings": {
+            "output_directory": "",
+            "output_format": "mp4"
+        }
     }
 }

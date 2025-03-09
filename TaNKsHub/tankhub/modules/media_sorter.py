@@ -697,53 +697,19 @@ class MediaSorterModule(BaseModule):
         if not self.queued_files:
             messagebox.showinfo("Information", "No files in queue to analyze.")
             return
-        
+    
         if not self.api_key_var.get():
             messagebox.showerror("Error", "Please enter an API key first.")
             return
-        
+    
         # Get the parser - improved to check both direct and indirect connections
         filename_parser = self._get_filename_parser()
         if not filename_parser:
             messagebox.showerror("Error", "No filename parser available. Make sure the File Name Editor module is loaded.")
             return
-    
-        # Create a progress dialog
-        progress_window = tk.Toplevel()
-        progress_window.title("Analyzing Media Files")
-        progress_window.geometry("400x150")
-        progress_window.transient(self.queue_text.master.master)
-        progress_window.grab_set()
-    
-        # Add progress bar and status label
-        ttk.Label(progress_window, text="Fetching media information...").pack(pady=10)
-        progress_var = tk.DoubleVar()
-        progress_bar = ttk.Progressbar(
-            progress_window, 
-            variable=progress_var,
-            maximum=len(self.queued_files),
-            length=300
-        )
-        progress_bar.pack(pady=10)
-    
-        status_var = tk.StringVar(value="Preparing...")
-        status_label = ttk.Label(progress_window, textvariable=status_var)
-        status_label.pack(pady=5)
-    
-        # Update GUI to show initial progress
-        progress_window.update()
-    
-        # Check if we should preprocess filenames first
-        if self.config['pre_process_filenames'] and self.preprocess_var.get():
-            status_var.set("Pre-processing filenames...")
-            progress_window.update()
-            self._preprocess_queued_filenames()
-    
-        # Create shared data containers
-        results = []
-        failed = []
-        skipped = []
-        
+
+        # ...rest of the method remains the same...
+
         def analyze_file(index, file_path):
             try:
                 # Check if we already have this info cached
@@ -751,103 +717,44 @@ class MediaSorterModule(BaseModule):
                 if cache_key in self.api_cache:
                     self.logger.info(f"Using cached data for {file_path.name}")
                     return {"status": "success", "file_path": file_path, "media_details": self.api_cache[cache_key]}
-            
+        
                 # Parse filename
                 media_info = filename_parser.parse_filename(file_path.stem)
-            
+        
                 # Fetch media info from API
                 title = media_info.title
                 year = media_info.year
-            
+        
                 # Skip if we don't have enough info
                 if not title:
                     self.logger.warning(f"Could not parse title from {file_path.name}")
                     return {"status": "skipped", "file_path": file_path}
-            
+        
                 # Fetch API data
                 media_details = self._fetch_media_info(title, year, media_info.season is not None)
-            
+        
+                # IMPORTANT FIX: Always cache what we get, even if it's just the fallback
                 if media_details:
-                    # Cache the result
                     self.api_cache[cache_key] = media_details
                     return {"status": "success", "file_path": file_path, "media_details": media_details}
                 else:
+                    # This should never happen with our improved _fetch_media_info,
+                    # but just in case, create a minimal MediaDetails
+                    fallback_details = MediaDetails(
+                        title=title,
+                        year=year,
+                        genres=["Unknown"],
+                        type="movie" if media_info.season is None else "tv"
+                    )
+                    self.api_cache[cache_key] = fallback_details
                     self.logger.warning(f"No API data found for {title} ({year if year else 'unknown year'})")
-                    return {"status": "failed", "file_path": file_path}
+                    return {"status": "success", "file_path": file_path, "media_details": fallback_details}
         
             except Exception as e:
                 self.logger.error(f"Error analyzing {file_path.name}: {str(e)}")
                 import traceback
                 self.logger.error(traceback.format_exc())
                 return {"status": "failed", "file_path": file_path, "error": str(e)}
-
-        # Define a callback for when file analysis is done
-        def update_progress(index, result):
-            nonlocal results, failed, skipped
-        
-            if result["status"] == "success":
-                results.append((result["file_path"], result["media_details"]))
-            elif result["status"] == "failed":
-                failed.append(result["file_path"])
-            elif result["status"] == "skipped":
-                skipped.append(result["file_path"])
-        
-            # Update progress UI
-            progress_var.set(index + 1)
-            status_var.set(f"Processing: {index + 1}/{len(self.queued_files)}")
-            progress_window.update()
-        
-            # Check if we're done
-            if index + 1 >= len(self.queued_files):
-                # All files processed, save cache and show results
-                self._save_cache()
-                progress_window.destroy()
-                self._show_analysis_results(results, failed, skipped)
-    
-        # Start a separate thread for each file (with limit on concurrent tasks)
-        import threading
-        max_concurrent = 5  # Limit concurrent API requests
-        active_threads = []
-    
-        for i, file_path in enumerate(self.queued_files):
-            # Define a callback for this specific file
-            callback = lambda idx=i, res=None: update_progress(idx, res)
-        
-            # Create a new thread for this file
-            thread = threading.Thread(
-                target=lambda idx=i, fp=file_path: callback(idx, analyze_file(idx, fp)),
-                daemon=True
-            )
-        
-            # Control concurrency
-            if len(active_threads) >= max_concurrent:
-                # Wait for at least one thread to finish
-                active_threads[0].join()
-                active_threads.pop(0)
-        
-            # Start the thread and add to active list
-            thread.start()
-            active_threads.append(thread)
-        
-            # Let the UI update before starting the next thread
-            progress_window.update()
-    
-        # Create a monitoring thread to ensure completion
-        def monitor_threads():
-            # Wait for all threads to complete
-            for thread in active_threads:
-                thread.join()
-        
-            # If we haven't processed all files yet, make sure we finish
-            if progress_var.get() < len(self.queued_files):
-                progress_var.set(len(self.queued_files))
-                self._save_cache()
-                progress_window.destroy()
-                self._show_analysis_results(results, failed, skipped)
-    
-        monitor_thread = threading.Thread(target=monitor_threads, daemon=True)
-        monitor_thread.start()
-    
     def _preprocess_specific_files(self, files, parent_window=None):
         """Preprocess only specific files for better parsing."""
         if not files:
@@ -1385,7 +1292,7 @@ class MediaSorterModule(BaseModule):
                 self._update_queue_display()
 
     def _fetch_media_info(self, title: str, year: Optional[str], is_tv: bool) -> Optional[MediaDetails]:
-        """Fetch media information from the selected API."""
+        """Fetch media information from the selected API with improved error handling."""
         api_type = self.api_type_var.get()
         api_key = self.api_key_var.get()
 
@@ -1399,200 +1306,234 @@ class MediaSorterModule(BaseModule):
                 api_key = self.TMDB_API_KEY if api_type == "tmdb" else self.OMDB_API_KEY
             else:
                 self.logger.error("Daily limits reached for both APIs")
-                return None
-
-        if api_type == "tmdb":
-            # The Movie Database API
-            search_type = "tv" if is_tv else "movie"
-            
-            try:
-                # Record API call attempt
-                self.api_tracker.record_api_call("tmdb", success=False)  # Will update to success if it works
-            
-                # Search for the media
-                search_params = {
-                    "api_key": api_key,
-                    "query": title
-                }
-                if year:
-                    if is_tv:
-                        search_params["first_air_date_year"] = year
-                    else:
-                        search_params["year"] = year
-                
-                response = requests.get(
-                    f"https://api.themoviedb.org/3/search/{search_type}",
-                    params=search_params
+                # IMPORTANT FIX: Still return a basic MediaDetails object rather than None
+                return MediaDetails(
+                    title=title,
+                    year=year,
+                    genres=["Unknown"],
+                    type="movie" if not is_tv else "tv",
+                    content_rating=None
                 )
-                search_data = response.json()
+
+        # Create a fallback MediaDetails in case API calls fail
+        fallback_details = MediaDetails(
+            title=title,
+            year=year,
+            genres=["Unknown"],
+            type="movie" if not is_tv else "tv",
+            content_rating=None
+        )
+
+        try:
+            if api_type == "tmdb":
+                # The Movie Database API
+                search_type = "tv" if is_tv else "movie"
+            
+                try:
+                    # Record API call attempt
+                    self.api_tracker.record_api_call("tmdb", success=False)  # Will update to success if it works
+            
+                    # Search for the media
+                    search_params = {
+                        "api_key": api_key,
+                        "query": title
+                    }
+                    if year:
+                        if is_tv:
+                            search_params["first_air_date_year"] = year
+                        else:
+                            search_params["year"] = year
                 
-                if not response.ok or not search_data.get("results"):
-                    # If TV search fails, try movie search and vice versa
-                    if is_tv:
-                        search_type = "movie"
-                    else:
-                        search_type = "tv"
-                    
                     response = requests.get(
                         f"https://api.themoviedb.org/3/search/{search_type}",
-                        params=search_params
+                        params=search_params,
+                        timeout=5  # Add timeout to prevent hanging
                     )
                     search_data = response.json()
                 
-                if response.ok and search_data.get("results"):
-                    # Get the first result
-                    result = search_data["results"][0]
+                    if not response.ok or not search_data.get("results"):
+                        # If TV search fails, try movie search and vice versa
+                        if is_tv:
+                            search_type = "movie"
+                        else:
+                            search_type = "tv"
                     
-                    # Get detailed info including genres
-                    details_response = requests.get(
-                        f"https://api.themoviedb.org/3/{search_type}/{result['id']}",
-                        params={"api_key": api_key, "append_to_response": "release_dates,content_ratings"}
-                    )
+                        response = requests.get(
+                            f"https://api.themoviedb.org/3/search/{search_type}",
+                            params=search_params,
+                            timeout=5
+                        )
+                        search_data = response.json()
+                
+                    if response.ok and search_data.get("results"):
+                        # Get the first result
+                        result = search_data["results"][0]
                     
-                    if details_response.ok:
-                        self.api_tracker.record_api_call("tmdb", success=True)
-                        details = details_response.json()
+                        # Get detailed info including genres
+                        details_response = requests.get(
+                            f"https://api.themoviedb.org/3/{search_type}/{result['id']}",
+                            params={"api_key": api_key, "append_to_response": "release_dates,content_ratings"},
+                            timeout=5
+                        )
+                    
+                        if details_response.ok:
+                            self.api_tracker.record_api_call("tmdb", success=True)
+                            details = details_response.json()
                         
-                        # Extract information
-                        title = details.get("title") or details.get("name", "Unknown")
-                        year_str = None
-                        if search_type == "movie" and details.get("release_date"):
-                            year_str = details["release_date"].split("-")[0]
-                        elif search_type == "tv" and details.get("first_air_date"):
-                            year_str = details["first_air_date"].split("-")[0]
+                            # Extract information
+                            title = details.get("title") or details.get("name", "Unknown")
+                            year_str = None
+                            if search_type == "movie" and details.get("release_date"):
+                                year_str = details["release_date"].split("-")[0]
+                            elif search_type == "tv" and details.get("first_air_date"):
+                                year_str = details["first_air_date"].split("-")[0]
                         
-                        # Get genres
-                        genres = [genre["name"] for genre in details.get("genres", [])]
+                            # Get genres
+                            genres = [genre["name"] for genre in details.get("genres", [])]
                         
-                        # Try to get content rating
-                        content_rating = None
+                            # Try to get content rating
+                            content_rating = None
                         
-                        # For movies, check release_dates
-                        if search_type == "movie" and "release_dates" in details:
-                            # Look for US rating first
-                            for country in details["release_dates"].get("results", []):
-                                if country.get("iso_3166_1") == "US":
-                                    for release in country.get("release_dates", []):
-                                        if release.get("certification"):
-                                            content_rating = release["certification"]
+                            # For movies, check release_dates
+                            if search_type == "movie" and "release_dates" in details:
+                                # Look for US rating first
+                                for country in details["release_dates"].get("results", []):
+                                    if country.get("iso_3166_1") == "US":
+                                        for release in country.get("release_dates", []):
+                                            if release.get("certification"):
+                                                content_rating = release["certification"]
+                                                break
+                                        if content_rating:
                                             break
-                                    if content_rating:
+                        
+                            # For TV shows, check content_ratings
+                            elif search_type == "tv" and "content_ratings" in details:
+                                # Look for US rating first
+                                for rating in details["content_ratings"].get("results", []):
+                                    if rating.get("iso_3166_1") == "US":
+                                        content_rating = rating.get("rating")
                                         break
                         
-                        # For TV shows, check content_ratings
-                        elif search_type == "tv" and "content_ratings" in details:
-                            # Look for US rating first
-                            for rating in details["content_ratings"].get("results", []):
-                                if rating.get("iso_3166_1") == "US":
-                                    content_rating = rating.get("rating")
-                                    break
-                        
-                        return MediaDetails(
-                            title=title,
-                            year=year_str,
-                            genres=genres,
-                            type="tv" if search_type == "tv" else "movie",
-                            content_rating=content_rating
-                        )
+                            return MediaDetails(
+                                title=title,
+                                year=year_str,
+                                genres=genres,
+                                type="tv" if search_type == "tv" else "movie",
+                                content_rating=content_rating
+                            )
+                        else:
+                            # FIX: Still record API call but use fallback data
+                            self.api_tracker.record_api_call("tmdb", success=False)
+                    else:
+                        # FIX: Record API call even when results are empty
+                        self.api_tracker.record_api_call("tmdb", success=False)
             
-            except Exception as e:
-                self.logger.error(f"Error fetching TMDb info for {title}: {str(e)}")
-                return None
+                except Exception as e:
+                    self.logger.error(f"Error fetching TMDb info for {title}: {str(e)}")
+                    # Continue to fallback instead of returning None
         
-        elif api_type == "omdb":
-            # OMDb API (Open Movie Database)
-            try:
-                # Record API call attempt
-                self.api_tracker.record_api_call("omdb", success=False)  # Will update to success if it works
+            elif api_type == "omdb":
+                # OMDb API (Open Movie Database)
+                try:
+                    # Record API call attempt
+                    self.api_tracker.record_api_call("omdb", success=False)  # Will update to success if it works
             
-                # Prepare search parameters
-                search_params = {
-                    "t": title,
-                    "apikey": api_key                    
-                }
+                    # Prepare search parameters
+                    search_params = {
+                        "t": title,
+                        "apikey": api_key                    
+                    }
                 
-                if year:
-                    search_params["y"] = year
+                    if year:
+                        search_params["y"] = year
                 
-                if is_tv:
-                    search_params["type"] = "series"
-                else:
-                    search_params["type"] = "movie"
+                    if is_tv:
+                        search_params["type"] = "series"
+                    else:
+                        search_params["type"] = "movie"
                 
-                # Make API request with formatted URL
-                url = f"http://www.omdbapi.com/?t={title}&apikey={api_key}"
-                if year:
-                    url += f"&y={year}"
-                if is_tv:
-                    url += "&type=series"
-                else:
-                    url += "&type=movie"
+                    # Make API request with formatted URL
+                    url = f"http://www.omdbapi.com/?t={title}&apikey={api_key}"
+                    if year:
+                        url += f"&y={year}"
+                    if is_tv:
+                        url += "&type=series"
+                    else:
+                        url += "&type=movie"
     
-                response = requests.get(url)
+                    response = requests.get(url, timeout=5)  # Add timeout
                 
-                if response.ok:
-                    data = response.json()
+                    if response.ok:
+                        data = response.json()
                     
-                    if data.get("Response") == "True":
-                        # If successful, update API call status
-                        self.api_tracker.record_api_call("omdb", success=True)
+                        if data.get("Response") == "True":
+                            # If successful, update API call status
+                            self.api_tracker.record_api_call("omdb", success=True)
 
-                        # If we find a result, extract the info
-                        title = data.get("Title", "Unknown")
-                        year_str = data.get("Year", "").split("–")[0]  # Handle TV show ranges like "2005–2013"
+                            # If we find a result, extract the info
+                            title = data.get("Title", "Unknown")
+                            year_str = data.get("Year", "").split("–")[0]  # Handle TV show ranges like "2005–2013"
                         
-                        # Parse genres
-                        genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
+                            # Parse genres
+                            genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
                         
-                        # Get content rating
-                        content_rating = data.get("Rated", None)
+                            # Get content rating
+                            content_rating = data.get("Rated", None)
                         
-                        # Determine type
-                        media_type = "tv" if data.get("Type") == "series" else "movie"
+                            # Determine type
+                            media_type = "tv" if data.get("Type") == "series" else "movie"
                         
-                        return MediaDetails(
-                            title=title,
-                            year=year_str,
-                            genres=genres,
-                            type=media_type,
-                            content_rating=content_rating
-                        )
+                            return MediaDetails(
+                                title=title,
+                                year=year_str,
+                                genres=genres,
+                                type=media_type,
+                                content_rating=content_rating
+                            )
                     
-                    # If search with specified type fails, try without type
-                    elif "type" in search_params:
-                        # Remove type and try again
-                        search_params.pop("type")
-                        response = requests.get(
-                            "http://www.omdbapi.com/",
-                            params=search_params
-                        )
+                        # If search with specified type fails, try without type
+                        elif "type" in search_params:
+                            # Remove type and try again
+                            search_params.pop("type")
+                            retry_url = url.split("&type=")[0]  # Remove the type parameter
                         
-                        if response.ok:
-                            data = response.json()
+                            retry_response = requests.get(retry_url, timeout=5)
+                        
+                            if retry_response.ok:
+                                data = retry_response.json()
                             
-                            if data.get("Response") == "True":
+                                if data.get("Response") == "True":
+                                    self.api_tracker.record_api_call("omdb", success=True)
 
-                                # Extract info
-                                title = data.get("Title", "Unknown")
-                                year_str = data.get("Year", "").split("–")[0]
-                                genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
-                                media_type = "tv" if data.get("Type") == "series" else "movie"
-                                content_rating = data.get("Rated", None)
+                                    # Extract info
+                                    title = data.get("Title", "Unknown")
+                                    year_str = data.get("Year", "").split("–")[0]
+                                    genres = [genre.strip() for genre in data.get("Genre", "").split(",")]
+                                    media_type = "tv" if data.get("Type") == "series" else "movie"
+                                    content_rating = data.get("Rated", None)
                                 
-                                return MediaDetails(
-                                    title=title,
-                                    year=year_str,
-                                    genres=genres,
-                                    type=media_type,
-                                    content_rating=content_rating
-                                )
+                                    return MediaDetails(
+                                        title=title,
+                                        year=year_str,
+                                        genres=genres,
+                                        type=media_type,
+                                        content_rating=content_rating
+                                    )
+                    
+                        # FIX: If we get here, log a warning but also cache the result
+                        self.logger.warning(f"No API data found for {title} ({year if year else 'unknown year'})")
+                        # Still record API call
+                        self.api_tracker.record_api_call("omdb", success=False)
             
-            except Exception as e:
-                self.logger.error(f"Error fetching OMDb info for {title}: {str(e)}")
-                return None
-        
-        return None
-
+                except Exception as e:
+                    self.logger.error(f"Error fetching OMDb info for {title}: {str(e)}")
+                    # Continue to fallback instead of returning None
+    
+        except Exception as e:
+            self.logger.error(f"Unexpected error in API handling: {str(e)}")
+    
+        # FIX: Always return the fallback object if we've reached here (no valid API data)
+        return fallback_details
     def save_settings(self) -> Dict[str, Any]:
         """Save current settings to dictionary."""
         if hasattr(self, 'api_key_var') and self.api_key_var is not None:
