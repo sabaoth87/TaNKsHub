@@ -5,6 +5,7 @@ from tankhub.modules.file_mover import FileMoverModule
 from tankhub.modules.file_name_editor import FileNameEditorModule
 from tankhub.modules.media_sorter import MediaSorterModule
 from tankhub.modules.video_converter import VideoConverterModule
+import tkinterdnd2
 
 """
 tankhub/
@@ -39,7 +40,8 @@ logger = logging.getLogger(__name__)
 def main():
     logger.debug("Starting TaNKsHub initialization")
     root = TkinterDnD.Tk()
-    
+    print(tkinterdnd2.__path__)
+
     # Create the modules
     logger.debug("Creating FileMoverModule instance")
     file_mover = FileMoverModule()
