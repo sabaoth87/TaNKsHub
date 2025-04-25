@@ -1,11 +1,11 @@
 {
     "omdb": {
         "daily_limit": 1000,
-        "calls_today": 0,
+        "calls_today": 570,
         "last_reset": "2025-04-10",
-        "total_calls": 590,
-        "successful_calls": 202,
-        "failed_calls": 388,
+        "total_calls": 1160,
+        "successful_calls": 349,
+        "failed_calls": 811,
         "daily_history": {
             "2025-02-25": 303,
             "2025-02-26": 27,

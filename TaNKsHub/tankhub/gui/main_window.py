@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from tkinterdnd2 import DND_FILES, TkinterDnD
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Set
 from tankhub.core.base_module import BaseModule
 
 from tankhub.core.module_manager import ModuleManager
@@ -19,7 +19,7 @@ and better handling of edge cases.
 """
 
 class DragDropHandler:
-    """Helper class to manage drag and drop operations with better debugging."""
+    """Helper class to manage drag and drop operations with better debugging and folder support."""
     
     def __init__(self, logger):
         self.logger = logger
@@ -89,7 +89,7 @@ class DragDropHandler:
                     files.append(current_file)
         
         # Log the parsed file list
-        self.logger.debug(f"Parsed {len(files)} files from drop data:")
+        self.logger.debug(f"Parsed {len(files)} dropped paths")
         for i, file_path in enumerate(files):
             self.logger.debug(f"  {i+1}: {file_path}")
         
@@ -104,8 +104,69 @@ class DragDropHandler:
             if path:
                 cleaned_files.append(path)
         
-        self.logger.debug(f"Final cleaned file list: {len(cleaned_files)} files")
-        return cleaned_files
+        self.logger.debug(f"Cleaned drop list: {len(cleaned_files)} paths")
+        
+        # Process all file paths and folders
+        processed_files = self.process_paths(cleaned_files)
+        self.logger.debug(f"Final file list after processing folders: {len(processed_files)} files")
+        return processed_files
+    
+    def process_paths(self, paths: List[str]) -> List[str]:
+        """
+        Process a list of paths, expanding folders to include all valid files inside them.
+        
+        Args:
+            paths: List of file and folder paths
+            
+        Returns:
+            List of all valid file paths including those found in subfolders
+        """
+        result = []
+        processed_paths = set()  # Use a set to avoid duplicate processing
+        
+        # Get list of supported extensions from any active modules
+        # This would need to be passed in from the main app in a real implementation
+        # For now, we'll use a basic set of common media extensions
+        supported_extensions = {
+            '.mp4', '.mkv', '.avi', '.mov', '.wmv', '.m4v',  # Video
+            '.jpg', '.jpeg', '.png', '.gif', '.bmp',         # Images
+            '.mp3', '.wav', '.flac', '.aac', '.ogg'          # Audio
+        }
+        
+        # Process all paths
+        for path_str in paths:
+            path = Path(path_str)
+            
+            # Skip already processed paths
+            if str(path.resolve()) in processed_paths:
+                self.logger.debug(f"Skipping already processed path: {path}")
+                continue
+                
+            processed_paths.add(str(path.resolve()))
+            
+            if not path.exists():
+                self.logger.warning(f"Path does not exist: {path}")
+                continue
+                
+            if path.is_file():
+                # Add individual file
+                result.append(str(path))
+                self.logger.debug(f"Added file: {path}")
+            elif path.is_dir():
+                # Process directory recursively
+                self.logger.debug(f"Processing directory: {path}")
+                file_count = 0
+                
+                for root, dirs, files in os.walk(path):
+                    for file in files:
+                        file_path = Path(root) / file
+                        if file_path.suffix.lower() in supported_extensions:
+                            result.append(str(file_path))
+                            file_count += 1
+                
+                self.logger.debug(f"Found {file_count} valid files in directory: {path}")
+        
+        return result
 
 class ThreadMonitor:
     """Monitors thread execution and can recover from hung threads."""
@@ -1126,22 +1187,123 @@ class TaNKsHubGUI:
         logger.info(f"Module {module.name} {'enabled' if module.enabled else 'disabled'}")
 
     def handle_drop(self, event):
-        """Handle file drop events with robust parsing for all operating systems."""
+        """Handle file drop events with robust parsing and folder support."""
         # Create a handler if it doesn't exist
         if not hasattr(self, 'drop_handler'):
             self.drop_handler = DragDropHandler(self.logger)
     
-        # Use the handler to parse the drop data
-        files = self.drop_handler.parse_dropped_files(event.data)
+        # Show a progress dialog for longer operations
+        prog_win = None
+        try:
+            # Use the handler to parse the drop data
+            # This will handle the initial parsing of paths
+            parsed_paths = self.drop_handler.parse_dropped_files(event.data)
+        
+            # If we have many paths (which might include folders), show a progress dialog
+            if len(parsed_paths) > 5:
+                prog_win = tk.Toplevel(self.root)
+                prog_win.title("Processing Dropped Files")
+                prog_win.geometry("400x150")
+                prog_win.transient(self.root)
+                prog_win.grab_set()
+            
+                ttk.Label(prog_win, text="Processing dropped files and folders...").pack(pady=10)
+            
+                progress_var = tk.DoubleVar()
+                progress_bar = ttk.Progressbar(
+                    prog_win, 
+                    variable=progress_var,
+                    length=300
+                )
+                progress_bar.pack(pady=10)
+            
+                file_label_var = tk.StringVar(value="Scanning...")
+                file_label = ttk.Label(prog_win, textvariable=file_label_var)
+                file_label.pack(pady=5)
+            
+                files_count_var = tk.StringVar(value="")
+                files_count_label = ttk.Label(prog_win, textvariable=files_count_var)
+                files_count_label.pack(pady=5)
+            
+                prog_win.update()
+        
+            # Process the parsed paths and expand folders
+            self.logger.info(f"Processing {len(parsed_paths)} dropped paths")
+        
+            # Get a list of all supported extensions from enabled modules
+            supported_extensions = self.get_all_supported_extensions()
+            self.logger.debug(f"Supported extensions: {supported_extensions}")
+        
+            # Process all the paths 
+            final_files = []
+            for i, path_str in enumerate(parsed_paths):
+                path = Path(path_str)
+            
+                # Update progress UI if we have one
+                if prog_win:
+                    progress_var.set((i / len(parsed_paths)) * 100)
+                    file_label_var.set(f"Processing: {path.name}")
+                    files_count_var.set(f"Found {len(final_files)} files so far")
+                    prog_win.update()
+            
+                # Handle directory
+                if path.is_dir():
+                    self.logger.info(f"Processing directory: {path}")
+                    for root, dirs, files in os.walk(path):
+                        for file in files:
+                            file_path = Path(root) / file
+                            # Check if this file type is supported by any module
+                            if '*' in supported_extensions or file_path.suffix.lower() in supported_extensions:
+                                final_files.append(str(file_path))
+                # Handle individual file
+                elif path.is_file():
+                    # Check if this file type is supported
+                    if '*' in supported_extensions or path.suffix.lower() in supported_extensions:
+                        final_files.append(str(path))
+        
+            # Close progress dialog if we have one
+            if prog_win:
+                prog_win.destroy()
+                prog_win = None
+        
+            # Update the file list display with the final list of files
+            self.logger.info(f"Found {len(final_files)} valid files")
+        
+            # Update file list display
+            self.update_file_list_display(final_files)
     
-        # Update file list display
-        self.update_file_list_display(files)
+            # Store file paths
+            self.file_paths = final_files
     
-        # Store file paths
-        self.file_paths = files
+            # Process files with enabled modules
+            self.process_files(final_files)
+        
+        except Exception as e:
+            self.logger.error(f"Error processing dropped files: {str(e)}")
+            import traceback
+            self.logger.error(traceback.format_exc())
+            messagebox.showerror("Error", f"An error occurred while processing dropped files: {str(e)}")
+        finally:
+            # Make sure we clean up the progress window if an error occurred
+            if prog_win and prog_win.winfo_exists():
+                prog_win.destroy()
+
+    def get_all_supported_extensions(self):
+        """Get all supported file extensions from enabled modules."""
+        extensions = set()
     
-        # Process files with enabled modules
-        self.process_files(files)
+        # Get enabled modules
+        enabled_modules = self.module_manager.get_enabled_modules()
+    
+        # Collect extensions from all modules
+        for module in enabled_modules:
+            if hasattr(module, 'get_supported_extensions'):
+                module_extensions = module.get_supported_extensions()
+                if '*' in module_extensions:
+                    return {'*'}  # If any module accepts all files, return that
+                extensions.update(module_extensions)
+    
+        return extensions
 
     def update_file_list_display(self, files):
         """Update the file list display with improved UI elements."""
@@ -1251,17 +1413,134 @@ class TaNKsHubGUI:
         self.update_file_list_display([])
 
     def select_files(self, event=None):
-        """Open file selection dialog with improved handling for multiple files."""
-        new_files = filedialog.askopenfilenames(title="Select Files")
-        if new_files:
+        """Open file selection dialog with improved handling for multiple files and folders."""
+        selected = filedialog.askopenfilenames(
+            title="Select Files",
+            filetypes=[("All Files", "*.*")]
+        )
+    
+        if selected:
+            # Get currently supported extensions
+            supported_extensions = self.get_all_supported_extensions()
+        
+            # Filter files based on supported extensions
+            valid_files = []
+            for path_str in selected:
+                path = Path(path_str)
+                if '*' in supported_extensions or path.suffix.lower() in supported_extensions:
+                    valid_files.append(path_str)
+        
+            if not valid_files:
+                messagebox.showinfo("Information", "None of the selected files are supported by the enabled modules.")
+                return
+            
             # Combine with existing files
-            combined_files = self.file_paths + list(new_files)
+            combined_files = self.file_paths + list(valid_files)
+        
             # Update UI and internal list
             self.update_file_list_display(combined_files)
             self.file_paths = combined_files
+        
             # Process the new files
-            self.process_files(new_files)
+            self.process_files(valid_files)
 
+    def select_folder(self):
+        """Handle folder selection for processing."""
+        folder = filedialog.askdirectory(title="Select Folder to Process")
+    
+        if not folder:
+            return
+        
+        # Show a progress dialog for folder scanning
+        prog_win = tk.Toplevel(self.root)
+        prog_win.title("Scanning Folder")
+        prog_win.geometry("400x150")
+        prog_win.transient(self.root)
+        prog_win.grab_set()
+    
+        ttk.Label(prog_win, text="Scanning folder for supported files...").pack(pady=10)
+    
+        progress_var = tk.DoubleVar(value=0)
+        progress_bar = ttk.Progressbar(
+            prog_win, 
+            variable=progress_var,
+            mode="indeterminate",
+            length=300
+        )
+        progress_bar.pack(pady=10)
+        progress_bar.start(10)
+    
+        file_count_var = tk.StringVar(value="Found: 0 files")
+        ttk.Label(prog_win, textvariable=file_count_var).pack(pady=5)
+    
+        prog_win.update()
+    
+        try:
+            # Get supported extensions
+            supported_extensions = self.get_all_supported_extensions()
+        
+            # Use a background thread to avoid UI freeze
+            def scan_folder():
+                found_files = []
+                folder_path = Path(folder)
+            
+                # Walk the directory recursively
+                for root, dirs, files in os.walk(folder_path):
+                    # Update progress periodically
+                    if len(found_files) % 50 == 0:
+                        self.root.after(0, lambda c=len(found_files): file_count_var.set(f"Found: {c} files"))
+                
+                    for file in files:
+                        file_path = Path(root) / file
+                        # Check if this file type is supported
+                        if '*' in supported_extensions or file_path.suffix.lower() in supported_extensions:
+                            found_files.append(str(file_path))
+            
+                return found_files
+        
+            # Execute the scan in a background thread
+            result = {"files": []}
+        
+            def scan_complete(files):
+                result["files"] = files
+                prog_win.destroy()
+            
+                if not files:
+                    messagebox.showinfo("Information", "No supported files found in the selected folder.")
+                    return
+                
+                # Ask user if they want to add the files
+                if messagebox.askyesno("Files Found", 
+                                     f"Found {len(files)} supported files in the folder. Add them to the queue?"):
+                    # Combine with existing files
+                    combined_files = self.file_paths + files
+                
+                    # Update UI and internal list
+                    self.update_file_list_display(combined_files)
+                    self.file_paths = combined_files
+                
+                    # Process the new files
+                    self.process_files(files)
+        
+            # Start the background scan
+            self.run_in_background(scan_folder, scan_complete)
+        
+        except Exception as e:
+            prog_win.destroy()
+            self.logger.error(f"Error scanning folder: {str(e)}")
+            messagebox.showerror("Error", f"An error occurred while scanning the folder: {str(e)}")
+
+    def update_files_tab(self):
+        """Add a 'Select Folder' button to the files tab."""
+        # Add folder selection button if it doesn't exist
+        if not hasattr(self, 'folder_btn'):
+            self.folder_btn = ttk.Button(
+                self.file_list_actions_frame,
+                text="Add Folder",
+                command=self.select_folder
+            )
+            self.folder_btn.pack(side='right', padx=5)
+    
     def select_log_file(self):
         """Select log file location."""
         filename = filedialog.asksaveasfilename(
