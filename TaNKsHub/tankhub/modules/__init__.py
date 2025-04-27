@@ -3,6 +3,7 @@ from .file_mover import FileMoverModule
 from .file_name_editor import FileNameEditorModule
 from .media_sorter import MediaSorterModule
 from .video_converter import VideoConverterModule
+from .pdf_extractor import PDFExtractorModule
 
 """
 # Now someone can do:

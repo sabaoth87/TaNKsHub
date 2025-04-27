@@ -5,14 +5,17 @@ from tankhub.modules.file_mover import FileMoverModule
 from tankhub.modules.file_name_editor import FileNameEditorModule
 from tankhub.modules.media_sorter import MediaSorterModule
 from tankhub.modules.video_converter import VideoConverterModule
+from tankhub.modules.pdf_extractor import PDFExtractorModule
 import tkinterdnd2
 
 """
 tankhub/
 ├── __init__.py
 ├── main.py
+├── setup.py
 ├── core/
 │   ├── __init__.py
+│   ├── api_tracker.py
 │   ├── base_module.py
 │   └── module_manager.py
 ├── gui/
@@ -22,8 +25,10 @@ tankhub/
     ├── __init__.py
     ├── file_mover.py
     ├── file_name_editor.py
-    ├── media_sorter.py         # New module for media organization
-    └── video_converter.py      # New module for video conversion
+    ├── file_name_parser.py
+    ├── media_sorter.py         
+    ├── pdf_extractor.py        
+    └── video_converter.py      
 """
 
 # Set up logging
@@ -58,6 +63,10 @@ def main():
     logger.debug("Creating VideoConverterModule instance")
     video_converter = VideoConverterModule()
 
+    # Create the PDF extractor module
+    logger.debug("Creating PDFExtractorModule instance")
+    pdf_extractor = PDFExtractorModule()
+
     # Connect the modules - IMPROVED CONNECTIONS
     file_mover.filename_editor = filename_editor
     media_sorter.file_mover = file_mover
@@ -88,12 +97,14 @@ def main():
     app.module_manager.register_module(filename_editor)  # Register filename editor
     app.module_manager.register_module(media_sorter)
     app.module_manager.register_module(video_converter)
-    
+    app.module_manager.register_module(pdf_extractor)
+
     # Give modules reference to main app for background processing
     file_mover.app = app
     filename_editor.app = app
     media_sorter.app = app
     video_converter.app = app
+    pdf_extractor.app = app
 
     # Add methods to modules to get files from main app
     def get_main_files():
@@ -102,7 +113,8 @@ def main():
     file_mover.request_file_list = get_main_files
     filename_editor.request_file_list = get_main_files
     media_sorter.request_file_list = get_main_files
-    
+    pdf_extractor.request_file_list = get_main_files
+
     # Check registered modules
     enabled_modules = app.module_manager.get_enabled_modules()
     logger.debug(f"Enabled modules: {[m.name for m in enabled_modules]}")

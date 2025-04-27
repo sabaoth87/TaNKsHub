@@ -49,6 +49,9 @@
     <Compile Include="tankhub\modules\media_sorter.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tankhub\modules\pdf_extractor.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tankhub\modules\video_converter.py">
       <SubType>Code</SubType>
     </Compile>

@@ -39,5 +39,21 @@
             "output_directory": "",
             "output_format": "mp4"
         }
+    },
+    "PDF Extractor": {
+        "enabled": true,
+        "settings": {
+            "output_directory": "",
+            "preserve_paragraphs": true,
+            "remove_headers_footers": true,
+            "simplify_formatting": true,
+            "extract_metadata": true,
+            "merge_hyphenated_words": true,
+            "page_separators": false,
+            "ai_friendly_format": false,
+            "ai_chunk_size": 2000,
+            "ai_add_headings": true,
+            "ai_enhance_structure": true
+        }
     }
 }

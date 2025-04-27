@@ -10,6 +10,7 @@ from tankhub.core.base_module import BaseModule
 
 from tankhub.core.module_manager import ModuleManager
 from tankhub.core.base_module import BaseModule
+from tankhub.modules.pdf_extractor import PDFExtractorModule
 
 logger = logging.getLogger(__name__)
 
