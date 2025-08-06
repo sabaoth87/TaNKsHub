@@ -6,6 +6,7 @@ from tankhub.modules.file_name_editor import FileNameEditorModule
 from tankhub.modules.media_sorter import MediaSorterModule
 from tankhub.modules.video_converter import VideoConverterModule
 from tankhub.modules.pdf_extractor import PDFExtractorModule
+from tankhub.modules.document_joiner import DocumentJoinerModule
 import tkinterdnd2
 
 """
@@ -66,6 +67,10 @@ def main():
     # Create the PDF extractor module
     logger.debug("Creating PDFExtractorModule instance")
     pdf_extractor = PDFExtractorModule()
+   
+    # Create the Document Joiner Module
+    logger.debug("Creating Document Joiner instance")
+    document_joiner = DocumentJoinerModule()
 
     # Connect the modules - IMPROVED CONNECTIONS
     file_mover.filename_editor = filename_editor
@@ -98,6 +103,7 @@ def main():
     app.module_manager.register_module(media_sorter)
     app.module_manager.register_module(video_converter)
     app.module_manager.register_module(pdf_extractor)
+    app.module_manager.register_module(document_joiner)
 
     # Give modules reference to main app for background processing
     file_mover.app = app
@@ -105,6 +111,7 @@ def main():
     media_sorter.app = app
     video_converter.app = app
     pdf_extractor.app = app
+    document_joiner.app = app
 
     # Add methods to modules to get files from main app
     def get_main_files():

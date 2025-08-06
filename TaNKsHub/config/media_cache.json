@@ -7515,5 +7515,278 @@
         ],
         "type": "tv",
         "content_rating": "TV-Y7"
+    },
+    "A Working Man (2025)": {
+        "title": "A Working Man",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ash (2025)": {
+        "title": "Ash",
+        "year": "2025",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Sci-Fi"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Batman Begins (2005)": {
+        "title": "Batman Begins",
+        "year": "2005",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Batman Ninja vs Yakuza League": {
+        "title": "Batman Ninja Vs Yakuza League",
+        "year": null,
+        "genres": [
+            "Unknown"
+        ],
+        "type": "movie",
+        "content_rating": null
+    },
+    "Bohemian Rhapsody (2018)": {
+        "title": "Bohemian Rhapsody",
+        "year": "2018",
+        "genres": [
+            "Biography",
+            "Drama",
+            "Music"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Bring Them Down (2024)": {
+        "title": "Bring Them Down",
+        "year": "2024",
+        "genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Death of a Unicorn (2025)": {
+        "title": "Death of a Unicorn",
+        "year": "2025",
+        "genres": [
+            "Comedy",
+            "Fantasy",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Fear Street Prom Queen (2025)": {
+        "title": "Fear Street: Prom Queen",
+        "year": "2025",
+        "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Freaky Tales (2024)": {
+        "title": "Freaky Tales",
+        "year": "2024",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Last Breath (2025)": {
+        "title": "Last Breath",
+        "year": "2025",
+        "genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Locked (2025)": {
+        "title": "Locked",
+        "year": "2025",
+        "genres": [
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Mickey 17 (2025)": {
+        "title": "Mickey 17",
+        "year": "2025",
+        "genres": [
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Night at the Museum Kahmunrah Rises Again (2022)": {
+        "title": "Night at the Museum: Kahmunrah Rises Again",
+        "year": "2022",
+        "genres": [
+            "Animation",
+            "Adventure",
+            "Comedy"
+        ],
+        "type": "movie",
+        "content_rating": "PG"
+    },
+    "Novocaine (2025)": {
+        "title": "Novocaine",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Ocean With David Attenborough (2025)": {
+        "title": "Ocean with David Attenborough",
+        "year": "2025",
+        "genres": [
+            "Documentary"
+        ],
+        "type": "movie",
+        "content_rating": "N/A"
+    },
+    "Rust (2024)": {
+        "title": "Rust",
+        "year": "2024",
+        "genres": [
+            "Drama",
+            "Western"
+        ],
+        "type": "movie",
+        "content_rating": "Not Rated"
+    },
+    "The Accountant 2 (2025)": {
+        "title": "The Accountant 2",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Dark Knight (2008)": {
+        "title": "The Dark Knight",
+        "year": "2008",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Dark Knight Rises (2012)": {
+        "title": "The Dark Knight Rises",
+        "year": "2012",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Monkey (2025)": {
+        "title": "The Monkey",
+        "year": "2025",
+        "genres": [
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Old Guard 2 (2025)": {
+        "title": "The Old Guard 2",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "The Phoenician Scheme (2025)": {
+        "title": "The Phoenician Scheme",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "The Woman in the Yard (2025)": {
+        "title": "The Woman in the Yard",
+        "year": "2025",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Thriller"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Thunderbolts (2025)": {
+        "title": "Thunderbolts*",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "type": "movie",
+        "content_rating": "PG-13"
+    },
+    "Until Dawn (2025)": {
+        "title": "Until Dawn",
+        "year": "2025",
+        "genres": [
+            "Drama",
+            "Horror"
+        ],
+        "type": "movie",
+        "content_rating": "R"
+    },
+    "Warfare (2025)": {
+        "title": "Warfare",
+        "year": "2025",
+        "genres": [
+            "Action",
+            "Drama",
+            "War"
+        ],
+        "type": "movie",
+        "content_rating": "R"
     }
 }

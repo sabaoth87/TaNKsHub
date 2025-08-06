@@ -39,6 +39,9 @@
     <Compile Include="tankhub\main.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tankhub\modules\document_joiner.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tankhub\modules\file_name_editor.py">
       <SubType>Code</SubType>
     </Compile>
